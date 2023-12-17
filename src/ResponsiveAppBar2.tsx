@@ -10,7 +10,23 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 
-const pages = ["Home", "About", "Courses", "Blog", "Page", "Contact"];
+const pages = [
+  "Home",
+  "About Us",
+  "Live Projects",
+  // "Domains of Expertise",
+  "Choose Us",
+  "Our Projects",
+  // "Guidance and Mentorship",
+  // "Collaboration and Innovation",
+  "Blog",
+  "Join Us",
+  "Contact Us",
+  // "FAQs",
+  "Testimonials",
+  "Gallery",
+  "Resources",
+];
 
 function ResponsiveAppBar2() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(

@@ -1,5 +1,12 @@
 import * as React from "react";
-import { Container, Grid, IconButton, Link, Typography } from "@mui/material";
+import {
+  Box,
+  Container,
+  Grid,
+  IconButton,
+  Link,
+  Typography,
+} from "@mui/material";
 import FacebookSharpIcon from "@mui/icons-material/FacebookSharp";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -150,7 +157,7 @@ function Footer() {
               <Link
                 variant="subtitle1"
                 color="text.secondary"
-                sx={{ textDecoration: "none", color: "#fff" }}
+                sx={{ textDecoration: "none", color: "#b5b8be" }}
               >
                 Email: Info.deercreative@gmail.com
               </Link>
@@ -159,7 +166,7 @@ function Footer() {
               <Link
                 variant="subtitle1"
                 color="text.secondary"
-                sx={{ textDecoration: "none", color: "#fff" }}
+                sx={{ textDecoration: "none", color: "#b5b8be" }}
               >
                 Phone: +(88) 111 555 666
               </Link>
@@ -168,7 +175,7 @@ function Footer() {
               <Link
                 variant="subtitle1"
                 color="text.secondary"
-                sx={{ textDecoration: "none", color: "#fff" }}
+                sx={{ textDecoration: "none", color: "#b5b8be" }}
               >
                 40 Baria Sreet 133/2 New York City, United States
               </Link>
@@ -187,86 +194,99 @@ function Footer() {
           >
             Contact Us
           </Typography>
-          <ul
-            style={{
-              listStyle: "none",
-              paddingLeft: 0,
-              color: "#fff",
-            }}
-          >
-            <li>
-              <Link
-                variant="subtitle1"
-                color="text.secondary"
-                sx={{ textDecoration: "none", color: "#b5b8be" }}
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link
-                variant="subtitle1"
-                color="text.secondary"
-                sx={{ textDecoration: "none", color: "#b5b8be" }}
-              >
-                About
-              </Link>
-            </li>
-            <li>
-              <Link
-                variant="subtitle1"
-                color="text.secondary"
-                sx={{ textDecoration: "none", color: "#b5b8be" }}
-              >
-                Contact
-              </Link>
-            </li>
-            <li>
-              <Link
-                variant="subtitle1"
-                color="text.secondary"
-                sx={{ textDecoration: "none", color: "#b5b8be" }}
-              >
-                Features
-              </Link>
-            </li>
-            <li>
-              <Link
-                variant="subtitle1"
-                color="text.secondary"
-                sx={{ textDecoration: "none", color: "#b5b8be" }}
-              >
-                Courses
-              </Link>
-            </li>
-            <li>
-              <Link
-                variant="subtitle1"
-                color="text.secondary"
-                sx={{ textDecoration: "none", color: "#b5b8be" }}
-              >
-                Events
-              </Link>
-            </li>
-            <li>
-              <Link
-                variant="subtitle1"
-                color="text.secondary"
-                sx={{ textDecoration: "none", color: "#b5b8be" }}
-              >
-                Gallery
-              </Link>
-            </li>
-            <li>
-              <Link
-                variant="subtitle1"
-                color="text.secondary"
-                sx={{ textDecoration: "none", color: "#b5b8be" }}
-              >
-                FAQs
-              </Link>
-            </li>
-          </ul>
+
+          <Box sx={{ display: "flex", mb: 4 }}>
+            <ul
+              style={{
+                listStyle: "none",
+                paddingLeft: 0,
+                color: "#fff",
+              }}
+            >
+              <li>
+                <Link
+                  variant="subtitle1"
+                  color="text.secondary"
+                  sx={{ textDecoration: "none", color: "#b5b8be" }}
+                >
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link
+                  variant="subtitle1"
+                  color="text.secondary"
+                  sx={{ textDecoration: "none", color: "#b5b8be" }}
+                >
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link
+                  variant="subtitle1"
+                  color="text.secondary"
+                  sx={{ textDecoration: "none", color: "#b5b8be" }}
+                >
+                  Contact
+                </Link>
+              </li>
+              <li>
+                <Link
+                  variant="subtitle1"
+                  color="text.secondary"
+                  sx={{ textDecoration: "none", color: "#b5b8be" }}
+                >
+                  Features
+                </Link>
+              </li>
+            </ul>
+
+            <ul
+              style={{
+                listStyle: "none",
+                paddingLeft: 0,
+                color: "#fff",
+                marginLeft: "4rem",
+              }}
+            >
+              <li>
+                <Link
+                  variant="subtitle1"
+                  color="text.secondary"
+                  sx={{ textDecoration: "none", color: "#b5b8be" }}
+                >
+                  Courses
+                </Link>
+              </li>
+              <li>
+                <Link
+                  variant="subtitle1"
+                  color="text.secondary"
+                  sx={{ textDecoration: "none", color: "#b5b8be" }}
+                >
+                  Events
+                </Link>
+              </li>
+              <li>
+                <Link
+                  variant="subtitle1"
+                  color="text.secondary"
+                  sx={{ textDecoration: "none", color: "#b5b8be" }}
+                >
+                  Gallery
+                </Link>
+              </li>
+              <li>
+                <Link
+                  variant="subtitle1"
+                  color="text.secondary"
+                  sx={{ textDecoration: "none", color: "#b5b8be" }}
+                >
+                  FAQs
+                </Link>
+              </li>
+            </ul>
+          </Box>
         </Grid>
       </Grid>
 

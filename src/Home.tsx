@@ -28,15 +28,31 @@ function Home() {
 
   return (
     <>
+      <Typography
+        variant="h4"
+        gutterBottom
+        sx={{
+          textAlign: "center",
+          color: "#384158",
+          position: "absolute",
+          top: "35%",
+          left: "15%",
+        }}
+      >
+        Welcome to Maple - Where Innovation Meets Opportinity!
+      </Typography>
       <Box
-        component="img"
+        // component="img"
         sx={{
           minHeight: "500px",
           width: "100%",
           minWidth: "100%",
+          backgroundSize: "150% 140%",
+          backgroundPositionY: "90%",
+          backgroundImage: `url(${HomeSlider})`,
         }}
-        alt="The house from the offer."
-        src={HomeSlider}
+        // alt="The house from the offer."
+        // src={HomeSlider}
       />
 
       <Box>
