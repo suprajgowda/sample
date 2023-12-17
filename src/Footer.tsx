@@ -4,6 +4,7 @@ import FacebookSharpIcon from "@mui/icons-material/FacebookSharp";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import FooterBg from "./assets/footer_background.png";
 
 function Copyright(props: any) {
   return (
@@ -78,6 +79,10 @@ function Footer() {
         pb: 3,
         px: 6,
         backgroundColor: "#1e2434",
+        backgroundImage: `url(${FooterBg})`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        backgroundPosition: "center center",
       }}
     >
       <Grid container spacing={4} justifyContent="space-evenly">
