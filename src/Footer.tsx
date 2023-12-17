@@ -74,7 +74,6 @@ function Footer() {
       component="footer"
       sx={{
         borderTop: `1px solid black`,
-        mt: 8,
         pt: 5,
         pb: 3,
         px: 6,
