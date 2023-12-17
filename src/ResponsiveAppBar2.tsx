@@ -28,7 +28,7 @@ function ResponsiveAppBar2() {
   return (
     <AppBar
       position="static"
-      sx={{ backgroundColor: "#14bdee", boxShadow: "none" }}
+      sx={{ backgroundColor: "white", boxShadow: "0px 2px 5px #eee" }}
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
@@ -43,8 +43,8 @@ function ResponsiveAppBar2() {
               fontFamily: "monospace",
               fontWeight: 700,
               letterSpacing: ".3rem",
-              color: "inherit",
               textDecoration: "none",
+              color: "#384158",
             }}
           >
             Maple
@@ -82,12 +82,18 @@ function ResponsiveAppBar2() {
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{
-                display: { xs: "block", md: "none" },
+                display: {
+                  xs: "block",
+                  md: "none",
+                  justifyContent: "flex-end",
+                },
               }}
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                  <Typography textAlign="center" sx={{ color: "#384158" }}>
+                    {page}
+                  </Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -112,12 +118,18 @@ function ResponsiveAppBar2() {
           >
             Maple Mobile
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: "none", md: "flex" },
+              justifyContent: "flex-end",
+            }}
+          >
             {pages.map((page) => (
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
+                sx={{ my: 2, color: "#384158", display: "block" }}
               >
                 {page}
               </Button>

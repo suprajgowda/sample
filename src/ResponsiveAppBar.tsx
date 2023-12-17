@@ -7,14 +7,9 @@ import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
-
-const pages = [
-  "Have any questions?",
-  "001-1234-88888",
-  "info.deercreative@gmail.com",
-];
+import PhoneIcon from "@mui/icons-material/Phone";
+import EmailIcon from "@mui/icons-material/Email";
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
@@ -65,11 +60,27 @@ function ResponsiveAppBar() {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))}
+              <MenuItem
+                key={"Have any questions?"}
+                onClick={handleCloseNavMenu}
+              >
+                <Typography textAlign="center">Have any questions?</Typography>
+              </MenuItem>
+
+              <MenuItem key={"001-1234-88888"} onClick={handleCloseNavMenu}>
+                <PhoneIcon />
+                <Typography textAlign="center">001-1234-88888</Typography>
+              </MenuItem>
+
+              <MenuItem
+                key={"info.deercreative@gmail.com"}
+                onClick={handleCloseNavMenu}
+              >
+                <EmailIcon />
+                <Typography textAlign="center">
+                  info.deercreative@gmail.com
+                </Typography>
+              </MenuItem>
             </Menu>
           </Box>
 
@@ -92,15 +103,35 @@ function ResponsiveAppBar() {
             LOGO
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
-              >
-                {page}
-              </Button>
-            ))}
+            <Typography variant="body2" gutterBottom sx={{ m: 0 }}>
+              Have any questions ?
+            </Typography>
+
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                ml: 1,
+              }}
+            >
+              <PhoneIcon sx={{ fontSize: "1rem", mr: 0.25 }} />
+              <Typography variant="body2" gutterBottom sx={{ m: 0 }}>
+                001-1234-88888
+              </Typography>
+            </Box>
+
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                ml: 1,
+              }}
+            >
+              <EmailIcon sx={{ fontSize: "1rem", mr: 0.25 }} />
+              <Typography variant="body2" gutterBottom sx={{ m: 0 }}>
+                info.deercreative@gmail.com
+              </Typography>
+            </Box>
           </Box>
         </Toolbar>
       </Container>
