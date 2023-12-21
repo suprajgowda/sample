@@ -37,7 +37,7 @@ function Copyright(props: any) {
         >
           {"Copyright © "}
           <Link color="inherit" sx={{ mr: 0.25, color: "#b5b8be" }}>
-            Your Website
+            Maple TechX
           </Link>
           {new Date().getFullYear()}
           {"."}
@@ -100,7 +100,7 @@ function Footer() {
             sx={{ color: "#fff" }}
             gutterBottom
           >
-            MAPLE
+            Maple TechX
           </Typography>
           <ul
             style={{
@@ -115,7 +115,8 @@ function Footer() {
                 color="text.secondary"
                 sx={{ textDecoration: "none", color: "#fff" }}
               >
-                Lorem ipsum dolor sit ametium, consectetur adipiscing elit.
+                Let's embark on this adventure together. Ignite your mind, power
+                your future!
               </Link>
             </li>
             <li>
@@ -218,7 +219,7 @@ function Footer() {
                   color="text.secondary"
                   sx={{ textDecoration: "none", color: "#b5b8be" }}
                 >
-                  About
+                  About Us
                 </Link>
               </li>
               <li>
@@ -227,16 +228,7 @@ function Footer() {
                   color="text.secondary"
                   sx={{ textDecoration: "none", color: "#b5b8be" }}
                 >
-                  Contact
-                </Link>
-              </li>
-              <li>
-                <Link
-                  variant="subtitle1"
-                  color="text.secondary"
-                  sx={{ textDecoration: "none", color: "#b5b8be" }}
-                >
-                  Features
+                  Skills
                 </Link>
               </li>
             </ul>
@@ -255,15 +247,6 @@ function Footer() {
                   color="text.secondary"
                   sx={{ textDecoration: "none", color: "#b5b8be" }}
                 >
-                  Courses
-                </Link>
-              </li>
-              <li>
-                <Link
-                  variant="subtitle1"
-                  color="text.secondary"
-                  sx={{ textDecoration: "none", color: "#b5b8be" }}
-                >
                   Events
                 </Link>
               </li>
@@ -273,16 +256,7 @@ function Footer() {
                   color="text.secondary"
                   sx={{ textDecoration: "none", color: "#b5b8be" }}
                 >
-                  Gallery
-                </Link>
-              </li>
-              <li>
-                <Link
-                  variant="subtitle1"
-                  color="text.secondary"
-                  sx={{ textDecoration: "none", color: "#b5b8be" }}
-                >
-                  FAQs
+                  Contact Us
                 </Link>
               </li>
             </ul>

@@ -83,7 +83,6 @@ function ResponsiveAppBar2() {
             variant="h6"
             noWrap
             component="a"
-            href="#app-bar-with-responsive-menu"
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
@@ -94,7 +93,7 @@ function ResponsiveAppBar2() {
               color: "#384158",
             }}
           >
-            Maple
+            Maple TechX
           </Typography>
 
           {/* Mobile View */}

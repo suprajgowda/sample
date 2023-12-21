@@ -20,7 +20,7 @@ function NewsLetter() {
         </Typography>
 
         <Typography variant="subtitle1" gutterBottom sx={{ color: "white" }}>
-          Subcribe to lastest smartphones news & great deals we offer
+          Subcribe to lastest news & great deals we offer
         </Typography>
       </Box>
     </>
