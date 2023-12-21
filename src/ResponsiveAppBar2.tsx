@@ -7,28 +7,53 @@ import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import Container from "@mui/material/Container";
 import MenuItem from "@mui/material/MenuItem";
+import { useNavigate } from "react-router-dom";
 
-const homeList = ["Welcome Message", "Overview of Maple TechX"];
-const aboutUs = ["Vision", "Mission", "Value and Culture", "Why choose us"];
-const skills = ["Overview of Live Projects", "Project domains"];
-const eventsList = ["Hackathons", "Workshops", "Conference"];
+const homeLink = "/";
+const eventsLink = "/events";
+const aboutUsLink = "/about-us";
+const skillsLink = "/skills";
+
+const homeList = {
+  link: homeLink,
+  list: ["Welcome Message", "Overview of Maple TechX"],
+};
+
+const aboutUs = {
+  link: aboutUsLink,
+  list: ["Vision", "Mission", "Value and Culture", "Why choose us"],
+};
+
+const skills = {
+  link: skillsLink,
+  list: ["Overview of Live Projects", "Project domains"],
+};
+
+const eventsList = {
+  link: eventsLink,
+  list: ["Hackathons", "Workshops", "Conference"],
+};
 
 function NavDropdown(props: any) {
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
     null
   );
 
+  const drpDwnList =
+    props.drpDwnList && props.drpDwnList.length > 0 ? props.drpDwnList : [];
+  const mainBtnTxt = props.mainBtnTxt;
+
+  const navLink = props.link;
+  const navigate = useNavigate();
+
   const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElUser(event.currentTarget);
   };
 
   const handleCloseUserMenu = () => {
+    navigate(navLink);
     setAnchorElUser(null);
   };
-
-  const drpDwnList =
-    props.drpDwnList && props.drpDwnList.length > 0 ? props.drpDwnList : [];
-  const mainBtnTxt = props.mainBtnTxt;
 
   return (
     <>
@@ -123,10 +148,26 @@ function ResponsiveAppBar2() {
               justifyContent: "flex-end",
             }}
           >
-            <NavDropdown mainBtnTxt={"Home"} drpDwnList={homeList} />
-            <NavDropdown mainBtnTxt={"About Us"} drpDwnList={aboutUs} />
-            <NavDropdown mainBtnTxt={"Skills"} drpDwnList={skills} />
-            <NavDropdown mainBtnTxt={"Events"} drpDwnList={eventsList} />
+            <NavDropdown
+              mainBtnTxt={"Home"}
+              link={homeLink}
+              drpDwnList={homeList.list}
+            />
+            <NavDropdown
+              mainBtnTxt={"About Us"}
+              link={aboutUsLink}
+              drpDwnList={aboutUs.list}
+            />
+            <NavDropdown
+              mainBtnTxt={"Skills"}
+              link={skillsLink}
+              drpDwnList={skills.list}
+            />
+            <NavDropdown
+              mainBtnTxt={"Events"}
+              link={eventsLink}
+              drpDwnList={eventsList.list}
+            />
 
             <IconButton
               onClick={() => console.log("----Contact Us------")}
