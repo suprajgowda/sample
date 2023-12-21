@@ -1,19 +1,20 @@
 import React from "react";
 import "./App.css";
-import ResponsiveAppBar from "./ResponsiveAppBar";
-import ResponsiveAppBar2 from "./ResponsiveAppBar2";
-import Footer from "./Footer";
 import Home from "./Home";
-import NewsLetter from "./NewsLetter";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Events from "./Events";
 
 function App() {
   return (
     <>
-      <ResponsiveAppBar />
-      <ResponsiveAppBar2 />
-      <Home />
-      <NewsLetter />
-      <Footer />
+      <Router>
+        <Routes>
+          <Route path="/" Component={Home} />
+          <Route path="/events" Component={Events} />
+          {/* <Route path="/about/:name" component={About} />
+          <Route path="/contact" component={Contact} /> */}
+        </Routes>
+      </Router>
     </>
   );
 }

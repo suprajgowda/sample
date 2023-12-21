@@ -10,6 +10,10 @@ import Course1 from "./assets/course_1.jpg";
 import Course2 from "./assets/course_2.jpg";
 import Course3 from "./assets/course_3.jpg";
 import CourseBk from "./assets/courses_background.jpg";
+import ResponsiveAppBar2 from "./ResponsiveAppBar2";
+import ResponsiveAppBar from "./ResponsiveAppBar";
+import Footer from "./Footer";
+import NewsLetter from "./NewsLetter";
 
 function Home() {
   const imgBoxStyle = {
@@ -28,6 +32,9 @@ function Home() {
 
   return (
     <>
+      <ResponsiveAppBar />
+      <ResponsiveAppBar2 />
+
       <Typography
         variant="h4"
         gutterBottom
@@ -42,7 +49,6 @@ function Home() {
         Welcome to Maple - Where Innovation Meets Opportunity!
       </Typography>
       <Box
-        // component="img"
         sx={{
           minHeight: "500px",
           width: "100%",
@@ -51,8 +57,6 @@ function Home() {
           backgroundPositionY: "90%",
           backgroundImage: `url(${HomeSlider})`,
         }}
-        // alt="The house from the offer."
-        // src={HomeSlider}
       />
 
       <Box>
@@ -247,6 +251,9 @@ function Home() {
           </Button>
         </Box>
       </Box>
+
+      <NewsLetter />
+      <Footer />
     </>
   );
 }
