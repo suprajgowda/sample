@@ -39,7 +39,7 @@ function Home() {
           left: "15%",
         }}
       >
-        Welcome to Maple - Where Innovation Meets Opportinity!
+        Welcome to Maple - Where Innovation Meets Opportunity!
       </Typography>
       <Box
         // component="img"

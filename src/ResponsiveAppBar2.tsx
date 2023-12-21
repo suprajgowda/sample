@@ -5,42 +5,73 @@ import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 
-const pages = [
-  "Home",
-  "About Us",
-  "Live Projects",
-  // "Domains of Expertise",
-  "Choose Us",
-  "Our Projects",
-  // "Guidance and Mentorship",
-  // "Collaboration and Innovation",
-  "Blog",
-  "Join Us",
-  "Contact Us",
-  // "FAQs",
-  "Testimonials",
-  "Gallery",
-  "Resources",
-];
+const homeList = ["Welcome Message", "Overview of Maple TechX"];
+const aboutUs = ["Vision", "Mission", "Value and Culture", "Why choose us"];
+const skills = ["Overview of Live Projects", "Project domains"];
+const eventsList = ["Hackathons", "Workshops", "Conference"];
 
-function ResponsiveAppBar2() {
-  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
+function NavDropdown(props: any) {
+  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
     null
   );
 
-  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElNav(event.currentTarget);
+  const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorElUser(event.currentTarget);
   };
 
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
+  const handleCloseUserMenu = () => {
+    setAnchorElUser(null);
   };
 
+  const drpDwnList =
+    props.drpDwnList && props.drpDwnList.length > 0 ? props.drpDwnList : [];
+  const mainBtnTxt = props.mainBtnTxt;
+
+  return (
+    <>
+      <IconButton
+        onClick={handleOpenUserMenu}
+        sx={{
+          p: 2,
+          fontSize: "0.875rem",
+          textTransform: "uppercase",
+          color: "#384158",
+          fontWeight: 500,
+          borderRadius: 0,
+        }}
+      >
+        {mainBtnTxt}
+      </IconButton>
+      <Menu
+        sx={{ mt: "65px" }}
+        id="menu-appbar"
+        anchorEl={anchorElUser}
+        anchorOrigin={{
+          vertical: "top",
+          horizontal: "right",
+        }}
+        keepMounted
+        transformOrigin={{
+          vertical: "top",
+          horizontal: "right",
+        }}
+        open={Boolean(anchorElUser)}
+        onClose={handleCloseUserMenu}
+      >
+        {drpDwnList.map((event: string) => (
+          <MenuItem key={event} onClick={handleCloseUserMenu}>
+            <Typography textAlign="center">{event}</Typography>
+          </MenuItem>
+        ))}
+      </Menu>
+    </>
+  );
+}
+
+function ResponsiveAppBar2() {
   return (
     <AppBar
       position="static"
@@ -66,55 +97,6 @@ function ResponsiveAppBar2() {
             Maple
           </Typography>
 
-          <Box
-            sx={{
-              flexGrow: 1,
-              display: { xs: "flex", md: "none" },
-              justifyContent: "flex-end",
-            }}
-          >
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: {
-                  xs: "block",
-                  md: "none",
-                  justifyContent: "flex-end",
-                },
-              }}
-            >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center" sx={{ color: "#384158" }}>
-                    {page}
-                  </Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
-
           {/* Mobile View */}
           <Typography
             variant="h5"
@@ -134,26 +116,37 @@ function ResponsiveAppBar2() {
           >
             Maple Mobile
           </Typography>
+
           <Box
             sx={{
               flexGrow: 1,
-              display: { xs: "none", md: "flex" },
+              display: "flex",
               justifyContent: "flex-end",
             }}
           >
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "#384158", display: "block" }}
-              >
-                {page}
-              </Button>
-            ))}
+            <NavDropdown mainBtnTxt={"Home"} drpDwnList={homeList} />
+            <NavDropdown mainBtnTxt={"About Us"} drpDwnList={aboutUs} />
+            <NavDropdown mainBtnTxt={"Skills"} drpDwnList={skills} />
+            <NavDropdown mainBtnTxt={"Events"} drpDwnList={eventsList} />
+
+            <IconButton
+              onClick={() => console.log("----Contact Us------")}
+              sx={{
+                p: 2,
+                fontSize: "0.875rem",
+                textTransform: "uppercase",
+                color: "#384158",
+                fontWeight: 500,
+                borderRadius: 0,
+              }}
+            >
+              Contact Us
+            </IconButton>
           </Box>
         </Toolbar>
       </Container>
     </AppBar>
   );
 }
+
 export default ResponsiveAppBar2;
