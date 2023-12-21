@@ -46,7 +46,7 @@ function NavDropdown(props: any) {
         {mainBtnTxt}
       </IconButton>
       <Menu
-        sx={{ mt: "65px" }}
+        sx={{ mt: "55px" }}
         id="menu-appbar"
         anchorEl={anchorElUser}
         anchorOrigin={{
