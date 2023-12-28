@@ -4,6 +4,10 @@ import ResponsiveAppBar from "./ResponsiveAppBar";
 import ResponsiveAppBar2 from "./ResponsiveAppBar2";
 import NewsLetter from "./NewsLetter";
 import Footer from "./Footer";
+import HackthonImage from "./assets/hackathon.jpg";
+import Skill from "./assets/skillDevelopment.jpg";
+import Networking from "./assets/networking.jpg";
+import ProblemSolving from "./assets/problemSolving.jpg";
 
 export default function Events() {
   return (
@@ -12,24 +16,41 @@ export default function Events() {
       <ResponsiveAppBar2 />
 
       <Box sx={{ display: "flex", flexDirection: "column", mx: "10%" }}>
-        <Box>
-          <Typography
-            variant="h3"
-            gutterBottom
-            sx={{ textAlign: "center", color: "#384158", mb: 2, mt: 11 }}
+        <Box
+          sx={{
+            mx: "-12.5%",
+            backgroundSize: "100% 250%",
+            backgroundPositionY: "center",
+            backgroundImage: `url(${HackthonImage})`,
+            minHeight: "350px",
+          }}
+        >
+          <Box
+            sx={{
+              backgroundColor: "black",
+              opacity: 0.7,
+              minHeight: "350px",
+              position: "absolute",
+            }}
           >
-            What is a Hackathon ?
-          </Typography>
-          <Typography
-            variant="body2"
-            gutterBottom
-            sx={{ textAlign: "center", color: "#76777a", mx: 5, mb: 5 }}
-          >
-            Welcome to the InnovateCode Hackathon, where innovation meets
-            collaboration! If you're new to the concept of a hackathon, you're
-            in for an exciting journey into the heart of creative
-            problem-solving and technological exploration.
-          </Typography>
+            <Typography
+              variant="h3"
+              gutterBottom
+              sx={{ textAlign: "center", color: "#FFF", mb: 2, mt: 11 }}
+            >
+              What is a Hackathon ?
+            </Typography>
+            <Typography
+              variant="body2"
+              gutterBottom
+              sx={{ textAlign: "center", color: "#FFF", mx: 5, mb: 5 }}
+            >
+              Welcome to the InnovateCode Hackathon, where innovation meets
+              collaboration! If you're new to the concept of a hackathon, you're
+              in for an exciting journey into the heart of creative
+              problem-solving and technological exploration.
+            </Typography>
+          </Box>
         </Box>
 
         <Box>
@@ -222,46 +243,94 @@ export default function Events() {
             </Typography>
           </Box>
 
-          <Box sx={{ mb: 4 }}>
-            <Typography variant="h6" gutterBottom>
-              Skill Development:
-            </Typography>{" "}
-            <Typography
-              variant="subtitle1"
-              gutterBottom
-              sx={{ color: "#76777a" }}
-            >
-              Hackathons offer a hands-on learning experience, allowing
-              participants to sharpen their technical and teamwork skills.
-            </Typography>
+          <Box
+            sx={{
+              mb: 4,
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <Box sx={{ mr: 2 }}>
+              <Typography variant="h6" gutterBottom>
+                Skill Development:
+              </Typography>{" "}
+              <Typography
+                variant="subtitle1"
+                gutterBottom
+                sx={{ color: "#76777a" }}
+              >
+                Hackathons offer a hands-on learning experience, allowing
+                participants to sharpen their technical and teamwork skills.
+              </Typography>
+            </Box>
+            <Box>
+              <img
+                src={Skill}
+                alt={"Skill development"}
+                style={{ maxWidth: "300px", borderRadius: "5px" }}
+              />
+            </Box>
           </Box>
 
-          <Box sx={{ mb: 4 }}>
-            <Typography variant="h6" gutterBottom>
-              Networking:
-            </Typography>{" "}
-            <Typography
-              variant="subtitle1"
-              gutterBottom
-              sx={{ color: "#76777a" }}
-            >
-              Connect with like-minded individuals, industry professionals, and
-              potential collaborators.
-            </Typography>
+          <Box
+            sx={{
+              mb: 4,
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <Box>
+              <img
+                src={Networking}
+                alt={"Networking"}
+                style={{ maxWidth: "350px", borderRadius: "5px" }}
+              />
+            </Box>
+            <Box sx={{ ml: 2 }}>
+              <Typography variant="h6" gutterBottom>
+                Networking:
+              </Typography>{" "}
+              <Typography
+                variant="subtitle1"
+                gutterBottom
+                sx={{ color: "#76777a" }}
+              >
+                Connect with like-minded individuals, industry professionals,
+                and potential collaborators.
+              </Typography>
+            </Box>
           </Box>
 
-          <Box sx={{ mb: 4 }}>
-            <Typography variant="h6" gutterBottom>
-              Real-World Problem Solving:
-            </Typography>{" "}
-            <Typography
-              variant="subtitle1"
-              gutterBottom
-              sx={{ color: "#76777a" }}
-            >
-              Tackle real-world challenges and contribute to innovative
-              solutions that may have a positive impact.
-            </Typography>
+          <Box
+            sx={{
+              mb: 4,
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <Box sx={{ mr: 2 }}>
+              <Typography variant="h6" gutterBottom>
+                Real-World Problem Solving:
+              </Typography>{" "}
+              <Typography
+                variant="subtitle1"
+                gutterBottom
+                sx={{ color: "#76777a" }}
+              >
+                Tackle real-world challenges and contribute to innovative
+                solutions that may have a positive impact.
+              </Typography>
+            </Box>
+            <Box>
+              <img
+                src={ProblemSolving}
+                alt={"Problem Solving"}
+                style={{ maxWidth: "300px", borderRadius: "5px" }}
+              />
+            </Box>
           </Box>
         </Box>
 

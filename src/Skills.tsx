@@ -4,10 +4,21 @@ import ResponsiveAppBar from "./ResponsiveAppBar";
 import ResponsiveAppBar2 from "./ResponsiveAppBar2";
 import NewsLetter from "./NewsLetter";
 import Footer from "./Footer";
+import AI from "./assets/ai3.jpg";
+import Natural from "./assets/nlp.png";
+import Block from "./assets/block-chain.jpg";
+import Machine from "./assets/machineLearning2.jpg";
+import Neural from "./assets/neural-network.jpg";
+import Cloud from "./assets/cloud-computing.jpg";
+import Web from "./assets/webprojects.jpg";
+import Aero from "./assets/aerospace.jpg";
+import Robotics from "./assets/robotics.jpg";
+import ThreeD from "./assets/3DPrinter.jpg";
 
 const projectDomainList = [
   {
     header: "Artificial Intelligence (AI):",
+    key: "ai",
     list: [
       {
         key1: "Description:",
@@ -27,6 +38,7 @@ const projectDomainList = [
   },
   {
     header: "Natural Language Detection:",
+    key: "nlp",
     list: [
       {
         key1: "Description:",
@@ -47,6 +59,7 @@ const projectDomainList = [
   },
   {
     header: "Blockchain:",
+    key: "block",
     list: [
       {
         key1: "Description:",
@@ -67,6 +80,7 @@ const projectDomainList = [
   },
   {
     header: "Machine Learning:",
+    key: "machine",
     list: [
       {
         key1: "Description:",
@@ -87,6 +101,7 @@ const projectDomainList = [
   },
   {
     header: "Neural Network:",
+    key: "neural",
     list: [
       {
         key1: "Description:",
@@ -105,6 +120,7 @@ const projectDomainList = [
   },
   {
     header: "Cloud Computing:",
+    key: "cloud",
     list: [
       {
         key1: "Description:",
@@ -124,6 +140,7 @@ const projectDomainList = [
   },
   {
     header: "Web-Based Projects:",
+    key: "web",
     list: [
       {
         key1: "Description:",
@@ -143,6 +160,7 @@ const projectDomainList = [
   },
   {
     header: "Aerospace and Thermal:",
+    key: "aero",
     list: [
       {
         key1: "Description:",
@@ -165,32 +183,92 @@ const projectDomainList = [
 function listOfProjects() {
   return (
     <>
-      {projectDomainList.map((domain) => {
-        return (
-          <>
-            <Box sx={{ mb: 4 }}>
-              <Typography variant="h6" gutterBottom>
-                {domain.header}
-              </Typography>
-            </Box>
+      {projectDomainList.map((domain, index) => {
+        let imageFile;
+        const imageStyle = { maxWidth: "500px", borderRadius: "5px" };
 
-            {domain.list.map((dom) => {
-              return (
-                <Box sx={{ mb: 4 }}>
-                  <Typography variant="h6" gutterBottom>
-                    {dom.key1}
-                  </Typography>{" "}
-                  <Typography
-                    variant="subtitle1"
-                    gutterBottom
-                    sx={{ color: "#76777a" }}
-                  >
-                    {dom.value}
-                  </Typography>
-                </Box>
-              );
-            })}
-          </>
+        if (domain.key === "ai") {
+          imageFile = <img src={AI} alt={domain.header} style={imageStyle} />;
+        } else if (domain.key === "nlp") {
+          imageFile = (
+            <img src={Natural} alt={domain.header} style={imageStyle} />
+          );
+        } else if (domain.key === "block") {
+          imageFile = (
+            <img src={Block} alt={domain.header} style={imageStyle} />
+          );
+        } else if (domain.key === "machine") {
+          imageFile = (
+            <img src={Machine} alt={domain.header} style={imageStyle} />
+          );
+        } else if (domain.key === "neural") {
+          imageFile = (
+            <img src={Neural} alt={domain.header} style={imageStyle} />
+          );
+        } else if (domain.key === "cloud") {
+          imageFile = (
+            <img src={Cloud} alt={domain.header} style={imageStyle} />
+          );
+        } else if (domain.key === "web") {
+          imageFile = <img src={Web} alt={domain.header} style={imageStyle} />;
+        } else if (domain.key === "aero") {
+          imageFile = <img src={Aero} alt={domain.header} style={imageStyle} />;
+        }
+
+        let imageBoxStyle: any = {
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        };
+
+        if (index % 2 === 0) {
+          imageBoxStyle["pr"] = 2;
+        } else {
+          imageBoxStyle["pl"] = 2;
+        }
+
+        return (
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "space-between",
+              mb: 8,
+              flexDirection: index % 2 === 0 ? "row" : "row-reverse",
+            }}
+          >
+            <Box sx={imageBoxStyle}>{imageFile}</Box>
+
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                flexDirection: "column",
+              }}
+            >
+              <Box sx={{ mb: 2 }}>
+                <Typography variant="h6" gutterBottom>
+                  {domain.header}
+                </Typography>
+              </Box>
+
+              {domain.list.map((dom) => {
+                return (
+                  <Box sx={{ mb: 1 }}>
+                    <Typography variant="h6" gutterBottom>
+                      {dom.key1}
+                    </Typography>{" "}
+                    <Typography
+                      variant="subtitle1"
+                      gutterBottom
+                      sx={{ color: "#76777a" }}
+                    >
+                      {dom.value}
+                    </Typography>
+                  </Box>
+                );
+              })}
+            </Box>
+          </Box>
         );
       })}
     </>
@@ -249,7 +327,7 @@ export default function Skills() {
             sx={{ textAlign: "center", color: "#76777a", mx: 5, mb: 5 }}
           >
             Embark on a transformative journey where theoretical knowledge meets
-            real-world application through our Live Projects at MAPLE . Our
+            real-world application through our Live Projects at MAPLE. Our
             projects are carefully crafted to provide participants with hands-on
             experience in cutting-edge domains, fostering innovation, and
             preparing them for the dynamic landscape of the tech industry.
@@ -315,14 +393,37 @@ export default function Skills() {
         >
           {listOfProjects()}
 
-          <Box sx={{ mb: 4 }}>
+          <Box
+            sx={{
+              mb: 4,
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
+          >
             <Typography variant="h6" gutterBottom>
               Robotics
             </Typography>
+            <img
+              src={Robotics}
+              alt={"Robotics"}
+              style={{ maxWidth: "500px", borderRadius: "5px" }}
+            />
           </Box>
 
-          <Box sx={{ mb: 4 }}>
-            <Typography variant="h6" gutterBottom>
+          <Box
+            sx={{
+              mb: 4,
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            <img
+              src={ThreeD}
+              alt={"3D Printer"}
+              style={{ maxWidth: "500px", borderRadius: "5px" }}
+            />
+            <Typography variant="h6" gutterBottom sx={{ ml: 4 }}>
               3D Printer
             </Typography>
           </Box>
