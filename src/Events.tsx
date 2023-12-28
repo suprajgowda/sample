@@ -8,6 +8,12 @@ import HackthonImage from "./assets/hackathon.jpg";
 import Skill from "./assets/skillDevelopment.jpg";
 import Networking from "./assets/networking.jpg";
 import ProblemSolving from "./assets/problemSolving.jpg";
+import TeamCollImage from "./assets/Team_Collaboration.jpg";
+import TimeBound from "./assets/Time_Bound_Challenges.jpg";
+import Innovation from "./assets/Innovation_and_Creativity.jpg";
+import LearningOpp from "./assets/Learning_Opportunities.jpg";
+import ProjectShowcase from "./assets/Project_Showcase.jpg";
+import PriceAndRecognition from "./assets/price_and_recognition.jpg";
 
 export default function Events() {
   return (
@@ -84,146 +90,267 @@ export default function Events() {
             my: 6,
           }}
         >
-          <Box sx={{ mb: 4 }}>
-            <Typography variant="h6" gutterBottom>
-              Team Collaboration
-            </Typography>
+          <Box sx={{ mb: 4, display: "flex" }}>
             <Box>
-              <Typography
-                variant="subtitle1"
-                gutterBottom
-                sx={{ color: "#76777a" }}
-              >
-                Participants form teams, bringing together their unique skills
-                and perspectives.
+              <img
+                src={TeamCollImage}
+                alt={"Team Collaboration"}
+                style={{ maxWidth: "300px", borderRadius: "5px" }}
+              />
+            </Box>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                ml: 3,
+              }}
+            >
+              <Typography variant="h6" gutterBottom>
+                Team Collaboration
               </Typography>
-              <Typography
-                variant="subtitle1"
-                gutterBottom
-                sx={{ color: "#76777a" }}
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                }}
               >
-                Collaboration is encouraged, fostering an environment of shared
-                learning and creativity.
-              </Typography>
+                <Typography
+                  variant="subtitle1"
+                  gutterBottom
+                  sx={{ color: "#76777a" }}
+                >
+                  Participants form teams, bringing together their unique skills
+                  and perspectives.
+                </Typography>
+                <Typography
+                  variant="subtitle1"
+                  gutterBottom
+                  sx={{ color: "#76777a" }}
+                >
+                  Collaboration is encouraged, fostering an environment of
+                  shared learning and creativity.
+                </Typography>
+              </Box>
             </Box>
           </Box>
 
-          <Box sx={{ mb: 4 }}>
-            <Typography variant="h6" gutterBottom>
-              Time-Bound Challenges
-            </Typography>
+          <Box sx={{ mb: 4, display: "flex" }}>
             <Box>
-              <Typography
-                variant="subtitle1"
-                gutterBottom
-                sx={{ color: "#76777a" }}
-              >
-                Hackathons typically run for a fixed period, often spanning a
-                weekend or a specific number of hours.
+              <img
+                src={TimeBound}
+                alt={"Time-Bound Challenges"}
+                style={{ maxWidth: "300px", borderRadius: "5px" }}
+              />
+            </Box>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                ml: 3,
+              }}
+            >
+              <Typography variant="h6" gutterBottom>
+                Time-Bound Challenges
               </Typography>
-              <Typography
-                variant="subtitle1"
-                gutterBottom
-                sx={{ color: "#76777a" }}
-              >
-                The time constraint adds an element of urgency, pushing
-                participants to think on their feet and deliver results quickly.
-              </Typography>
+              <Box>
+                <Typography
+                  variant="subtitle1"
+                  gutterBottom
+                  sx={{ color: "#76777a" }}
+                >
+                  Hackathons typically run for a fixed period, often spanning a
+                  weekend or a specific number of hours.
+                </Typography>
+                <Typography
+                  variant="subtitle1"
+                  gutterBottom
+                  sx={{ color: "#76777a" }}
+                >
+                  The time constraint adds an element of urgency, pushing
+                  participants to think on their feet and deliver results
+                  quickly.
+                </Typography>
+              </Box>
             </Box>
           </Box>
 
-          <Box sx={{ mb: 4 }}>
-            <Typography variant="h6" gutterBottom>
-              Innovation and Creativity
-            </Typography>
+          <Box sx={{ mb: 4, display: "flex" }}>
             <Box>
-              <Typography
-                variant="subtitle1"
-                gutterBottom
-                sx={{ color: "#76777a" }}
-              >
-                Participants are challenged to think innovatively and creatively
-                to solve problems.
+              <img
+                src={Innovation}
+                alt={"Innovation and Creativity"}
+                style={{ maxWidth: "300px", borderRadius: "5px" }}
+              />
+            </Box>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                ml: 3,
+              }}
+            >
+              <Typography variant="h6" gutterBottom>
+                Innovation and Creativity
               </Typography>
-              <Typography
-                variant="subtitle1"
-                gutterBottom
-                sx={{ color: "#76777a" }}
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                }}
               >
-                The freedom to explore new technologies and ideas often leads to
-                groundbreaking solutions.
-              </Typography>
+                <Typography
+                  variant="subtitle1"
+                  gutterBottom
+                  sx={{ color: "#76777a" }}
+                >
+                  Participants are challenged to think innovatively and
+                  creatively to solve problems.
+                </Typography>
+                <Typography
+                  variant="subtitle1"
+                  gutterBottom
+                  sx={{ color: "#76777a" }}
+                >
+                  The freedom to explore new technologies and ideas often leads
+                  to groundbreaking solutions.
+                </Typography>
+              </Box>
             </Box>
           </Box>
 
-          <Box sx={{ mb: 4 }}>
-            <Typography variant="h6" gutterBottom>
-              Learning Opportunities
-            </Typography>
+          <Box sx={{ mb: 4, display: "flex" }}>
             <Box>
-              <Typography
-                variant="subtitle1"
-                gutterBottom
-                sx={{ color: "#76777a" }}
-              >
-                Workshops, mentorship sessions, and expert talks provide
-                valuable learning opportunities.
+              <img
+                src={LearningOpp}
+                alt={"Learning Opportunities"}
+                style={{ maxWidth: "300px", borderRadius: "5px" }}
+              />
+            </Box>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                ml: 3,
+              }}
+            >
+              <Typography variant="h6" gutterBottom>
+                Learning Opportunities
               </Typography>
-              <Typography
-                variant="subtitle1"
-                gutterBottom
-                sx={{ color: "#76777a" }}
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                }}
               >
-                Participants can enhance their skills, learn about the latest
-                technologies, and gain insights from industry professionals.
-              </Typography>
+                <Typography
+                  variant="subtitle1"
+                  gutterBottom
+                  sx={{ color: "#76777a" }}
+                >
+                  Workshops, mentorship sessions, and expert talks provide
+                  valuable learning opportunities.
+                </Typography>
+                <Typography
+                  variant="subtitle1"
+                  gutterBottom
+                  sx={{ color: "#76777a" }}
+                >
+                  Participants can enhance their skills, learn about the latest
+                  technologies, and gain insights from industry professionals.
+                </Typography>
+              </Box>
             </Box>
           </Box>
 
-          <Box sx={{ mb: 4 }}>
-            <Typography variant="h6" gutterBottom>
-              Project Showcase and Judging
-            </Typography>
+          <Box sx={{ mb: 4, display: "flex" }}>
             <Box>
-              <Typography
-                variant="subtitle1"
-                gutterBottom
-                sx={{ color: "#76777a" }}
-              >
-                Teams present their projects to a panel of judges or industry
-                experts.
+              <img
+                src={ProjectShowcase}
+                alt={"Project Showcase and Judging"}
+                style={{ maxWidth: "300px", borderRadius: "5px" }}
+              />
+            </Box>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                ml: 3,
+              }}
+            >
+              <Typography variant="h6" gutterBottom>
+                Project Showcase and Judging
               </Typography>
-              <Typography
-                variant="subtitle1"
-                gutterBottom
-                sx={{ color: "#76777a" }}
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                }}
               >
-                Projects are evaluated based on criteria such as creativity,
-                functionality, and overall impact.
-              </Typography>
+                <Typography
+                  variant="subtitle1"
+                  gutterBottom
+                  sx={{ color: "#76777a" }}
+                >
+                  Teams present their projects to a panel of judges or industry
+                  experts.
+                </Typography>
+                <Typography
+                  variant="subtitle1"
+                  gutterBottom
+                  sx={{ color: "#76777a" }}
+                >
+                  Projects are evaluated based on criteria such as creativity,
+                  functionality, and overall impact.
+                </Typography>
+              </Box>
             </Box>
           </Box>
 
-          <Box sx={{ mb: 4 }}>
-            <Typography variant="h6" gutterBottom>
-              Prizes and Recognition
-            </Typography>
+          <Box sx={{ mb: 4, display: "flex" }}>
             <Box>
-              <Typography
-                variant="subtitle1"
-                gutterBottom
-                sx={{ color: "#76777a" }}
-              >
-                Exciting prizes and recognition are awarded to winning teams.
+              <img
+                src={PriceAndRecognition}
+                alt={"Prizes and Recognition"}
+                style={{ maxWidth: "300px", borderRadius: "5px" }}
+              />
+            </Box>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                ml: 3,
+              }}
+            >
+              <Typography variant="h6" gutterBottom>
+                Prizes and Recognition
               </Typography>
-              <Typography
-                variant="subtitle1"
-                gutterBottom
-                sx={{ color: "#76777a" }}
-              >
-                Sponsors often contribute prizes, creating additional motivation
-                for participants.
-              </Typography>
+              <Box>
+                <Typography
+                  variant="subtitle1"
+                  gutterBottom
+                  sx={{ color: "#76777a" }}
+                >
+                  Exciting prizes and recognition are awarded to winning teams.
+                </Typography>
+                <Typography
+                  variant="subtitle1"
+                  gutterBottom
+                  sx={{ color: "#76777a" }}
+                >
+                  Sponsors often contribute prizes, creating additional
+                  motivation for participants.
+                </Typography>
+              </Box>
             </Box>
           </Box>
         </Box>
