@@ -14,6 +14,7 @@ import Web from "./assets/webprojects.jpg";
 import Aero from "./assets/aerospace.jpg";
 import Robotics from "./assets/robotics.jpg";
 import ThreeD from "./assets/3DPrinter.jpg";
+import SkillsBanner from "./assets/skillsbanner.jpg";
 
 const projectDomainList = [
   {
@@ -313,25 +314,42 @@ export default function Skills() {
       <ResponsiveAppBar2 />
 
       <Box sx={{ display: "flex", flexDirection: "column", mx: "10%" }}>
-        <Box>
-          <Typography
-            variant="h3"
-            gutterBottom
-            sx={{ textAlign: "center", color: "#384158", mb: 2, mt: 11 }}
+        <Box
+          sx={{
+            mx: "-12.5%",
+            backgroundSize: "100% 250%",
+            backgroundPositionY: "center",
+            backgroundImage: `url(${SkillsBanner})`,
+            minHeight: "350px",
+          }}
+        >
+          <Box
+            sx={{
+              backgroundColor: "black",
+              opacity: 0.7,
+              minHeight: "350px",
+              position: "absolute",
+            }}
           >
-            Overview of Live Projects at MAPLE
-          </Typography>
-          <Typography
-            variant="body2"
-            gutterBottom
-            sx={{ textAlign: "center", color: "#76777a", mx: 5, mb: 5 }}
-          >
-            Embark on a transformative journey where theoretical knowledge meets
-            real-world application through our Live Projects at MAPLE. Our
-            projects are carefully crafted to provide participants with hands-on
-            experience in cutting-edge domains, fostering innovation, and
-            preparing them for the dynamic landscape of the tech industry.
-          </Typography>
+            <Typography
+              variant="h3"
+              gutterBottom
+              sx={{ textAlign: "center", color: "#FFF", mb: 2, mt: 11 }}
+            >
+              Overview of Live Projects at MAPLE
+            </Typography>
+            <Typography
+              variant="body2"
+              gutterBottom
+              sx={{ textAlign: "center", color: "#FFF", mx: 5, mb: 5 }}
+            >
+              Embark on a transformative journey where theoretical knowledge
+              meets real-world application through our Live Projects at MAPLE.
+              Our projects are carefully crafted to provide participants with
+              hands-on experience in cutting-edge domains, fostering innovation,
+              and preparing them for the dynamic landscape of the tech industry.
+            </Typography>
+          </Box>
         </Box>
 
         <Box

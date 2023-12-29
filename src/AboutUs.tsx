@@ -19,6 +19,7 @@ import Excellence from "./assets/Excellence.png";
 import Innovation from "./assets/Innovation.png";
 import Integrity from "./assets/Integrity.png";
 import Student_Centric_Focus from "./assets/Student_Centric_Focus.png";
+import AboutUsBanner from "./assets/aboutusbanner.jpg";
 
 const listOfAboutUs = [
   {
@@ -116,23 +117,40 @@ export default function AboutUs() {
       <ResponsiveAppBar2 />
 
       <Box sx={{ display: "flex", flexDirection: "column", mx: "10%" }}>
-        <Box>
-          <Typography
-            variant="h3"
-            gutterBottom
-            sx={{ textAlign: "center", color: "#384158", mb: 2, mt: 11 }}
+        <Box
+          sx={{
+            mx: "-12.5%",
+            backgroundSize: "100% 250%",
+            backgroundPositionY: "center",
+            backgroundImage: `url(${AboutUsBanner})`,
+            minHeight: "350px",
+          }}
+        >
+          <Box
+            sx={{
+              backgroundColor: "black",
+              opacity: 0.65,
+              minHeight: "350px",
+              position: "absolute",
+            }}
           >
-            Vision
-          </Typography>
-          <Typography
-            variant="body2"
-            gutterBottom
-            sx={{ textAlign: "center", color: "#76777a", mx: 5, mb: 5 }}
-          >
-            "Empowering Tomorrow's Industry Leaders: Our vision is to provide
-            industry-ready education that transcends traditional boundaries,
-            shaping graduates who lead with expertise and hands-on skills."
-          </Typography>
+            <Typography
+              variant="h3"
+              gutterBottom
+              sx={{ textAlign: "center", color: "#FFF", mb: 2, mt: 11 }}
+            >
+              Vision
+            </Typography>
+            <Typography
+              variant="body2"
+              gutterBottom
+              sx={{ textAlign: "center", color: "#FFF", mx: 5, mb: 5 }}
+            >
+              "Empowering Tomorrow's Industry Leaders: Our vision is to provide
+              industry-ready education that transcends traditional boundaries,
+              shaping graduates who lead with expertise and hands-on skills."
+            </Typography>
+          </Box>
         </Box>
 
         <Box>
