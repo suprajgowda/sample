@@ -1,35 +1,15 @@
 import React from "react";
-import { Box, Button, Grid, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import HomeSlider from "./assets/home_slider_1.jpg";
-import Award from "./assets/award.png";
-import Book from "./assets/book.png";
-import Courses from "./assets/courses.png";
-import Experts from "./assets/experts.png";
-import MediaCard from "./MediaCard";
-import Course1 from "./assets/course_1.jpg";
-import Course2 from "./assets/course_2.jpg";
-import Course3 from "./assets/course_3.jpg";
-import CourseBk from "./assets/courses_background.jpg";
 import ResponsiveAppBar2 from "./ResponsiveAppBar2";
 import ResponsiveAppBar from "./ResponsiveAppBar";
 import Footer from "./Footer";
 import NewsLetter from "./NewsLetter";
+import HomePageBanner2 from "./assets/homepage_banner_2.jpg";
+import HomePageBanner3 from "./assets/homepage_banner_3.jpg";
+import HomePageBanner4 from "./assets/homepage_banner_4.jpg";
 
 function Home() {
-  const imgBoxStyle = {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-    mt: 5,
-  };
-
-  const imageStyle = {
-    minHeight: "50px",
-    width: "50px",
-    minWidth: "50px",
-  };
-
   return (
     <>
       <ResponsiveAppBar />
@@ -69,9 +49,16 @@ function Home() {
         </Typography>
 
         <Typography
-          variant="body2"
+          variant="h6"
           gutterBottom
-          sx={{ textAlign: "center", color: "#76777a", mx: 5, mb: 5 }}
+          sx={{
+            textAlign: "center",
+            color: "#76777a",
+            mx: 5,
+            mt: 5,
+            mb: 10,
+            fontWeight: "lighter",
+          }}
         >
           At MAPLE , we extend a warm and enthusiastic welcome to all aspiring
           minds ready to embark on a transformative journey. We believe in the
@@ -79,23 +66,59 @@ function Home() {
           curiosity meets real-world experience.
         </Typography>
 
-        <Typography
-          variant="body2"
-          gutterBottom
-          sx={{ textAlign: "center", color: "#76777a", mx: 5, mb: 5 }}
-        >
-          As you step into our digital space, you enter a realm where
-          theoretical knowledge transforms into practical skills, and classrooms
-          extend beyond walls into the dynamic landscapes of AI, Machine
-          Learning, Blockchain, Robotics, and more. Here, we are not just a
-          startup; we are a community of forward-thinkers, tech enthusiasts, and
-          learners ready to shape the future.
-        </Typography>
+        <Box sx={{ display: "flex", flexDirection: "column" }}>
+          <Box
+            sx={{
+              backgroundPositionY: "30%",
+              backgroundImage: `url(${HomePageBanner2})`,
+              minHeight: "350px",
+              backgroundSize: "100% 200%",
+            }}
+          >
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                backgroundColor: "black",
+                opacity: 0.65,
+                minHeight: "350px",
+                position: "absolute",
+              }}
+            >
+              <Typography
+                variant="h6"
+                gutterBottom
+                sx={{
+                  textAlign: "center",
+                  color: "#FFF",
+                  mx: 5,
+                  my: 5,
+                  fontWeight: "lighter",
+                }}
+              >
+                As you step into our digital space, you enter a realm where
+                theoretical knowledge transforms into practical skills, and
+                classrooms extend beyond walls into the dynamic landscapes of
+                AI, Machine Learning, Blockchain, Robotics, and more. Here, we
+                are not just a startup; we are a community of forward-thinkers,
+                tech enthusiasts, and learners ready to shape the future.
+              </Typography>
+            </Box>
+          </Box>
+        </Box>
 
         <Typography
-          variant="body2"
+          variant="h6"
           gutterBottom
-          sx={{ textAlign: "center", color: "#76777a", mx: 5, mb: 5 }}
+          sx={{
+            textAlign: "center",
+            color: "#76777a",
+            mx: 5,
+            mt: 15,
+            mb: 15,
+            fontWeight: "lighter",
+          }}
         >
           Our commitment is simple: to provide students with live projects that
           go beyond traditional learning. These are not mere assignments; they
@@ -106,21 +129,57 @@ function Home() {
           your platform for growth.
         </Typography>
 
-        <Typography
-          variant="body2"
-          gutterBottom
-          sx={{ textAlign: "center", color: "#76777a", mx: 5, mb: 5 }}
-        >
-          We invite you to discover the domains of expertise that await you,
-          guided by industry experts and a collaborative learning environment.
-          Our projects are designed not only to equip you with industry-relevant
-          skills but also to ignite your passion for innovation.
-        </Typography>
+        <Box sx={{ display: "flex", flexDirection: "column" }}>
+          <Box
+            sx={{
+              backgroundPositionY: "center",
+              backgroundImage: `url(${HomePageBanner3})`,
+              minHeight: "350px",
+              backgroundSize: "100% 150%",
+            }}
+          >
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                backgroundColor: "black",
+                opacity: 0.65,
+                minHeight: "350px",
+                position: "absolute",
+              }}
+            >
+              <Typography
+                variant="h6"
+                gutterBottom
+                sx={{
+                  textAlign: "center",
+                  color: "#FFF",
+                  mx: 5,
+                  my: 5,
+                  fontWeight: "lighter",
+                }}
+              >
+                We invite you to discover the domains of expertise that await
+                you, guided by industry experts and a collaborative learning
+                environment. Our projects are designed not only to equip you
+                with industry-relevant skills but also to ignite your passion
+                for innovation.
+              </Typography>
+            </Box>
+          </Box>
+        </Box>
 
         <Typography
-          variant="body2"
+          variant="h6"
           gutterBottom
-          sx={{ textAlign: "center", color: "#76777a", mx: 5, mb: 5 }}
+          sx={{
+            textAlign: "center",
+            color: "#76777a",
+            mx: 5,
+            my: 15,
+            fontWeight: "lighter",
+          }}
         >
           Join us on this exciting journey where ideas take flight, and the
           future is shaped by the collective brilliance of aspiring minds.
@@ -128,14 +187,44 @@ function Home() {
           potential becomes the driving force for tomorrow's technology.
         </Typography>
 
-        <Typography
-          variant="body2"
-          gutterBottom
-          sx={{ textAlign: "center", color: "#76777a", mx: 5, mb: 5 }}
-        >
-          Let's embark on this adventure together. Ignite your mind, power your
-          future!
-        </Typography>
+        <Box sx={{ display: "flex", flexDirection: "column" }}>
+          <Box
+            sx={{
+              backgroundPositionY: "35%",
+              backgroundImage: `url(${HomePageBanner4})`,
+              minHeight: "350px",
+              backgroundSize: "100% 185%",
+            }}
+          >
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                backgroundColor: "black",
+                opacity: 0.65,
+                minHeight: "350px",
+                position: "absolute",
+                width: "100%",
+              }}
+            >
+              <Typography
+                variant="h6"
+                gutterBottom
+                sx={{
+                  textAlign: "center",
+                  color: "#FFF",
+                  mx: 5,
+                  my: 5,
+                  fontWeight: "lighter",
+                }}
+              >
+                Let's embark on this adventure together. Ignite your mind, power
+                your future!
+              </Typography>
+            </Box>
+          </Box>
+        </Box>
       </Box>
 
       {/* <Grid
