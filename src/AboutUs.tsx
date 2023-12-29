@@ -195,7 +195,6 @@ export default function AboutUs() {
                     alignItems: "center",
                     justifyContent: "center",
                     textAlign: "center",
-                    border: "1px solid #eee",
                     borderRadius: "5px",
                     boxShadow: "5px 5px 5px #eee",
                     maxWidth: "200px",
@@ -253,7 +252,11 @@ export default function AboutUs() {
             } else {
               imageBoxStyle["pl"] = 2;
             }
-            const imageStyle = { maxWidth: "500px", borderRadius: "5px" };
+            const imageStyle = {
+              maxWidth: "500px",
+              maxHeight: "250px",
+              borderRadius: "5px",
+            };
 
             return (
               <Box
@@ -322,17 +325,28 @@ export default function AboutUs() {
             } else {
               imageBoxStyle["pl"] = 2;
             }
-            const imageStyle = { maxWidth: "500px", borderRadius: "5px" };
+            const imageStyle = {
+              maxWidth: "500px",
+              maxHeight: "250px",
+              borderRadius: "5px",
+            };
+
+            let boxStyle: any = {
+              display: "flex",
+              justifyContent: "space-between",
+              mb: 8,
+              p: 2,
+              flexDirection: index % 2 === 0 ? "row" : "row-reverse",
+            };
+
+            if (index % 2 === 0) {
+              boxStyle["boxShadow"] = "6px 5px 5px #e7f3f7";
+              boxStyle["backgroundColor"] = "#f7fdff";
+              boxStyle["borderRadius"] = "5px";
+            }
 
             return (
-              <Box
-                sx={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  mb: 8,
-                  flexDirection: index % 2 === 0 ? "row" : "row-reverse",
-                }}
-              >
+              <Box sx={boxStyle}>
                 <Box sx={imageBoxStyle}>
                   <img
                     src={aboutUs.image}
