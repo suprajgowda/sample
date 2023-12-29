@@ -14,27 +14,37 @@ import Expert_Guidance from "./assets/Expert-Guidance.jpg";
 import Fun_and_Enjoyment from "./assets/Fun-and-Enjoyment.jpg";
 import Industry_Relevant_Skills from "./assets/Industry-Relevant-Skills.jpg";
 import Live_Projects from "./assets/Live_Projects.jpg";
+import Collaboration from "./assets/Collaboration.png";
+import Excellence from "./assets/Excellence.png";
+import Innovation from "./assets/Innovation.png";
+import Integrity from "./assets/Integrity.png";
+import Student_Centric_Focus from "./assets/Student_Centric_Focus.png";
 
 const listOfAboutUs = [
   {
-    key1: "Excellence:",
+    key1: "Excellence",
     key2: " Striving for and delivering the highest standards in education.",
+    img: Excellence,
   },
   {
-    key1: "Integrity:",
+    key1: "Integrity",
     key2: " Upholding honesty, transparency, and ethical conduct.",
+    img: Integrity,
   },
   {
-    key1: "Innovation:",
+    key1: "Innovation",
     key2: " Embracing creativity and staying at the forefront of educational advancements.",
+    img: Innovation,
   },
   {
-    key1: "Collaboration:",
+    key1: "Collaboration",
     key2: " Fostering teamwork, open communication, and diverse perspectives.",
+    img: Collaboration,
   },
   {
-    key1: "Student-Centric Focus:",
+    key1: "Student-Centric Focus",
     key2: " Prioritizing the needs and growth of our students.",
+    img: Student_Centric_Focus,
   },
 ];
 
@@ -155,27 +165,65 @@ export default function AboutUs() {
           }}
         >
           <Box sx={{ mb: 4 }}>
-            <Typography variant="h5" gutterBottom>
+            <Typography
+              variant="h3"
+              gutterBottom
+              sx={{ textAlign: "center", color: "#384158" }}
+            >
               Values
             </Typography>
           </Box>
 
-          {listOfAboutUs.map((aboutUs) => {
-            return (
-              <Box sx={{ mb: 4 }}>
-                <Typography variant="h6" gutterBottom>
-                  {aboutUs.key1}
-                </Typography>{" "}
-                <Typography
-                  variant="subtitle1"
-                  gutterBottom
-                  sx={{ color: "#76777a" }}
+          <Box
+            sx={{
+              display: "flex",
+              flexWrap: "wrap",
+              flexDirection: "row",
+              justifyContent: "center",
+            }}
+          >
+            {listOfAboutUs.map((aboutUs) => {
+              return (
+                <Box
+                  sx={{
+                    my: 4,
+                    px: 2,
+                    py: 2,
+                    mx: 4,
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    textAlign: "center",
+                    border: "1px solid #eee",
+                    borderRadius: "5px",
+                    boxShadow: "5px 5px 5px #eee",
+                    maxWidth: "200px",
+                  }}
                 >
-                  {aboutUs.key2}
-                </Typography>
-              </Box>
-            );
-          })}
+                  <img
+                    src={aboutUs.img}
+                    alt={aboutUs.key1}
+                    style={{
+                      maxWidth: "50px",
+                      borderRadius: "5px",
+                      margin: "25px",
+                    }}
+                  />
+                  <Typography variant="h6" gutterBottom>
+                    {aboutUs.key1}
+                  </Typography>{" "}
+                  <Typography
+                    variant="subtitle1"
+                    gutterBottom
+                    sx={{ color: "#76777a" }}
+                  >
+                    {aboutUs.key2}
+                  </Typography>
+                </Box>
+              );
+            })}
+          </Box>
         </Box>
 
         <Box
