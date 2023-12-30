@@ -76,24 +76,22 @@ function Copyright(props: any) {
 }
 
 function Footer() {
+  const footerStyle = {
+    borderTop: `1px solid black`,
+    pt: 5,
+    pb: 3,
+    px: 6,
+    backgroundColor: "#1e2434",
+    backgroundImage: `url(${FooterBg})`,
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+    backgroundPosition: "center center",
+  };
+
   return (
-    <Container
-      maxWidth="xl"
-      component="footer"
-      sx={{
-        borderTop: `1px solid black`,
-        pt: 5,
-        pb: 3,
-        px: 6,
-        backgroundColor: "#1e2434",
-        backgroundImage: `url(${FooterBg})`,
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-        backgroundPosition: "center center",
-      }}
-    >
+    <Container maxWidth="xl" component="footer" sx={footerStyle}>
       <Grid container spacing={4} justifyContent="space-evenly">
-        <Grid item xs={6} sm={3} key={"Company"}>
+        <Grid item xs={6} sm={12} md={3} key={"Company"}>
           <Typography
             variant="h6"
             color="text.primary"
@@ -136,7 +134,7 @@ function Footer() {
           </ul>
         </Grid>
 
-        <Grid item xs={6} sm={3} key={"Company"}>
+        <Grid item xs={6} sm={12} md={3} key={"Company"}>
           <Typography
             variant="h6"
             color="text.primary"
@@ -184,7 +182,7 @@ function Footer() {
           </ul>
         </Grid>
 
-        <Grid item xs={6} sm={3} key={"Company"}>
+        <Grid item xs={6} sm={12} md={3} key={"Company"}>
           <Typography
             variant="h6"
             color="text.primary"

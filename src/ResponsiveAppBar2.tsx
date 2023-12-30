@@ -97,6 +97,7 @@ function NavDropdown(props: any) {
 }
 
 function ResponsiveAppBar2() {
+  const navigate = useNavigate();
   return (
     <AppBar
       position="static"
@@ -108,6 +109,7 @@ function ResponsiveAppBar2() {
             variant="h6"
             noWrap
             component="a"
+            onClick={() => navigate(homeLink)}
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
