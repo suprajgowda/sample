@@ -89,9 +89,14 @@ function Footer() {
   };
 
   return (
-    <Container maxWidth="xl" component="footer" sx={footerStyle}>
-      <Grid container spacing={4} justifyContent="space-evenly">
-        <Grid item xs={6} sm={12} md={3} key={"Company"}>
+    <Container
+      maxWidth="xl"
+      component="footer"
+      className="footerComp"
+      sx={footerStyle}
+    >
+      <Grid container spacing={4} className="" justifyContent="space-evenly">
+        <Grid item xs={12} sm={12} md={3} key={"Company"}>
           <Typography
             variant="h6"
             color="text.primary"
@@ -134,7 +139,7 @@ function Footer() {
           </ul>
         </Grid>
 
-        <Grid item xs={6} sm={12} md={3} key={"Company"}>
+        <Grid item xs={12} sm={12} md={3} key={"Company"}>
           <Typography
             variant="h6"
             color="text.primary"
@@ -182,7 +187,7 @@ function Footer() {
           </ul>
         </Grid>
 
-        <Grid item xs={6} sm={12} md={3} key={"Company"}>
+        <Grid item xs={12} sm={12} md={3} key={"Company"}>
           <Typography
             variant="h6"
             color="text.primary"

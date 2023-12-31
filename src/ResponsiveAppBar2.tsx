@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useNavigate } from "react-router-dom";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -7,7 +8,9 @@ import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import Container from "@mui/material/Container";
 import MenuItem from "@mui/material/MenuItem";
-import { useNavigate } from "react-router-dom";
+import MenuIcon from "@mui/icons-material/Menu";
+import PhoneIcon from "@mui/icons-material/Phone";
+import EmailIcon from "@mui/icons-material/Email";
 
 const homeLink = "/";
 const eventsLink = "/events";
@@ -96,8 +99,130 @@ function NavDropdown(props: any) {
   );
 }
 
+function MobileHeader() {
+  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
+    null
+  );
+
+  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) =>
+    setAnchorElNav(event.currentTarget);
+
+  const handleCloseNavMenu = () => setAnchorElNav(null);
+
+  return (
+    <Box
+      sx={{
+        display: "flex",
+        justifyContent: "space-between",
+        width: "100%",
+        alignItems: "center",
+      }}
+    >
+      <Typography
+        variant="h5"
+        noWrap
+        component="a"
+        href="/"
+        sx={{
+          mr: 2,
+          display: { xs: "flex", md: "none" },
+          flexGrow: 1,
+          fontSize: "1em",
+          fontWeight: 700,
+          letterSpacing: ".13rem",
+          color: "#000",
+          textDecoration: "none",
+        }}
+      >
+        Maple Mobile
+      </Typography>
+
+      <Box
+        sx={{
+          flexGrow: 1,
+          display: { xs: "flex", md: "none" },
+          justifyContent: "flex-end",
+        }}
+      >
+        <IconButton
+          size="large"
+          aria-label="account of current user"
+          aria-controls="menu-appbar"
+          aria-haspopup="true"
+          onClick={handleOpenNavMenu}
+          sx={{
+            color: "black",
+          }}
+        >
+          <MenuIcon />
+        </IconButton>
+        <Menu
+          id="menu-appbar"
+          anchorEl={anchorElNav}
+          anchorOrigin={{
+            vertical: "bottom",
+            horizontal: "left",
+          }}
+          keepMounted
+          transformOrigin={{
+            vertical: "top",
+            horizontal: "left",
+          }}
+          open={Boolean(anchorElNav)}
+          onClose={handleCloseNavMenu}
+          sx={{
+            "& div": {
+              "& ul": {
+                display: { xs: "flex", md: "none" },
+                flexDirection: { xs: "column", md: "none" },
+                justifyContent: { xs: "center", md: "none" },
+              },
+            },
+          }}
+        >
+          <NavDropdown
+            mainBtnTxt={"Home"}
+            link={homeLink}
+            drpDwnList={homeList.list}
+          />
+          <NavDropdown
+            mainBtnTxt={"About Us"}
+            link={aboutUsLink}
+            drpDwnList={aboutUs.list}
+          />
+          <NavDropdown
+            mainBtnTxt={"Skills"}
+            link={skillsLink}
+            drpDwnList={skills.list}
+          />
+          <NavDropdown
+            mainBtnTxt={"Events"}
+            link={eventsLink}
+            drpDwnList={eventsList.list}
+          />
+
+          <IconButton
+            onClick={() => console.log("----Contact Us------")}
+            sx={{
+              p: 2,
+              fontSize: "0.875rem",
+              textTransform: "uppercase",
+              color: "#384158",
+              fontWeight: 500,
+              borderRadius: 0,
+            }}
+          >
+            Contact Us
+          </IconButton>
+        </Menu>
+      </Box>
+    </Box>
+  );
+}
+
 function ResponsiveAppBar2() {
   const navigate = useNavigate();
+
   return (
     <AppBar
       position="static"
@@ -123,30 +248,12 @@ function ResponsiveAppBar2() {
             Maple TechX
           </Typography>
 
-          {/* Mobile View */}
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            Maple Mobile
-          </Typography>
+          <MobileHeader />
 
           <Box
             sx={{
+              display: { xs: "none", md: "flex" },
               flexGrow: 1,
-              display: "flex",
               justifyContent: "flex-end",
             }}
           >

@@ -23,17 +23,18 @@ function Home() {
           color: "#384158",
           position: "absolute",
           top: "35%",
-          left: "15%",
+          left: { xs: "5%", md: "15%" },
+          fontSize: { xs: "1.5rem", md: "2.125rem" },
         }}
       >
         Welcome to Maple - Where Innovation Meets Opportunity!
       </Typography>
       <Box
         sx={{
-          minHeight: "500px",
+          minHeight: { xs: "400px", md: "500px" },
           width: "100%",
           minWidth: "100%",
-          backgroundSize: "150% 140%",
+          backgroundSize: { xs: "230% 100%", md: "150% 140%" },
           backgroundPositionY: "90%",
           backgroundImage: `url(${HomeSlider})`,
         }}
@@ -43,7 +44,13 @@ function Home() {
         <Typography
           variant="h4"
           gutterBottom
-          sx={{ textAlign: "center", color: "#384158", mb: 2, mt: 11 }}
+          sx={{
+            textAlign: "center",
+            color: "#384158",
+            mb: 2,
+            mt: 11,
+            fontSize: { xs: "1.5rem", md: "2.125rem" },
+          }}
         >
           Welcome to Maple - Where Innovation Meets Opportunity!
         </Typography>
@@ -58,6 +65,7 @@ function Home() {
             mt: 5,
             mb: 10,
             fontWeight: "lighter",
+            fontSize: { xs: "0.9rem", md: "1.25rem" },
           }}
         >
           At MAPLE , we extend a warm and enthusiastic welcome to all aspiring
@@ -71,7 +79,10 @@ function Home() {
             sx={{
               backgroundPositionY: "30%",
               backgroundImage: `url(${HomePageBanner2})`,
-              minHeight: "350px",
+              minHeight: {
+                xs: "250px",
+                md: "350px",
+              },
               backgroundSize: "100% 200%",
             }}
           >
@@ -82,7 +93,10 @@ function Home() {
                 alignItems: "center",
                 backgroundColor: "black",
                 opacity: 0.65,
-                minHeight: "350px",
+                minHeight: {
+                  xs: "250px",
+                  md: "350px",
+                },
                 position: "absolute",
               }}
             >
@@ -95,6 +109,7 @@ function Home() {
                   mx: 5,
                   my: 5,
                   fontWeight: "lighter",
+                  fontSize: { xs: "0.9rem", md: "1.25rem" },
                 }}
               >
                 As you step into our digital space, you enter a realm where
@@ -118,6 +133,7 @@ function Home() {
             mt: 15,
             mb: 15,
             fontWeight: "lighter",
+            fontSize: { xs: "0.9rem", md: "1.25rem" },
           }}
         >
           Our commitment is simple: to provide students with live projects that
@@ -134,7 +150,10 @@ function Home() {
             sx={{
               backgroundPositionY: "center",
               backgroundImage: `url(${HomePageBanner3})`,
-              minHeight: "350px",
+              minHeight: {
+                xs: "250px",
+                md: "350px",
+              },
               backgroundSize: "100% 150%",
             }}
           >
@@ -145,7 +164,10 @@ function Home() {
                 alignItems: "center",
                 backgroundColor: "black",
                 opacity: 0.65,
-                minHeight: "350px",
+                minHeight: {
+                  xs: "250px",
+                  md: "350px",
+                },
                 position: "absolute",
               }}
             >
@@ -158,6 +180,7 @@ function Home() {
                   mx: 5,
                   my: 5,
                   fontWeight: "lighter",
+                  fontSize: { xs: "0.9rem", md: "1.25rem" },
                 }}
               >
                 We invite you to discover the domains of expertise that await
@@ -179,6 +202,7 @@ function Home() {
             mx: 5,
             my: 15,
             fontWeight: "lighter",
+            fontSize: { xs: "0.9rem", md: "1.25rem" },
           }}
         >
           Join us on this exciting journey where ideas take flight, and the
@@ -192,7 +216,10 @@ function Home() {
             sx={{
               backgroundPositionY: "35%",
               backgroundImage: `url(${HomePageBanner4})`,
-              minHeight: "350px",
+              minHeight: {
+                xs: "250px",
+                md: "350px",
+              },
               backgroundSize: "100% 185%",
             }}
           >
@@ -203,7 +230,10 @@ function Home() {
                 alignItems: "center",
                 backgroundColor: "black",
                 opacity: 0.65,
-                minHeight: "350px",
+                minHeight: {
+                  xs: "250px",
+                  md: "350px",
+                },
                 position: "absolute",
                 width: "100%",
               }}
@@ -217,6 +247,7 @@ function Home() {
                   mx: 5,
                   my: 5,
                   fontWeight: "lighter",
+                  fontSize: { xs: "0.9rem", md: "1.25rem" },
                 }}
               >
                 Let's embark on this adventure together. Ignite your mind, power
@@ -226,180 +257,6 @@ function Home() {
           </Box>
         </Box>
       </Box>
-
-      {/* <Grid
-        container
-        spacing={{ xs: 2, md: 4 }}
-        columns={{ xs: 4, sm: 8, md: 12 }}
-        sx={{ mb: 10 }}
-      >
-        <Grid item xs={2} sm={3} md={3}>
-          <Box sx={imgBoxStyle}>
-            <Box
-              component="img"
-              sx={imageStyle}
-              alt="The house from the offer."
-              src={Experts}
-            />
-
-            <Typography
-              variant="h6"
-              gutterBottom
-              sx={{ color: "#384158", textAlign: "center" }}
-            >
-              The Experts
-            </Typography>
-
-            <Typography
-              variant="body2"
-              gutterBottom
-              sx={{ textAlign: "center", color: "#76777a" }}
-            >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit
-            </Typography>
-          </Box>
-        </Grid>
-
-        <Grid item xs={2} sm={3} md={3}>
-          <Box sx={imgBoxStyle}>
-            <Box
-              component="img"
-              sx={imageStyle}
-              alt="The house from the offer."
-              src={Book}
-            />
-
-            <Typography
-              variant="h6"
-              gutterBottom
-              sx={{ color: "#384158", textAlign: "center" }}
-            >
-              Book & Library
-            </Typography>
-
-            <Typography
-              variant="body2"
-              gutterBottom
-              sx={{ textAlign: "center", color: "#76777a" }}
-            >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit
-            </Typography>
-          </Box>
-        </Grid>
-
-        <Grid item xs={2} sm={3} md={3}>
-          <Box sx={imgBoxStyle}>
-            <Box
-              component="img"
-              sx={imageStyle}
-              alt="The house from the offer."
-              src={Courses}
-            />
-
-            <Typography
-              variant="h6"
-              gutterBottom
-              sx={{ color: "#384158", textAlign: "center" }}
-            >
-              Best Courses
-            </Typography>
-
-            <Typography
-              variant="body2"
-              gutterBottom
-              sx={{ textAlign: "center", color: "#76777a" }}
-            >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit
-            </Typography>
-          </Box>
-        </Grid>
-
-        <Grid item xs={2} sm={3} md={3}>
-          <Box sx={imgBoxStyle}>
-            <Box
-              component="img"
-              sx={imageStyle}
-              alt="The house from the offer."
-              src={Award}
-            />
-
-            <Typography
-              variant="h6"
-              gutterBottom
-              sx={{ color: "#384158", textAlign: "center" }}
-            >
-              Award & Reward
-            </Typography>
-
-            <Typography
-              variant="body2"
-              gutterBottom
-              sx={{ textAlign: "center", color: "#76777a" }}
-            >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit
-            </Typography>
-          </Box>
-        </Grid>
-      </Grid>
-
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          backgroundImage: `url(${CourseBk})`,
-          pb: 10,
-        }}
-      >
-        <Typography
-          variant="h4"
-          gutterBottom
-          sx={{ textAlign: "center", color: "#384158", mb: 2, mt: 11 }}
-        >
-          Popular Online Courses
-        </Typography>
-        <Typography
-          variant="body2"
-          gutterBottom
-          sx={{ textAlign: "center", color: "#76777a", mb: 5 }}
-        >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel
-          gravida arcu. Vestibulum feugiat, sapien ultrices fermentum congue,
-          quam velit venenatis sem
-        </Typography>
-
-        <Grid
-          container
-          spacing={{ xs: 2, md: 4 }}
-          columns={{ xs: 4, sm: 8, md: 12 }}
-          sx={{
-            justifyContent: "space-evenly",
-          }}
-        >
-          <Grid item xs={2} sm={3} md={3}>
-            <MediaCard cardImg={Course1} />
-          </Grid>
-          <Grid item xs={2} sm={3} md={3}>
-            <MediaCard cardImg={Course2} />
-          </Grid>
-          <Grid item xs={2} sm={3} md={3}>
-            <MediaCard cardImg={Course3} />
-          </Grid>
-        </Grid>
-
-        <Box
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            mt: 4,
-            pt: 2,
-          }}
-        >
-          <Button variant="contained" sx={{ maxWidth: "15%" }}>
-            View All Courses
-          </Button>
-        </Box>
-      </Box> */}
 
       <NewsLetter />
       <Footer />
