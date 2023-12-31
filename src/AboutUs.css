@@ -1,0 +1,24 @@
+.cultureImg {
+  border-radius: 5px;
+  max-width: 500px;
+  max-height: 250px;
+}
+
+.chooseMapleImg {
+  max-width: 500px;
+  max-height: 250px;
+  border-radius: 5px;
+}
+
+@media only screen and (max-width: 768px) {
+  /* Styles for both extra small and small devices */
+  .cultureImg {
+    max-width: 300px;
+    max-height: 150px;
+  }
+
+  .chooseMapleImg {
+    max-width: 300px;
+    max-height: 150px;
+  }
+}

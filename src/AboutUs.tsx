@@ -20,6 +20,7 @@ import Innovation from "./assets/Innovation.png";
 import Integrity from "./assets/Integrity.png";
 import Student_Centric_Focus from "./assets/Student_Centric_Focus.png";
 import AboutUsBanner from "./assets/aboutusbanner.jpg";
+import "./AboutUs.css";
 
 const listOfAboutUs = [
   {
@@ -120,8 +121,9 @@ export default function AboutUs() {
         <Box
           sx={{
             mx: "-12.5%",
-            backgroundSize: "100% 250%",
+            backgroundSize: { xs: "145% 100%", md: "100% 250%" },
             backgroundPositionY: "center",
+            backgroundPositionX: "center",
             backgroundImage: `url(${AboutUsBanner})`,
             minHeight: "350px",
           }}
@@ -270,11 +272,6 @@ export default function AboutUs() {
             } else {
               imageBoxStyle["pl"] = 2;
             }
-            const imageStyle = {
-              maxWidth: "500px",
-              maxHeight: "250px",
-              borderRadius: "5px",
-            };
 
             return (
               <Box
@@ -282,14 +279,17 @@ export default function AboutUs() {
                   display: "flex",
                   justifyContent: "space-between",
                   mb: 8,
-                  flexDirection: index % 2 === 0 ? "row" : "row-reverse",
+                  flexDirection: {
+                    xs: "column",
+                    md: index % 2 === 0 ? "row" : "row-reverse",
+                  },
                 }}
               >
                 <Box sx={imageBoxStyle}>
                   <img
                     src={aboutUs.image}
                     alt={aboutUs.key1}
-                    style={imageStyle}
+                    className="cultureImg"
                   />
                 </Box>
                 <Box
@@ -343,18 +343,16 @@ export default function AboutUs() {
             } else {
               imageBoxStyle["pl"] = 2;
             }
-            const imageStyle = {
-              maxWidth: "500px",
-              maxHeight: "250px",
-              borderRadius: "5px",
-            };
 
             let boxStyle: any = {
               display: "flex",
               justifyContent: "space-between",
               mb: 8,
               p: 2,
-              flexDirection: index % 2 === 0 ? "row" : "row-reverse",
+              flexDirection: {
+                xs: "column",
+                md: index % 2 === 0 ? "row" : "row-reverse",
+              },
             };
 
             if (index % 2 === 0) {
@@ -369,7 +367,7 @@ export default function AboutUs() {
                   <img
                     src={aboutUs.image}
                     alt={aboutUs.key1}
-                    style={imageStyle}
+                    className="chooseMapleImg"
                   />
                 </Box>
                 <Box
