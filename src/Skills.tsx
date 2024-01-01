@@ -353,17 +353,17 @@ export default function Skills() {
         <Box
           sx={{
             mx: "-12.5%",
-            backgroundSize: "100% 250%",
+            backgroundSize: { xs: "100% 100%", md: "100% 250%" },
             backgroundPositionY: "center",
             backgroundImage: `url(${SkillsBanner})`,
-            minHeight: "350px",
+            minHeight: { xs: "500px", md: "350px" },
           }}
         >
           <Box
             sx={{
               backgroundColor: "black",
               opacity: 0.7,
-              minHeight: "350px",
+              minHeight: { xs: "500px", md: "350px" },
               position: "absolute",
             }}
           >

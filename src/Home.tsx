@@ -80,10 +80,13 @@ function Home() {
               backgroundPositionY: "30%",
               backgroundImage: `url(${HomePageBanner2})`,
               minHeight: {
-                xs: "250px",
+                xs: "450px",
                 md: "350px",
               },
-              backgroundSize: "100% 200%",
+              backgroundSize: {
+                xs: "100% 100%",
+                md: "100% 200%",
+              },
             }}
           >
             <Box
@@ -94,7 +97,7 @@ function Home() {
                 backgroundColor: "black",
                 opacity: 0.65,
                 minHeight: {
-                  xs: "250px",
+                  xs: "450px",
                   md: "350px",
                 },
                 position: "absolute",

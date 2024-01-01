@@ -166,7 +166,12 @@ export default function AboutUs() {
           <Typography
             variant="body2"
             gutterBottom
-            sx={{ textAlign: "center", color: "#76777a", mx: 5, mb: 5 }}
+            sx={{
+              textAlign: "center",
+              color: "#76777a",
+              mx: { xd: 0, md: 5 },
+              mb: 5,
+            }}
           >
             "At Maple TechX, we are on a mission to revolutionize education with
             hands-on, skill-based learning. Our commitment is to equip students
@@ -255,7 +260,11 @@ export default function AboutUs() {
           }}
         >
           <Box sx={{ mb: 4 }}>
-            <Typography variant="h5" gutterBottom>
+            <Typography
+              variant="h5"
+              gutterBottom
+              sx={{ textAlign: { xs: "center", md: "left" } }}
+            >
               Culture
             </Typography>
           </Box>
@@ -268,9 +277,9 @@ export default function AboutUs() {
             };
 
             if (index % 2 === 0) {
-              imageBoxStyle["pr"] = 2;
+              imageBoxStyle["pr"] = { xs: 0, md: 2 };
             } else {
-              imageBoxStyle["pl"] = 2;
+              imageBoxStyle["pl"] = { xs: 0, md: 2 };
             }
 
             return (
@@ -300,13 +309,20 @@ export default function AboutUs() {
                     flexDirection: "column",
                   }}
                 >
-                  <Typography variant="h6" gutterBottom>
+                  <Typography
+                    variant="h6"
+                    gutterBottom
+                    sx={{ textAlign: { xs: "center", md: "left" } }}
+                  >
                     {aboutUs.key1}
                   </Typography>{" "}
                   <Typography
                     variant="subtitle1"
                     gutterBottom
-                    sx={{ color: "#76777a" }}
+                    sx={{
+                      color: "#76777a",
+                      textAlign: { xs: "center", md: "left" },
+                    }}
                   >
                     {aboutUs.key2}
                   </Typography>
@@ -326,7 +342,16 @@ export default function AboutUs() {
           }}
         >
           <Box sx={{ mb: 4 }}>
-            <Typography variant="h5" gutterBottom>
+            <Typography
+              variant="h5"
+              gutterBottom
+              sx={{
+                textAlign: {
+                  xs: "center",
+                  md: "left",
+                },
+              }}
+            >
               Why Choose MAPLE TechX ?
             </Typography>
           </Box>
@@ -339,9 +364,9 @@ export default function AboutUs() {
             };
 
             if (index % 2 === 0) {
-              imageBoxStyle["pr"] = 2;
+              imageBoxStyle["pr"] = { xs: 0, md: 2 };
             } else {
-              imageBoxStyle["pl"] = 2;
+              imageBoxStyle["pl"] = { xs: 0, md: 2 };
             }
 
             let boxStyle: any = {
@@ -378,13 +403,28 @@ export default function AboutUs() {
                     flexDirection: "column",
                   }}
                 >
-                  <Typography variant="h6" gutterBottom>
+                  <Typography
+                    variant="h6"
+                    gutterBottom
+                    sx={{
+                      textAlign: {
+                        xs: "center",
+                        md: "left",
+                      },
+                    }}
+                  >
                     {aboutUs.key1}
                   </Typography>{" "}
                   <Typography
                     variant="subtitle1"
                     gutterBottom
-                    sx={{ color: "#76777a" }}
+                    sx={{
+                      color: "#76777a",
+                      textAlign: {
+                        xs: "center",
+                        md: "left",
+                      },
+                    }}
                   >
                     {aboutUs.key2}
                   </Typography>
