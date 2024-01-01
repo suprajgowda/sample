@@ -33,6 +33,14 @@ function Copyright(props: any) {
             display: "flex",
             justifyContent: "flex-start",
             color: "#b5b8be",
+            fontSize: {
+              xs: "0.5rem",
+              md: "0.875rem",
+            },
+            flexDirection: {
+              xs: "row",
+              md: "row",
+            },
           }}
         >
           {"Copyright © "}
@@ -55,6 +63,10 @@ function Copyright(props: any) {
             display: "flex",
             justifyContent: "flex-end",
             color: "#b5b8be",
+            fontSize: {
+              xs: "0.5rem",
+              md: "0.875rem",
+            },
           }}
         >
           <Link
@@ -100,7 +112,13 @@ function Footer() {
           <Typography
             variant="h6"
             color="text.primary"
-            sx={{ color: "#fff" }}
+            sx={{
+              color: "#fff",
+              fontSize: {
+                xs: "1rem",
+                md: "1.25rem",
+              },
+            }}
             gutterBottom
           >
             Maple TechX
@@ -116,7 +134,14 @@ function Footer() {
               <Link
                 variant="subtitle1"
                 color="text.secondary"
-                sx={{ textDecoration: "none", color: "#fff" }}
+                sx={{
+                  textDecoration: "none",
+                  color: "#fff",
+                  fontSize: {
+                    xs: "0.8rem",
+                    md: "1rem",
+                  },
+                }}
               >
                 Let's embark on this adventure together. Ignite your mind, power
                 your future!
@@ -145,6 +170,10 @@ function Footer() {
             color="text.primary"
             sx={{
               color: "#fff",
+              fontSize: {
+                xs: "1rem",
+                md: "1.25rem",
+              },
             }}
             gutterBottom
           >
@@ -161,7 +190,14 @@ function Footer() {
               <Link
                 variant="subtitle1"
                 color="text.secondary"
-                sx={{ textDecoration: "none", color: "#b5b8be" }}
+                sx={{
+                  textDecoration: "none",
+                  color: "#b5b8be",
+                  fontSize: {
+                    xs: "0.8rem",
+                    md: "1rem",
+                  },
+                }}
               >
                 Email: Info.deercreative@gmail.com
               </Link>
@@ -170,7 +206,14 @@ function Footer() {
               <Link
                 variant="subtitle1"
                 color="text.secondary"
-                sx={{ textDecoration: "none", color: "#b5b8be" }}
+                sx={{
+                  textDecoration: "none",
+                  color: "#b5b8be",
+                  fontSize: {
+                    xs: "0.8rem",
+                    md: "1rem",
+                  },
+                }}
               >
                 Phone: +(88) 111 555 666
               </Link>
@@ -179,7 +222,14 @@ function Footer() {
               <Link
                 variant="subtitle1"
                 color="text.secondary"
-                sx={{ textDecoration: "none", color: "#b5b8be" }}
+                sx={{
+                  textDecoration: "none",
+                  color: "#b5b8be",
+                  fontSize: {
+                    xs: "0.8rem",
+                    md: "1rem",
+                  },
+                }}
               >
                 40 Baria Sreet 133/2 New York City, United States
               </Link>
@@ -193,6 +243,10 @@ function Footer() {
             color="text.primary"
             sx={{
               color: "#fff",
+              fontSize: {
+                xs: "1rem",
+                md: "1.25rem",
+              },
             }}
             gutterBottom
           >
@@ -211,7 +265,14 @@ function Footer() {
                 <Link
                   variant="subtitle1"
                   color="text.secondary"
-                  sx={{ textDecoration: "none", color: "#b5b8be" }}
+                  sx={{
+                    textDecoration: "none",
+                    color: "#b5b8be",
+                    fontSize: {
+                      xs: "0.8rem",
+                      md: "1rem",
+                    },
+                  }}
                 >
                   Home
                 </Link>
@@ -220,7 +281,14 @@ function Footer() {
                 <Link
                   variant="subtitle1"
                   color="text.secondary"
-                  sx={{ textDecoration: "none", color: "#b5b8be" }}
+                  sx={{
+                    textDecoration: "none",
+                    color: "#b5b8be",
+                    fontSize: {
+                      xs: "0.8rem",
+                      md: "1rem",
+                    },
+                  }}
                 >
                   About Us
                 </Link>
@@ -229,7 +297,14 @@ function Footer() {
                 <Link
                   variant="subtitle1"
                   color="text.secondary"
-                  sx={{ textDecoration: "none", color: "#b5b8be" }}
+                  sx={{
+                    textDecoration: "none",
+                    color: "#b5b8be",
+                    fontSize: {
+                      xs: "0.8rem",
+                      md: "1rem",
+                    },
+                  }}
                 >
                   Skills
                 </Link>
@@ -248,7 +323,14 @@ function Footer() {
                 <Link
                   variant="subtitle1"
                   color="text.secondary"
-                  sx={{ textDecoration: "none", color: "#b5b8be" }}
+                  sx={{
+                    textDecoration: "none",
+                    color: "#b5b8be",
+                    fontSize: {
+                      xs: "0.8rem",
+                      md: "1rem",
+                    },
+                  }}
                 >
                   Events
                 </Link>
@@ -257,7 +339,14 @@ function Footer() {
                 <Link
                   variant="subtitle1"
                   color="text.secondary"
-                  sx={{ textDecoration: "none", color: "#b5b8be" }}
+                  sx={{
+                    textDecoration: "none",
+                    color: "#b5b8be",
+                    fontSize: {
+                      xs: "0.8rem",
+                      md: "1rem",
+                    },
+                  }}
                 >
                   Contact Us
                 </Link>

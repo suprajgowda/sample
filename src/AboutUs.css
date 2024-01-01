@@ -4,7 +4,8 @@
   max-height: 250px;
 }
 
-.chooseMapleImg {
+.chooseMapleImg,
+.skillsImg1 {
   max-width: 500px;
   max-height: 250px;
   border-radius: 5px;
@@ -17,7 +18,8 @@
     max-height: 150px;
   }
 
-  .chooseMapleImg {
+  .chooseMapleImg,
+  .skillsImg1 {
     max-width: 300px;
     max-height: 150px;
   }

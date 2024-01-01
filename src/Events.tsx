@@ -42,7 +42,16 @@ export default function Events() {
             <Typography
               variant="h3"
               gutterBottom
-              sx={{ textAlign: "center", color: "#FFF", mb: 2, mt: 11 }}
+              sx={{
+                textAlign: "center",
+                color: "#FFF",
+                mb: 2,
+                mt: 11,
+                fontSize: {
+                  xs: "2rem",
+                  md: "3rem",
+                },
+              }}
             >
               What is a Hackathon ?
             </Typography>
@@ -63,14 +72,31 @@ export default function Events() {
           <Typography
             variant="h3"
             gutterBottom
-            sx={{ textAlign: "center", color: "#384158", mb: 2, mt: 11 }}
+            sx={{
+              textAlign: "center",
+              color: "#384158",
+              mb: 2,
+              mt: 11,
+              fontSize: {
+                xs: "1.5rem",
+                md: "3rem",
+              },
+            }}
           >
             Defining the Hackathon Experience
           </Typography>
           <Typography
             variant="body2"
             gutterBottom
-            sx={{ textAlign: "center", color: "#76777a", mx: 5, mb: 5 }}
+            sx={{
+              textAlign: "center",
+              color: "#76777a",
+              mx: {
+                xs: 0,
+                md: 5,
+              },
+              mb: 5,
+            }}
           >
             A hackathon is an intensive, time-limited event that gathers
             individuals with diverse skills, ranging from coding and design to
@@ -90,7 +116,20 @@ export default function Events() {
             my: 6,
           }}
         >
-          <Box sx={{ mb: 4, display: "flex" }}>
+          <Box
+            sx={{
+              mb: 4,
+              display: "flex",
+              flexDirection: {
+                xs: "column",
+                md: "row",
+              },
+              alignItems: {
+                xs: "center",
+                md: "start",
+              },
+            }}
+          >
             <Box>
               <img
                 src={TeamCollImage}
@@ -103,10 +142,22 @@ export default function Events() {
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
-                ml: 3,
+                ml: {
+                  xs: 0,
+                  md: 3,
+                },
               }}
             >
-              <Typography variant="h6" gutterBottom>
+              <Typography
+                variant="h6"
+                gutterBottom
+                sx={{
+                  textAlign: {
+                    xs: "center",
+                    md: "left",
+                  },
+                }}
+              >
                 Team Collaboration
               </Typography>
               <Box
@@ -119,7 +170,13 @@ export default function Events() {
                 <Typography
                   variant="subtitle1"
                   gutterBottom
-                  sx={{ color: "#76777a" }}
+                  sx={{
+                    color: "#76777a",
+                    textAlign: {
+                      xs: "center",
+                      md: "left",
+                    },
+                  }}
                 >
                   Participants form teams, bringing together their unique skills
                   and perspectives.
@@ -127,7 +184,13 @@ export default function Events() {
                 <Typography
                   variant="subtitle1"
                   gutterBottom
-                  sx={{ color: "#76777a" }}
+                  sx={{
+                    color: "#76777a",
+                    textAlign: {
+                      xs: "center",
+                      md: "left",
+                    },
+                  }}
                 >
                   Collaboration is encouraged, fostering an environment of
                   shared learning and creativity.
@@ -136,7 +199,20 @@ export default function Events() {
             </Box>
           </Box>
 
-          <Box sx={{ mb: 4, display: "flex" }}>
+          <Box
+            sx={{
+              mb: 4,
+              display: "flex",
+              flexDirection: {
+                xs: "column",
+                md: "row",
+              },
+              alignItems: {
+                xs: "center",
+                md: "start",
+              },
+            }}
+          >
             <Box>
               <img
                 src={TimeBound}
@@ -149,17 +225,35 @@ export default function Events() {
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
-                ml: 3,
+                ml: {
+                  xs: 0,
+                  md: 3,
+                },
               }}
             >
-              <Typography variant="h6" gutterBottom>
+              <Typography
+                variant="h6"
+                gutterBottom
+                sx={{
+                  textAlign: {
+                    xs: "center",
+                    md: "left",
+                  },
+                }}
+              >
                 Time-Bound Challenges
               </Typography>
               <Box>
                 <Typography
                   variant="subtitle1"
                   gutterBottom
-                  sx={{ color: "#76777a" }}
+                  sx={{
+                    color: "#76777a",
+                    textAlign: {
+                      xs: "center",
+                      md: "left",
+                    },
+                  }}
                 >
                   Hackathons typically run for a fixed period, often spanning a
                   weekend or a specific number of hours.
@@ -167,7 +261,13 @@ export default function Events() {
                 <Typography
                   variant="subtitle1"
                   gutterBottom
-                  sx={{ color: "#76777a" }}
+                  sx={{
+                    color: "#76777a",
+                    textAlign: {
+                      xs: "center",
+                      md: "left",
+                    },
+                  }}
                 >
                   The time constraint adds an element of urgency, pushing
                   participants to think on their feet and deliver results
@@ -177,7 +277,20 @@ export default function Events() {
             </Box>
           </Box>
 
-          <Box sx={{ mb: 4, display: "flex" }}>
+          <Box
+            sx={{
+              mb: 4,
+              display: "flex",
+              flexDirection: {
+                xs: "column",
+                md: "row",
+              },
+              alignItems: {
+                xs: "center",
+                md: "start",
+              },
+            }}
+          >
             <Box>
               <img
                 src={Innovation}
@@ -190,10 +303,22 @@ export default function Events() {
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
-                ml: 3,
+                ml: {
+                  xs: 0,
+                  md: 3,
+                },
               }}
             >
-              <Typography variant="h6" gutterBottom>
+              <Typography
+                variant="h6"
+                gutterBottom
+                sx={{
+                  textAlign: {
+                    xs: "center",
+                    md: "left",
+                  },
+                }}
+              >
                 Innovation and Creativity
               </Typography>
               <Box
@@ -206,7 +331,13 @@ export default function Events() {
                 <Typography
                   variant="subtitle1"
                   gutterBottom
-                  sx={{ color: "#76777a" }}
+                  sx={{
+                    color: "#76777a",
+                    textAlign: {
+                      xs: "center",
+                      md: "left",
+                    },
+                  }}
                 >
                   Participants are challenged to think innovatively and
                   creatively to solve problems.
@@ -214,7 +345,13 @@ export default function Events() {
                 <Typography
                   variant="subtitle1"
                   gutterBottom
-                  sx={{ color: "#76777a" }}
+                  sx={{
+                    color: "#76777a",
+                    textAlign: {
+                      xs: "center",
+                      md: "left",
+                    },
+                  }}
                 >
                   The freedom to explore new technologies and ideas often leads
                   to groundbreaking solutions.
@@ -223,7 +360,20 @@ export default function Events() {
             </Box>
           </Box>
 
-          <Box sx={{ mb: 4, display: "flex" }}>
+          <Box
+            sx={{
+              mb: 4,
+              display: "flex",
+              flexDirection: {
+                xs: "column",
+                md: "row",
+              },
+              alignItems: {
+                xs: "center",
+                md: "start",
+              },
+            }}
+          >
             <Box>
               <img
                 src={LearningOpp}
@@ -236,10 +386,19 @@ export default function Events() {
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
-                ml: 3,
+                ml: { xs: 0, md: 3 },
               }}
             >
-              <Typography variant="h6" gutterBottom>
+              <Typography
+                variant="h6"
+                gutterBottom
+                sx={{
+                  textAlign: {
+                    xs: "center",
+                    md: "left",
+                  },
+                }}
+              >
                 Learning Opportunities
               </Typography>
               <Box
@@ -252,7 +411,13 @@ export default function Events() {
                 <Typography
                   variant="subtitle1"
                   gutterBottom
-                  sx={{ color: "#76777a" }}
+                  sx={{
+                    color: "#76777a",
+                    textAlign: {
+                      xs: "center",
+                      md: "left",
+                    },
+                  }}
                 >
                   Workshops, mentorship sessions, and expert talks provide
                   valuable learning opportunities.
@@ -260,7 +425,13 @@ export default function Events() {
                 <Typography
                   variant="subtitle1"
                   gutterBottom
-                  sx={{ color: "#76777a" }}
+                  sx={{
+                    color: "#76777a",
+                    textAlign: {
+                      xs: "center",
+                      md: "left",
+                    },
+                  }}
                 >
                   Participants can enhance their skills, learn about the latest
                   technologies, and gain insights from industry professionals.
@@ -269,7 +440,20 @@ export default function Events() {
             </Box>
           </Box>
 
-          <Box sx={{ mb: 4, display: "flex" }}>
+          <Box
+            sx={{
+              mb: 4,
+              display: "flex",
+              flexDirection: {
+                xs: "column",
+                md: "row",
+              },
+              alignItems: {
+                xs: "center",
+                md: "start",
+              },
+            }}
+          >
             <Box>
               <img
                 src={ProjectShowcase}
@@ -282,10 +466,19 @@ export default function Events() {
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
-                ml: 3,
+                ml: { xs: 0, md: 3 },
               }}
             >
-              <Typography variant="h6" gutterBottom>
+              <Typography
+                variant="h6"
+                gutterBottom
+                sx={{
+                  textAlign: {
+                    xs: "center",
+                    md: "left",
+                  },
+                }}
+              >
                 Project Showcase and Judging
               </Typography>
               <Box
@@ -298,7 +491,13 @@ export default function Events() {
                 <Typography
                   variant="subtitle1"
                   gutterBottom
-                  sx={{ color: "#76777a" }}
+                  sx={{
+                    color: "#76777a",
+                    textAlign: {
+                      xs: "center",
+                      md: "left",
+                    },
+                  }}
                 >
                   Teams present their projects to a panel of judges or industry
                   experts.
@@ -306,7 +505,13 @@ export default function Events() {
                 <Typography
                   variant="subtitle1"
                   gutterBottom
-                  sx={{ color: "#76777a" }}
+                  sx={{
+                    color: "#76777a",
+                    textAlign: {
+                      xs: "center",
+                      md: "left",
+                    },
+                  }}
                 >
                   Projects are evaluated based on criteria such as creativity,
                   functionality, and overall impact.
@@ -315,7 +520,20 @@ export default function Events() {
             </Box>
           </Box>
 
-          <Box sx={{ mb: 4, display: "flex" }}>
+          <Box
+            sx={{
+              mb: 4,
+              display: "flex",
+              flexDirection: {
+                xs: "column",
+                md: "row",
+              },
+              alignItems: {
+                xs: "center",
+                md: "start",
+              },
+            }}
+          >
             <Box>
               <img
                 src={PriceAndRecognition}
@@ -328,24 +546,45 @@ export default function Events() {
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
-                ml: 3,
+                ml: { xs: 0, md: 3 },
               }}
             >
-              <Typography variant="h6" gutterBottom>
+              <Typography
+                variant="h6"
+                gutterBottom
+                sx={{
+                  textAlign: {
+                    xs: "center",
+                    md: "left",
+                  },
+                }}
+              >
                 Prizes and Recognition
               </Typography>
               <Box>
                 <Typography
                   variant="subtitle1"
                   gutterBottom
-                  sx={{ color: "#76777a" }}
+                  sx={{
+                    color: "#76777a",
+                    textAlign: {
+                      xs: "center",
+                      md: "left",
+                    },
+                  }}
                 >
                   Exciting prizes and recognition are awarded to winning teams.
                 </Typography>
                 <Typography
                   variant="subtitle1"
                   gutterBottom
-                  sx={{ color: "#76777a" }}
+                  sx={{
+                    color: "#76777a",
+                    textAlign: {
+                      xs: "center",
+                      md: "left",
+                    },
+                  }}
                 >
                   Sponsors often contribute prizes, creating additional
                   motivation for participants.
@@ -365,7 +604,16 @@ export default function Events() {
           }}
         >
           <Box sx={{ mb: 4 }}>
-            <Typography variant="h5" gutterBottom>
+            <Typography
+              variant="h5"
+              gutterBottom
+              sx={{
+                textAlign: {
+                  xs: "center",
+                  md: "left",
+                },
+              }}
+            >
               Why Participate in a Hackathon?
             </Typography>
           </Box>
@@ -376,16 +624,35 @@ export default function Events() {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
+              flexDirection: {
+                xs: "column-reverse",
+                md: "row",
+              },
             }}
           >
-            <Box sx={{ mr: 2 }}>
-              <Typography variant="h6" gutterBottom>
+            <Box sx={{ mr: { xs: 0, md: 2 } }}>
+              <Typography
+                variant="h6"
+                gutterBottom
+                sx={{
+                  textAlign: {
+                    xs: "center",
+                    md: "left",
+                  },
+                }}
+              >
                 Skill Development:
               </Typography>{" "}
               <Typography
                 variant="subtitle1"
                 gutterBottom
-                sx={{ color: "#76777a" }}
+                sx={{
+                  color: "#76777a",
+                  textAlign: {
+                    xs: "center",
+                    md: "left",
+                  },
+                }}
               >
                 Hackathons offer a hands-on learning experience, allowing
                 participants to sharpen their technical and teamwork skills.
@@ -406,23 +673,42 @@ export default function Events() {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
+              flexDirection: {
+                xs: "column",
+                md: "row",
+              },
             }}
           >
             <Box>
               <img
                 src={Networking}
                 alt={"Networking"}
-                style={{ maxWidth: "350px", borderRadius: "5px" }}
+                style={{ maxWidth: "300px", borderRadius: "5px" }}
               />
             </Box>
-            <Box sx={{ ml: 2 }}>
-              <Typography variant="h6" gutterBottom>
+            <Box sx={{ ml: { xs: 0, md: 2 } }}>
+              <Typography
+                variant="h6"
+                gutterBottom
+                sx={{
+                  textAlign: {
+                    xs: "center",
+                    md: "left",
+                  },
+                }}
+              >
                 Networking:
               </Typography>{" "}
               <Typography
                 variant="subtitle1"
                 gutterBottom
-                sx={{ color: "#76777a" }}
+                sx={{
+                  color: "#76777a",
+                  textAlign: {
+                    xs: "center",
+                    md: "left",
+                  },
+                }}
               >
                 Connect with like-minded individuals, industry professionals,
                 and potential collaborators.
@@ -436,16 +722,35 @@ export default function Events() {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
+              flexDirection: {
+                xs: "column-reverse",
+                md: "row",
+              },
             }}
           >
-            <Box sx={{ mr: 2 }}>
-              <Typography variant="h6" gutterBottom>
+            <Box sx={{ mr: { xs: 0, md: 2 } }}>
+              <Typography
+                variant="h6"
+                gutterBottom
+                sx={{
+                  textAlign: {
+                    xs: "center",
+                    md: "left",
+                  },
+                }}
+              >
                 Real-World Problem Solving:
               </Typography>{" "}
               <Typography
                 variant="subtitle1"
                 gutterBottom
-                sx={{ color: "#76777a" }}
+                sx={{
+                  color: "#76777a",
+                  textAlign: {
+                    xs: "center",
+                    md: "left",
+                  },
+                }}
               >
                 Tackle real-world challenges and contribute to innovative
                 solutions that may have a positive impact.
@@ -469,7 +774,15 @@ export default function Events() {
           <Typography
             variant="h5"
             gutterBottom
-            sx={{ textAlign: "center", color: "#384158", mb: 2 }}
+            sx={{
+              textAlign: "center",
+              color: "#384158",
+              mb: 2,
+              fontSize: {
+                xs: "1rem",
+                md: "1.5rem",
+              },
+            }}
           >
             InnovateCode Hackathon: Your Gateway to Innovation!
           </Typography>
@@ -495,7 +808,15 @@ export default function Events() {
           <Typography
             variant="h5"
             gutterBottom
-            sx={{ textAlign: "center", color: "#384158", mb: 2 }}
+            sx={{
+              textAlign: "center",
+              color: "#384158",
+              mb: 2,
+              fontSize: {
+                xs: "1rem",
+                md: "1.5rem",
+              },
+            }}
           >
             Welcome to [Your Organization's] Hackathon Collaboration
             Opportunity!{" "}
@@ -503,7 +824,12 @@ export default function Events() {
           <Typography
             variant="body2"
             gutterBottom
-            sx={{ textAlign: "center", color: "#76777a", mx: 5, mb: 5 }}
+            sx={{
+              textAlign: "center",
+              color: "#76777a",
+              mx: { xs: 1, md: 5 },
+              mb: 5,
+            }}
           >
             Are you passionate about fostering innovation, supporting emerging
             talent, and contributing to the ever-evolving landscape of

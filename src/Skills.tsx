@@ -15,6 +15,7 @@ import Aero from "./assets/aerospace.jpg";
 import Robotics from "./assets/robotics.jpg";
 import ThreeD from "./assets/3DPrinter.jpg";
 import SkillsBanner from "./assets/skillsbanner.jpg";
+import "./AboutUs.css";
 
 const projectDomainList = [
   {
@@ -186,34 +187,39 @@ function listOfProjects() {
     <>
       {projectDomainList.map((domain, index) => {
         let imageFile;
-        const imageStyle = { maxWidth: "500px", borderRadius: "5px" };
 
         if (domain.key === "ai") {
-          imageFile = <img src={AI} alt={domain.header} style={imageStyle} />;
+          imageFile = (
+            <img src={AI} alt={domain.header} className="skillsImg1" />
+          );
         } else if (domain.key === "nlp") {
           imageFile = (
-            <img src={Natural} alt={domain.header} style={imageStyle} />
+            <img src={Natural} alt={domain.header} className="skillsImg1" />
           );
         } else if (domain.key === "block") {
           imageFile = (
-            <img src={Block} alt={domain.header} style={imageStyle} />
+            <img src={Block} alt={domain.header} className="skillsImg1" />
           );
         } else if (domain.key === "machine") {
           imageFile = (
-            <img src={Machine} alt={domain.header} style={imageStyle} />
+            <img src={Machine} alt={domain.header} className="skillsImg1" />
           );
         } else if (domain.key === "neural") {
           imageFile = (
-            <img src={Neural} alt={domain.header} style={imageStyle} />
+            <img src={Neural} alt={domain.header} className="skillsImg1" />
           );
         } else if (domain.key === "cloud") {
           imageFile = (
-            <img src={Cloud} alt={domain.header} style={imageStyle} />
+            <img src={Cloud} alt={domain.header} className="skillsImg1" />
           );
         } else if (domain.key === "web") {
-          imageFile = <img src={Web} alt={domain.header} style={imageStyle} />;
+          imageFile = (
+            <img src={Web} alt={domain.header} className="skillsImg1" />
+          );
         } else if (domain.key === "aero") {
-          imageFile = <img src={Aero} alt={domain.header} style={imageStyle} />;
+          imageFile = (
+            <img src={Aero} alt={domain.header} className="skillsImg1" />
+          );
         }
 
         let imageBoxStyle: any = {
@@ -234,7 +240,10 @@ function listOfProjects() {
               display: "flex",
               justifyContent: "space-between",
               mb: 8,
-              flexDirection: index % 2 === 0 ? "row" : "row-reverse",
+              flexDirection: {
+                xs: "column",
+                md: index % 2 === 0 ? "row" : "row-reverse",
+              },
             }}
           >
             <Box sx={imageBoxStyle}>{imageFile}</Box>
@@ -244,6 +253,10 @@ function listOfProjects() {
                 display: "flex",
                 justifyContent: "center",
                 flexDirection: "column",
+                alignItems: {
+                  xs: "center",
+                  md: "start",
+                },
               }}
             >
               <Box sx={{ mb: 2 }}>
@@ -254,14 +267,37 @@ function listOfProjects() {
 
               {domain.list.map((dom) => {
                 return (
-                  <Box sx={{ mb: 1 }}>
-                    <Typography variant="h6" gutterBottom>
+                  <Box
+                    sx={{
+                      mb: 1,
+                      alignItems: {
+                        xs: "center",
+                        md: "start",
+                      },
+                    }}
+                  >
+                    <Typography
+                      variant="h6"
+                      gutterBottom
+                      sx={{
+                        textAlign: {
+                          xs: "center",
+                          md: "left",
+                        },
+                      }}
+                    >
                       {dom.key1}
                     </Typography>{" "}
                     <Typography
                       variant="subtitle1"
                       gutterBottom
-                      sx={{ color: "#76777a" }}
+                      sx={{
+                        color: "#76777a",
+                        textAlign: {
+                          xs: "center",
+                          md: "left",
+                        },
+                      }}
                     >
                       {dom.value}
                     </Typography>
@@ -334,7 +370,16 @@ export default function Skills() {
             <Typography
               variant="h3"
               gutterBottom
-              sx={{ textAlign: "center", color: "#FFF", mb: 2, mt: 11 }}
+              sx={{
+                textAlign: "center",
+                color: "#FFF",
+                mb: 2,
+                mt: 11,
+                fontSize: {
+                  xs: "1.5rem",
+                  md: "3rem",
+                },
+              }}
             >
               Overview of Live Projects at MAPLE
             </Typography>
@@ -383,14 +428,31 @@ export default function Skills() {
           <Typography
             variant="h3"
             gutterBottom
-            sx={{ textAlign: "center", color: "#384158", mb: 2, mt: 11 }}
+            sx={{
+              textAlign: "center",
+              color: "#384158",
+              mb: 2,
+              mt: 11,
+              fontSize: {
+                xs: "1.5rem",
+                md: "3rem",
+              },
+            }}
           >
             Explore Our Project Domains in Detail
           </Typography>
           <Typography
             variant="body2"
             gutterBottom
-            sx={{ textAlign: "center", color: "#76777a", mx: 5, mb: 5 }}
+            sx={{
+              textAlign: "center",
+              color: "#76777a",
+              mx: {
+                xs: 1,
+                md: 5,
+              },
+              mb: 5,
+            }}
           >
             At MAPLE , we offer a spectrum of project domains, each designed to
             immerse participants in the latest technologies and industry trends.
@@ -417,16 +479,16 @@ export default function Skills() {
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
+              flexDirection: {
+                xs: "column-reverse",
+                md: "row",
+              },
             }}
           >
             <Typography variant="h6" gutterBottom>
               Robotics
             </Typography>
-            <img
-              src={Robotics}
-              alt={"Robotics"}
-              style={{ maxWidth: "500px", borderRadius: "5px" }}
-            />
+            <img src={Robotics} alt={"Robotics"} className="skillsImg1" />
           </Box>
 
           <Box
@@ -434,20 +496,29 @@ export default function Skills() {
               mb: 4,
               display: "flex",
               alignItems: "center",
+              flexDirection: {
+                xs: "column",
+                md: "row",
+              },
             }}
           >
-            <img
-              src={ThreeD}
-              alt={"3D Printer"}
-              style={{ maxWidth: "500px", borderRadius: "5px" }}
-            />
+            <img src={ThreeD} alt={"3D Printer"} className="skillsImg1" />
             <Typography variant="h6" gutterBottom sx={{ ml: 4 }}>
               3D Printer
             </Typography>
           </Box>
 
           <Box>
-            <Typography variant="body1" gutterBottom>
+            <Typography
+              variant="body1"
+              gutterBottom
+              sx={{
+                textAlign: {
+                  xs: "center",
+                  md: "left",
+                },
+              }}
+            >
               Each project domain at MAPLE offers a unique learning experience,
               providing participants with the skills and knowledge necessary to
               excel in their chosen field. Join us on this journey of
