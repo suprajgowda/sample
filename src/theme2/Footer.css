@@ -1,0 +1,13 @@
+.footerLogo {
+  max-width: 300px;
+  border-radius: 5px;
+}
+
+@media only screen and (max-width: 768px) {
+  /* Styles for both extra small and small devices */
+
+  .footerLogo {
+    max-width: 200px;
+    max-height: 150px;
+  }
+}
