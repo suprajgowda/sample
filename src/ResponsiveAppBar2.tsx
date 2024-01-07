@@ -9,13 +9,12 @@ import Menu from "@mui/material/Menu";
 import Container from "@mui/material/Container";
 import MenuItem from "@mui/material/MenuItem";
 import MenuIcon from "@mui/icons-material/Menu";
-import PhoneIcon from "@mui/icons-material/Phone";
-import EmailIcon from "@mui/icons-material/Email";
 
 const homeLink = "/";
 const eventsLink = "/events";
 const aboutUsLink = "/about-us";
 const skillsLink = "/skills";
+const contactUsLink = "/contact-us";
 
 const homeList = {
   link: homeLink,
@@ -100,6 +99,7 @@ function NavDropdown(props: any) {
 }
 
 function MobileHeader() {
+  const navigate = useNavigate();
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
@@ -202,7 +202,7 @@ function MobileHeader() {
           />
 
           <IconButton
-            onClick={() => console.log("----Contact Us------")}
+            onClick={() => navigate(contactUsLink)}
             sx={{
               p: 2,
               fontSize: "0.875rem",
@@ -279,7 +279,7 @@ function ResponsiveAppBar2() {
             />
 
             <IconButton
-              onClick={() => console.log("----Contact Us------")}
+              onClick={() => navigate(contactUsLink)}
               sx={{
                 p: 2,
                 fontSize: "0.875rem",

@@ -1,5 +1,10 @@
 import React from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, Button, TextField, Typography } from "@mui/material";
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogContentText from "@mui/material/DialogContentText";
+import DialogTitle from "@mui/material/DialogTitle";
 import ResponsiveAppBar from "./ResponsiveAppBar";
 import ResponsiveAppBar2 from "./ResponsiveAppBar2";
 import NewsLetter from "./NewsLetter";
@@ -182,7 +187,8 @@ const projectDomainList = [
   },
 ];
 
-function listOfProjects() {
+const ListOfProjects = (props: any) => {
+  const { handleClickOpen } = props;
   return (
     <>
       {projectDomainList.map((domain, index) => {
@@ -236,6 +242,7 @@ function listOfProjects() {
 
         return (
           <Box
+            key={`${domain.header}-${index}`}
             sx={{
               display: "flex",
               justifyContent: "space-between",
@@ -244,9 +251,12 @@ function listOfProjects() {
                 xs: "column",
                 md: index % 2 === 0 ? "row" : "row-reverse",
               },
+              alignItems: { xs: "center", md: "normal" },
             }}
           >
-            <Box sx={imageBoxStyle}>{imageFile}</Box>
+            <Box key={`${domain.header}-${index}`} sx={imageBoxStyle}>
+              {imageFile}
+            </Box>
 
             <Box
               sx={{
@@ -274,6 +284,7 @@ function listOfProjects() {
                         xs: "center",
                         md: "start",
                       },
+                      width: "100%",
                     }}
                   >
                     <Typography
@@ -281,7 +292,7 @@ function listOfProjects() {
                       gutterBottom
                       sx={{
                         textAlign: {
-                          xs: "center",
+                          xs: "left",
                           md: "left",
                         },
                       }}
@@ -294,7 +305,7 @@ function listOfProjects() {
                       sx={{
                         color: "#76777a",
                         textAlign: {
-                          xs: "center",
+                          xs: "left",
                           md: "left",
                         },
                       }}
@@ -304,13 +315,26 @@ function listOfProjects() {
                   </Box>
                 );
               })}
+              <Button
+                variant="contained"
+                sx={{
+                  width: { xs: "50%", md: "30%" },
+                  backgroundColor: "#14bdee",
+                  "&:hover": {
+                    backgroundColor: "#2cb3da",
+                  },
+                }}
+                onClick={handleClickOpen}
+              >
+                Im Intrested
+              </Button>
             </Box>
           </Box>
         );
       })}
     </>
   );
-}
+};
 
 const listOfSkills = [
   {
@@ -344,6 +368,16 @@ const listOfSkills = [
 ];
 
 export default function Skills() {
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
     <>
       <ResponsiveAppBar />
@@ -406,9 +440,9 @@ export default function Skills() {
             my: 6,
           }}
         >
-          {listOfSkills.map((skills) => {
+          {listOfSkills.map((skills, index) => {
             return (
-              <Box sx={{ mb: 4 }}>
+              <Box key={`${skills.key1}-${index}`} sx={{ mb: 4 }}>
                 <Typography variant="h6" gutterBottom>
                   {skills.key1}
                 </Typography>{" "}
@@ -471,7 +505,7 @@ export default function Skills() {
             my: 6,
           }}
         >
-          {listOfProjects()}
+          <ListOfProjects handleClickOpen={handleClickOpen} />
 
           <Box
             sx={{
@@ -530,6 +564,53 @@ export default function Skills() {
 
       <NewsLetter />
       <Footer />
+
+      <FormDialogue
+        open={open}
+        setOpen={setOpen}
+        handleClickOpen={handleClickOpen}
+        handleClose={handleClose}
+      />
     </>
   );
 }
+
+const FormDialogue = (props: any) => {
+  const { open, handleClose } = props;
+
+  return (
+    <React.Fragment>
+      <Dialog open={open} onClose={handleClose}>
+        <DialogTitle>Subscribe</DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            To subscribe to this website, please enter your email address and
+            Phone Number here. We will send updates occasionally.
+          </DialogContentText>
+          <TextField
+            autoFocus
+            margin="dense"
+            id="name"
+            label="Email Address"
+            type="email"
+            fullWidth
+            variant="standard"
+          />
+          <TextField
+            autoFocus
+            margin="dense"
+            id="name"
+            label="Phone Number"
+            type="phone"
+            fullWidth
+            variant="standard"
+          />
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose}>Cancel</Button>
+          <Button onClick={handleClose}>Subscribe</Button>
+        </DialogActions>
+      </Dialog>
+    </React.Fragment>
+  );
+};
