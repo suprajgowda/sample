@@ -18,12 +18,19 @@ export default function Footer() {
       }}
     >
       <Box sx={{ mb: 5 }}>
-        <img
+        {/* <img
           src={"https://vamia.fi/wp-content/uploads/2023/03/vamia_logo.png"}
           alt={"Footer Logo"}
           className="footerLogo"
           //   style={{ maxWidth: "300px", borderRadius: "5px" }}
-        />
+        /> */}
+        <Typography
+          variant="h3"
+          gutterBottom
+          sx={{ color: "#006983", mb: 3, fontWeight: 700 }}
+        >
+          Maple Tech
+        </Typography>
 
         <Box sx={{ my: 3 }}>
           <IconButton

@@ -17,11 +17,226 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import YouTubeIcon from "@mui/icons-material/YouTube";
 
 export default function HomePage() {
   return (
     <>
       <DrawerAppBar />
+      <Box sx={{ display: "flex" }}>
+        <img
+          src="https://vamia.fi/wp-content/uploads/2023/06/brooke-cagle-uHVRvDr7pg-unsplash.jpg"
+          alt="Home Page"
+          style={{ width: "65%", marginTop: "2%" }}
+        />
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            pl: 6,
+          }}
+        >
+          <Typography
+            variant="h3"
+            component="div"
+            sx={{ pb: 4, fontWeight: 700 }}
+          >
+            Welcome to Maple
+          </Typography>
+          <Typography variant="h5" component="div" sx={{ fontWeight: 700 }}>
+            Where Innovation Meets Opportunity!
+          </Typography>
+        </Box>
+      </Box>
+
+      <Box
+        sx={{ display: "flex", justifyContent: "space-evenly", py: 4, my: 6 }}
+      >
+        <Box
+          sx={{ backgroundColor: "#fdb2c2", py: 2, px: 8, borderRadius: "5px" }}
+        >
+          <Typography
+            variant="h5"
+            gutterBottom
+            sx={{ fontWeight: 700, fontSize: "1rem", marginBottom: 0 }}
+          >
+            Programmes
+          </Typography>
+        </Box>
+
+        <Box
+          sx={{ backgroundColor: "#ef9780", py: 2, px: 8, borderRadius: "5px" }}
+        >
+          <Typography
+            variant="h5"
+            gutterBottom
+            sx={{ fontWeight: 700, fontSize: "1rem", marginBottom: 0 }}
+          >
+            VamiaGuide
+          </Typography>
+        </Box>
+
+        <Box
+          sx={{ backgroundColor: "#d6e3c5", py: 2, px: 8, borderRadius: "5px" }}
+        >
+          <Typography
+            variant="h5"
+            gutterBottom
+            sx={{ fontWeight: 700, fontSize: "1rem", marginBottom: 0 }}
+          >
+            How to apply
+          </Typography>
+        </Box>
+      </Box>
+
+      <Box>
+        <Box
+          sx={{
+            mx: "10%",
+          }}
+        >
+          <Typography
+            variant="h4"
+            gutterBottom
+            sx={{
+              fontWeight: 700,
+              fontSize: "22px",
+              marginBottom: 0,
+              color: "#006983",
+            }}
+          >
+            Latest News
+          </Typography>
+        </Box>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            mx: "10%",
+            mb: 4,
+          }}
+        >
+          <Typography
+            variant="h2"
+            gutterBottom
+            sx={{ fontWeight: 700, marginBottom: 0 }}
+          >
+            What's happening at Maplex
+          </Typography>
+
+          <Box>
+            <IconButton
+              aria-label="delete"
+              size="large"
+              sx={{
+                backgroundColor: "#006983",
+                borderRadius: "15px",
+                boxShadow: "5px 5px 0px 0px #EF9780",
+                mr: 2,
+                "&:hover": {
+                  backgroundColor: "#006983",
+                },
+              }}
+            >
+              <FacebookIcon fontSize="inherit" sx={{ color: "#fff" }} />
+            </IconButton>
+
+            <IconButton
+              aria-label="delete"
+              size="large"
+              sx={{
+                backgroundColor: "#006983",
+                borderRadius: "15px",
+                boxShadow: "5px 5px 0px 0px #FDB2C2",
+                mr: 2,
+                "&:hover": {
+                  backgroundColor: "#006983",
+                },
+              }}
+            >
+              <InstagramIcon fontSize="inherit" sx={{ color: "#fff" }} />
+            </IconButton>
+
+            <IconButton
+              aria-label="delete"
+              size="large"
+              sx={{
+                backgroundColor: "#006983",
+                borderRadius: "15px",
+                boxShadow: "5px 5px 0px 0px #D6E3C5",
+                mr: 2,
+                "&:hover": {
+                  backgroundColor: "#006983",
+                },
+              }}
+            >
+              <YouTubeIcon fontSize="inherit" sx={{ color: "#fff" }} />
+            </IconButton>
+
+            <Button
+              sx={{
+                backgroundColor: "#006983",
+                color: "#fff",
+                px: 5,
+                py: 1.5,
+                fontSize: "1.25rem",
+                borderRadius: "0.65rem",
+                fontWeight: 700,
+                "&:hover": {
+                  backgroundColor: "#004455",
+                },
+              }}
+            >
+              See all news
+            </Button>
+          </Box>
+        </Box>
+        <Box>
+          <Box
+            sx={{
+              display: "flex",
+              boxShadow: "0px 3px 35px 0px rgba(0, 0, 0, 0.29)",
+              mx: "10%",
+            }}
+          >
+            <Box>
+              <img
+                src="https://vamia.fi/wp-content/uploads/2023/10/DM0A2435-1024x683.jpg"
+                style={{ maxWidth: "700px", height: "500px" }}
+              />
+            </Box>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                flexWrap: "wrap",
+                justifyContent: "center",
+                px: 5,
+              }}
+            >
+              <Typography
+                variant="h6"
+                sx={{ fontSize: "20px", fontWeight: 700 }}
+              >
+                Status update on the December application round
+              </Typography>
+              <Typography
+                variant="h6"
+                sx={{ fontSize: "1rem", fontWeight: 500, mt: 4 }}
+              >
+                The processing phase of the December application round is still
+                ongoing. Interview invitations will be sent out by January 12th,
+                2024. Our school's holiday break
+              </Typography>
+            </Box>
+          </Box>
+          <Box></Box>
+        </Box>
+      </Box>
       <div>HomePage2</div>
       <Footer />
     </>
@@ -164,7 +379,7 @@ function DrawerAppBar(props: Props) {
       sx={{ textAlign: "center", backgroundColor: "#006983" }}
     >
       <Typography variant="h6" sx={{ my: 2 }}>
-        MUI
+        Maple Tech
       </Typography>
       <Divider />
       <List>
@@ -204,7 +419,7 @@ function DrawerAppBar(props: Props) {
             component="div"
             sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
           >
-            MUI
+            Maple Tech
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (

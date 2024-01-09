@@ -6,6 +6,7 @@ import AboutUs from "./AboutUs";
 import Skills from "./Skills";
 import ContactUs from "./ContactUs";
 import HomePage2 from "./theme2/HomePage";
+import HomePage from "./Home";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" Component={HomePage2} />
+          <Route path="/home" Component={HomePage} />
           <Route path="/events" Component={Events} />
           <Route path="/about-us" Component={AboutUs} />
           <Route path="/skills" Component={Skills} />
