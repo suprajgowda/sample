@@ -22,7 +22,7 @@ export default function ContactUs() {
             textAlign: "center",
             color: "#384158",
             left: { xs: "5%", md: "15%" },
-            fontSize: { xs: "30px", md: "60px" },
+            fontSize: { xs: "25px", md: "50px" },
             fontWeight: 700,
           }}
         >
