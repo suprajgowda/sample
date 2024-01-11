@@ -17,7 +17,7 @@ export default function Footer() {
         borderTop: "11px solid #006983",
       }}
     >
-      <Box sx={{ mb: 5 }}>
+      <Box sx={{ mb: 5, display: "flex", alignItems: "center" }}>
         {/* <img
           src={"https://vamia.fi/wp-content/uploads/2023/03/vamia_logo.png"}
           alt={"Footer Logo"}
@@ -27,12 +27,12 @@ export default function Footer() {
         <Typography
           variant="h3"
           gutterBottom
-          sx={{ color: "#006983", mb: 3, fontWeight: 700 }}
+          sx={{ color: "#006983", m: 0, fontWeight: 700, mr: 4 }}
         >
           Maple Tech
         </Typography>
 
-        <Box sx={{ my: 3 }}>
+        <Box sx={{ my: 0 }}>
           <IconButton
             aria-label="delete"
             size="large"
@@ -41,6 +41,7 @@ export default function Footer() {
               borderRadius: "15px",
               boxShadow: "5px 5px 0px 0px #EF9780",
               mr: 2,
+              p: 1,
               "&:hover": {
                 backgroundColor: "#006983",
               },
@@ -57,6 +58,7 @@ export default function Footer() {
               borderRadius: "15px",
               boxShadow: "5px 5px 0px 0px #FDB2C2",
               mr: 2,
+              p: 1,
               "&:hover": {
                 backgroundColor: "#006983",
               },
@@ -73,6 +75,7 @@ export default function Footer() {
               borderRadius: "15px",
               boxShadow: "5px 5px 0px 0px #D6E3C5",
               mr: 2,
+              p: 1,
               "&:hover": {
                 backgroundColor: "#006983",
               },
