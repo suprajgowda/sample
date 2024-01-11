@@ -10,11 +10,11 @@ import Container from "@mui/material/Container";
 import MenuItem from "@mui/material/MenuItem";
 import MenuIcon from "@mui/icons-material/Menu";
 
-const homeLink = "/";
-const eventsLink = "/events";
-const aboutUsLink = "/about-us";
-const skillsLink = "/skills";
-const contactUsLink = "/contact-us";
+const homeLink = "/v1/home";
+const eventsLink = "/v1/events";
+const aboutUsLink = "/v1/about-us";
+const skillsLink = "/v1/skills";
+const contactUsLink = "/v1/contact-us";
 
 const homeList = {
   link: homeLink,

@@ -5,11 +5,8 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
-import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
-import MenuItem from "@mui/material/MenuItem";
 import CssBaseline from "@mui/material/CssBaseline";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
@@ -20,6 +17,7 @@ import ListItemText from "@mui/material/ListItemText";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import YouTubeIcon from "@mui/icons-material/YouTube";
+import { useNavigate } from "react-router-dom";
 
 export default function HomePage() {
   return (
@@ -205,6 +203,7 @@ export default function HomePage() {
           >
             <Box>
               <img
+                alt="Home Page Banner"
                 src="https://vamia.fi/wp-content/uploads/2023/10/DM0A2435-1024x683.jpg"
                 style={{ maxWidth: "700px", height: "500px" }}
               />
@@ -234,125 +233,184 @@ export default function HomePage() {
               </Typography>
             </Box>
           </Box>
-          <Box></Box>
+
+          <Box
+            sx={{
+              display: "flex",
+              mx: "10%",
+              my: 8,
+              flexDirection: "row",
+              flexWrap: "wrap",
+              justifyContent: "space-around",
+              alignItems: "center",
+            }}
+          >
+            {[1, 2, 3, 4, 5, 6].map((e) => (
+              <Box
+                sx={{
+                  display: "flex",
+                  maxWidth: "500px",
+                  borderRadius: "50px",
+                  boxShadow: "0px 3px 35px 0px rgba(0, 0, 0, 0.29)",
+                  m: 4,
+                }}
+              >
+                <Box
+                  sx={{
+                    backgroundSize: "100% 100%",
+                    backgroundPositionY: "center",
+                    backgroundImage: `url(https://vamia.fi/wp-content/uploads/2023/11/Kopio-Kopio-Valmistujaisjuhla-23.png)`,
+                    height: "200px",
+                    width: "50%",
+                    borderRadius: "0px 0px 0px 50px",
+                  }}
+                ></Box>
+                <Box
+                  sx={{
+                    backgroundColor: "#fff",
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    p: 2.5,
+                    width: "50%",
+                    borderRadius: "0px 50px 0px 0px",
+                  }}
+                >
+                  <Typography
+                    variant="body2"
+                    gutterBottom
+                    sx={{
+                      textAlign: "center",
+                      color: "#000",
+                      fontSize: "20px",
+                      fontWeight: "700",
+                    }}
+                  >
+                    Christmas graduation ceremony on Friday 22 December 2023 at
+                    9.00
+                  </Typography>
+                </Box>
+              </Box>
+            ))}
+          </Box>
         </Box>
       </Box>
-      <div>HomePage2</div>
       <Footer />
     </>
   );
 }
 
-const pages = ["Products", "Pricing", "Blog"];
+// const pages = ["Products", "Pricing", "Blog"];
 
-function ResponsiveAppBar() {
-  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
-    null
-  );
+// function ResponsiveAppBar() {
+//   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
+//     null
+//   );
 
-  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElNav(event.currentTarget);
-  };
+//   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
+//     setAnchorElNav(event.currentTarget);
+//   };
 
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
+//   const handleCloseNavMenu = () => {
+//     setAnchorElNav(null);
+//   };
 
-  return (
-    <AppBar
-      position="static"
-      sx={{ backgroundColor: "#efefef", boxShadow: "none" }}
-    >
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            sx={{
-              mr: 2,
-              display: { xs: "none", md: "flex" },
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "black",
-              textDecoration: "none",
-            }}
-          >
-            LOGO
-          </Typography>
+//   return (
+//     <AppBar
+//       position="static"
+//       sx={{ backgroundColor: "#efefef", boxShadow: "none" }}
+//     >
+//       <Container maxWidth="xl">
+//         <Toolbar disableGutters>
+//           <Typography
+//             variant="h6"
+//             noWrap
+//             component="a"
+//             sx={{
+//               mr: 2,
+//               display: { xs: "none", md: "flex" },
+//               fontFamily: "monospace",
+//               fontWeight: 700,
+//               letterSpacing: ".3rem",
+//               color: "black",
+//               textDecoration: "none",
+//             }}
+//           >
+//             LOGO
+//           </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: "block", md: "none" },
-              }}
-            >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
+//           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+//             <IconButton
+//               size="large"
+//               aria-label="account of current user"
+//               aria-controls="menu-appbar"
+//               aria-haspopup="true"
+//               onClick={handleOpenNavMenu}
+//               color="inherit"
+//             >
+//               <MenuIcon />
+//             </IconButton>
+//             <Menu
+//               id="menu-appbar"
+//               anchorEl={anchorElNav}
+//               anchorOrigin={{
+//                 vertical: "bottom",
+//                 horizontal: "left",
+//               }}
+//               keepMounted
+//               transformOrigin={{
+//                 vertical: "top",
+//                 horizontal: "left",
+//               }}
+//               open={Boolean(anchorElNav)}
+//               onClose={handleCloseNavMenu}
+//               sx={{
+//                 display: { xs: "block", md: "none" },
+//               }}
+//             >
+//               {pages.map((page) => (
+//                 <MenuItem key={page} onClick={handleCloseNavMenu}>
+//                   <Typography textAlign="center">{page}</Typography>
+//                 </MenuItem>
+//               ))}
+//             </Menu>
+//           </Box>
 
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "black",
-              textDecoration: "none",
-            }}
-          >
-            LOGO
-          </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "black", display: "block" }}
-              >
-                {page}
-              </Button>
-            ))}
-          </Box>
-        </Toolbar>
-      </Container>
-    </AppBar>
-  );
-}
+//           <Typography
+//             variant="h5"
+//             noWrap
+//             component="a"
+//             href="#app-bar-with-responsive-menu"
+//             sx={{
+//               mr: 2,
+//               display: { xs: "flex", md: "none" },
+//               flexGrow: 1,
+//               fontFamily: "monospace",
+//               fontWeight: 700,
+//               letterSpacing: ".3rem",
+//               color: "black",
+//               textDecoration: "none",
+//             }}
+//           >
+//             LOGO
+//           </Typography>
+//           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+//             {pages.map((page) => (
+//               <Button
+//                 key={page}
+//                 onClick={handleCloseNavMenu}
+//                 sx={{ my: 2, color: "black", display: "block" }}
+//               >
+//                 {page}
+//               </Button>
+//             ))}
+//           </Box>
+//         </Toolbar>
+//       </Container>
+//     </AppBar>
+//   );
+// }
 
 interface Props {
   /**
@@ -363,11 +421,33 @@ interface Props {
 }
 
 const drawerWidth = 240;
-const navItems = ["Home", "About", "Contact"];
+const navItems = [
+  {
+    title: "Home",
+    link: "/",
+  },
+  {
+    title: "About Us",
+    link: "/about-us",
+  },
+  {
+    title: "Skills",
+    link: "/skills",
+  },
+  {
+    title: "Events",
+    link: "/events",
+  },
+  {
+    title: "Contact Us",
+    link: "/contact-us",
+  },
+];
 
-function DrawerAppBar(props: Props) {
+export function DrawerAppBar(props: Props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const navigate = useNavigate();
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -384,9 +464,15 @@ function DrawerAppBar(props: Props) {
       <Divider />
       <List>
         {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item} />
+          <ListItem key={item.title} disablePadding>
+            <ListItemButton
+              sx={{ textAlign: "center" }}
+              onClick={() => {
+                console.log(":ink = ", item.link);
+                navigate(item.link);
+              }}
+            >
+              <ListItemText primary={item.title} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -423,8 +509,15 @@ function DrawerAppBar(props: Props) {
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: "#fff" }}>
-                {item}
+              <Button
+                key={item.title}
+                onClick={() => {
+                  console.log(":ink = ", item.link);
+                  navigate(item.link);
+                }}
+                sx={{ color: "#fff" }}
+              >
+                {item.title}
               </Button>
             ))}
           </Box>
