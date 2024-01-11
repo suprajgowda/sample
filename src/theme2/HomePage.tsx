@@ -119,7 +119,7 @@ export default function HomePage() {
           }}
         >
           <Typography
-            variant="h2"
+            variant="h3"
             gutterBottom
             sx={{ fontWeight: 700, marginBottom: 0 }}
           >
@@ -135,6 +135,7 @@ export default function HomePage() {
                 borderRadius: "15px",
                 boxShadow: "5px 5px 0px 0px #EF9780",
                 mr: 2,
+                p: 1,
                 "&:hover": {
                   backgroundColor: "#006983",
                 },
@@ -151,6 +152,7 @@ export default function HomePage() {
                 borderRadius: "15px",
                 boxShadow: "5px 5px 0px 0px #FDB2C2",
                 mr: 2,
+                p: 1,
                 "&:hover": {
                   backgroundColor: "#006983",
                 },
@@ -167,6 +169,7 @@ export default function HomePage() {
                 borderRadius: "15px",
                 boxShadow: "5px 5px 0px 0px #D6E3C5",
                 mr: 2,
+                p: 1,
                 "&:hover": {
                   backgroundColor: "#006983",
                 },
@@ -179,9 +182,9 @@ export default function HomePage() {
               sx={{
                 backgroundColor: "#006983",
                 color: "#fff",
-                px: 5,
-                py: 1.5,
-                fontSize: "1.25rem",
+                px: 3,
+                py: 1.1,
+                fontSize: "1rem",
                 borderRadius: "0.65rem",
                 fontWeight: 700,
                 "&:hover": {
@@ -249,10 +252,11 @@ export default function HomePage() {
               <Box
                 sx={{
                   display: "flex",
-                  maxWidth: "500px",
+                  maxWidth: "450px",
                   borderRadius: "50px",
                   boxShadow: "0px 3px 35px 0px rgba(0, 0, 0, 0.29)",
-                  m: 4,
+                  mx: 2,
+                  my: 4,
                 }}
               >
                 <Box

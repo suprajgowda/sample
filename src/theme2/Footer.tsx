@@ -93,7 +93,7 @@ export default function Footer() {
           justifyContent: "space-between",
         }}
       >
-        <Box sx={{ flex: 1, mb: { xs: 5, md: 0 } }}>
+        <Box sx={{ flex: 2, mb: { xs: 5, md: 0 } }}>
           <Typography
             variant="h5"
             gutterBottom
@@ -124,7 +124,7 @@ export default function Footer() {
           </Typography>
         </Box>
 
-        <Box sx={{ flex: 1, mb: { xs: 5, md: 0 } }}>
+        <Box sx={{ flex: 2, mb: { xs: 5, md: 0 } }}>
           <Typography
             variant="h5"
             gutterBottom
