@@ -2,6 +2,66 @@ import React from "react";
 import { DrawerAppBar } from "./HomePage";
 import Footer from "./Footer";
 import { Box, Typography } from "@mui/material";
+import TeamCollImage from "../assets/Team_Collaboration.jpg";
+import TimeBound from "../assets/Time_Bound_Challenges.jpg";
+import Innovation from "../assets/Innovation_and_Creativity.jpg";
+import LearningOpp from "../assets/Learning_Opportunities.jpg";
+import ProjectShowcase from "../assets/Project_Showcase.jpg";
+import PriceAndRecognition from "../assets/price_and_recognition.jpg";
+import Skill from "../assets/skillDevelopment.jpg";
+import Networking from "../assets/networking.jpg";
+import ProblemSolving from "../assets/problemSolving.jpg";
+
+const events1 = [
+  {
+    img: TeamCollImage,
+    title: "Team Collaboration",
+    desc: "Participants form teams, bringing together their unique skills and perspectives. Collaboration is encouraged, fostering an environment of shared learning and creativity.",
+  },
+  {
+    img: TimeBound,
+    title: "Time-Bound Challenges",
+    desc: "Hackathons typically run for a fixed period, often spanning a weekend or a specific number of hours. The time constraint adds an element of urgency, pushing participants to think on their feet and deliver results quickly.",
+  },
+  {
+    img: Innovation,
+    title: "Innovation and Creativity",
+    desc: "Participants are challenged to think innovatively and creatively to solve problems. The freedom to explore new technologies and ideas often leads to groundbreaking solutions.",
+  },
+  {
+    img: LearningOpp,
+    title: "Learning Opportunities",
+    desc: "Workshops, mentorship sessions, and expert talks provide valuable learning opportunities. Participants can enhance their skills, learn about the latest technologies, and gain insights from industry professionals.",
+  },
+  {
+    img: ProjectShowcase,
+    title: "Project Showcase and Judging",
+    desc: "Teams present their projects to a panel of judges or industry experts. Projects are evaluated based on criteria such as creativity, functionality, and overall impact.",
+  },
+  {
+    img: PriceAndRecognition,
+    title: "Prizes and Recognition",
+    desc: "Exciting prizes and recognition are awarded to winning teams. Sponsors often contribute prizes, creating additional motivation for participants.",
+  },
+];
+
+const events2 = [
+  {
+    img: Skill,
+    title: "Skill Development:",
+    desc: "Hackathons offer a hands-on learning experience, allowing participants to sharpen their technical and teamwork skills.",
+  },
+  {
+    img: Networking,
+    title: "Networking:",
+    desc: "Connect with like-minded individuals, industry professionals, and potential collaborators.",
+  },
+  {
+    img: ProblemSolving,
+    title: "Real-World Problem Solving:",
+    desc: "Tackle real-world challenges and contribute to innovative solutions that may have a positive impact.",
+  },
+];
 
 export default function Events() {
   return (
@@ -87,7 +147,7 @@ export default function Events() {
             my: 6,
           }}
         >
-          {[1, 2, 3, 4, 5, 6, 7, 8].map((e) => {
+          {events1.map((event1) => {
             return (
               <Box
                 sx={{
@@ -104,8 +164,8 @@ export default function Events() {
                 }}
               >
                 <img
-                  src="https://vamia.fi/wp-content/uploads/2023/06/brooke-cagle-uHVRvDr7pg-unsplash.jpg"
-                  alt="Home Page"
+                  src={event1.img}
+                  alt={event1.title}
                   style={{ width: "100%", height: "100%" }}
                 />
 
@@ -120,7 +180,7 @@ export default function Events() {
                     my: 2,
                   }}
                 >
-                  Team Collaboration
+                  {event1.title}
                 </Typography>
 
                 <Typography
@@ -128,9 +188,7 @@ export default function Events() {
                   gutterBottom
                   sx={{ textAlign: "left", px: 4, mb: 4, fontWeight: 500 }}
                 >
-                  Participants form teams, bringing together their unique skills
-                  and perspectives. Collaboration is encouraged, fostering an
-                  environment of shared learning and creativity.
+                  {event1.desc}
                 </Typography>
               </Box>
             );
@@ -155,7 +213,7 @@ export default function Events() {
               my: 6,
             }}
           >
-            {[1, 2, 3, 4, 5, 6, 7, 8].map((e) => {
+            {events2.map((event2) => {
               return (
                 <Box
                   sx={{
@@ -172,8 +230,8 @@ export default function Events() {
                   }}
                 >
                   <img
-                    src="https://vamia.fi/wp-content/uploads/2023/06/brooke-cagle-uHVRvDr7pg-unsplash.jpg"
-                    alt="Home Page"
+                    src={event2.img}
+                    alt={event2.title}
                     style={{ width: "100%", height: "100%" }}
                   />
 
@@ -188,7 +246,7 @@ export default function Events() {
                       my: 2,
                     }}
                   >
-                    Team Collaboration
+                    {event2.title}
                   </Typography>
 
                   <Typography
@@ -196,9 +254,7 @@ export default function Events() {
                     gutterBottom
                     sx={{ textAlign: "left", px: 4, mb: 4, fontWeight: 500 }}
                   >
-                    Participants form teams, bringing together their unique
-                    skills and perspectives. Collaboration is encouraged,
-                    fostering an environment of shared learning and creativity.
+                    {event2.desc}
                   </Typography>
                 </Box>
               );
