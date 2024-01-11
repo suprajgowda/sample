@@ -8,56 +8,57 @@ export default function Events() {
     <>
       <DrawerAppBar />
 
+      <Box sx={{ display: "flex", mt: "5%" }}>
+        <img
+          src="https://vamia.fi/wp-content/uploads/2023/06/brooke-cagle-uHVRvDr7pg-unsplash.jpg"
+          alt="Home Page"
+          style={{ width: "60%" }}
+        />
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            p: 3,
+          }}
+        >
+          <Typography
+            variant="h4"
+            gutterBottom
+            sx={{
+              textAlign: "left",
+              color: "#384158",
+              left: { xs: "5%", md: "15%" },
+              fontSize: { xs: "25px", md: "40px" },
+              fontWeight: 700,
+              pb: 2,
+              mt: 2,
+            }}
+          >
+            Events
+          </Typography>
+          <Typography
+            variant="h5"
+            component="div"
+            sx={{ pb: 2, fontWeight: 700 }}
+          >
+            What is a Hackathon ?
+          </Typography>
+          <Typography variant="h6" component="div" sx={{ fontWeight: 400 }}>
+            Welcome to the InnovateCode Hackathon, where innovation meets
+            collaboration! If you're new to the concept of a hackathon, you're
+            in for an exciting journey into the heart of creative
+            problem-solving and technological exploration.
+          </Typography>
+        </Box>
+      </Box>
+
       <Box
         sx={{
           mx: "10%",
           mt: "8%",
         }}
       >
-        <Typography
-          variant="h4"
-          gutterBottom
-          sx={{
-            textAlign: "center",
-            color: "#384158",
-            left: { xs: "5%", md: "15%" },
-            fontSize: { xs: "25px", md: "50px" },
-            fontWeight: 700,
-          }}
-        >
-          Events
-        </Typography>
-
-        <Box sx={{ display: "flex" }}>
-          <img
-            src="https://vamia.fi/wp-content/uploads/2023/06/brooke-cagle-uHVRvDr7pg-unsplash.jpg"
-            alt="Home Page"
-            style={{ width: "65%", marginTop: "2%" }}
-          />
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              pl: 6,
-            }}
-          >
-            <Typography
-              variant="h5"
-              component="div"
-              sx={{ pb: 4, fontWeight: 700 }}
-            >
-              What is a Hackathon ?
-            </Typography>
-            <Typography variant="h6" component="div" sx={{ fontWeight: 400 }}>
-              Welcome to the InnovateCode Hackathon, where innovation meets
-              collaboration! If you're new to the concept of a hackathon, you're
-              in for an exciting journey into the heart of creative
-              problem-solving and technological exploration.
-            </Typography>
-          </Box>
-        </Box>
-
         <Box sx={{ display: "flex", flexDirection: "column", my: 10 }}>
           <Typography
             variant="h5"

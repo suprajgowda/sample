@@ -214,57 +214,58 @@ export default function Skills() {
     <>
       <DrawerAppBar />
 
+      <Box sx={{ display: "flex", mt: "5%" }}>
+        <img
+          src="https://vamia.fi/wp-content/uploads/2023/06/brooke-cagle-uHVRvDr7pg-unsplash.jpg"
+          alt="Home Page"
+          style={{ width: "60%" }}
+        />
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            p: 3,
+          }}
+        >
+          <Typography
+            variant="h4"
+            gutterBottom
+            sx={{
+              textAlign: "left",
+              color: "#384158",
+              left: { xs: "5%", md: "15%" },
+              fontSize: { xs: "25px", md: "40px" },
+              fontWeight: 700,
+              pb: 2,
+              mt: 2,
+            }}
+          >
+            Skills
+          </Typography>
+          <Typography
+            variant="h5"
+            component="div"
+            sx={{ pb: 2, fontWeight: 700 }}
+          >
+            Overview of Live Projects at MAPLE
+          </Typography>
+          <Typography variant="h6" component="div" sx={{ fontWeight: 400 }}>
+            Embark on a transformative journey where theoretical knowledge meets
+            real-world application through our Live Projects at MAPLE. Our
+            projects are carefully crafted to provide participants with hands-on
+            experience in cutting-edge domains, fostering innovation, and
+            preparing them for the dynamic landscape of the tech industry.
+          </Typography>
+        </Box>
+      </Box>
+
       <Box
         sx={{
           mx: "10%",
           mt: "8%",
         }}
       >
-        <Typography
-          variant="h4"
-          gutterBottom
-          sx={{
-            textAlign: "center",
-            color: "#384158",
-            left: { xs: "5%", md: "15%" },
-            fontSize: { xs: "25px", md: "50px" },
-            fontWeight: 700,
-          }}
-        >
-          Skills
-        </Typography>
-
-        <Box sx={{ display: "flex" }}>
-          <img
-            src="https://vamia.fi/wp-content/uploads/2023/06/brooke-cagle-uHVRvDr7pg-unsplash.jpg"
-            alt="Home Page"
-            style={{ width: "60%", marginTop: "2%" }}
-          />
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              pl: 6,
-            }}
-          >
-            <Typography
-              variant="h5"
-              component="div"
-              sx={{ pb: 4, fontWeight: 700 }}
-            >
-              Overview of Live Projects at MAPLE
-            </Typography>
-            <Typography variant="h6" component="div" sx={{ fontWeight: 400 }}>
-              Embark on a transformative journey where theoretical knowledge
-              meets real-world application through our Live Projects at MAPLE.
-              Our projects are carefully crafted to provide participants with
-              hands-on experience in cutting-edge domains, fostering innovation,
-              and preparing them for the dynamic landscape of the tech industry.
-            </Typography>
-          </Box>
-        </Box>
-
         {skillsList.map((skill) => {
           return (
             <Box sx={{ display: "flex", flexDirection: "column", my: 10 }}>

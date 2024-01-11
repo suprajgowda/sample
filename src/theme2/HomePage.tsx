@@ -23,11 +23,11 @@ export default function HomePage() {
   return (
     <>
       <DrawerAppBar />
-      <Box sx={{ display: "flex" }}>
+      <Box sx={{ display: "flex", mt: "5%" }}>
         <img
           src="https://vamia.fi/wp-content/uploads/2023/06/brooke-cagle-uHVRvDr7pg-unsplash.jpg"
           alt="Home Page"
-          style={{ width: "65%", marginTop: "2%" }}
+          style={{ width: "60%" }}
         />
         <Box
           sx={{
