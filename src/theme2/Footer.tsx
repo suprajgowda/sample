@@ -11,23 +11,30 @@ export default function Footer() {
       sx={{
         display: "flex",
         flexDirection: "column",
-        pt: { xs: 5, md: 8 },
-        px: { xs: 10, md: 20 },
-        pb: { xs: 5, md: 8 },
+        pt: { xs: 3, md: 8 },
+        px: { xs: 3, md: 20 },
+        pb: { xs: 3, md: 8 },
         borderTop: "11px solid #006983",
       }}
     >
-      <Box sx={{ mb: 5, display: "flex", alignItems: "center" }}>
-        {/* <img
-          src={"https://vamia.fi/wp-content/uploads/2023/03/vamia_logo.png"}
-          alt={"Footer Logo"}
-          className="footerLogo"
-          //   style={{ maxWidth: "300px", borderRadius: "5px" }}
-        /> */}
+      <Box
+        sx={{
+          mb: 5,
+          display: "flex",
+          flexDirection: { xs: "column", sm: "row" },
+          alignItems: { xs: "start", sm: "center" },
+        }}
+      >
         <Typography
           variant="h3"
           gutterBottom
-          sx={{ color: "#006983", m: 0, fontWeight: 700, mr: 4 }}
+          sx={{
+            color: "#006983",
+            m: 0,
+            fontWeight: 700,
+            mr: 4,
+            fontSize: { xs: "2rem", md: "3rem" },
+          }}
         >
           Maple Tech
         </Typography>
@@ -42,6 +49,7 @@ export default function Footer() {
               boxShadow: "5px 5px 0px 0px #EF9780",
               mr: 2,
               p: 1,
+              mt: { xs: 2, sm: 0 },
               "&:hover": {
                 backgroundColor: "#006983",
               },
@@ -59,6 +67,7 @@ export default function Footer() {
               boxShadow: "5px 5px 0px 0px #FDB2C2",
               mr: 2,
               p: 1,
+              mt: { xs: 2, sm: 0 },
               "&:hover": {
                 backgroundColor: "#006983",
               },
@@ -76,6 +85,7 @@ export default function Footer() {
               boxShadow: "5px 5px 0px 0px #D6E3C5",
               mr: 2,
               p: 1,
+              mt: { xs: 2, sm: 0 },
               "&:hover": {
                 backgroundColor: "#006983",
               },
@@ -100,28 +110,45 @@ export default function Footer() {
           <Typography
             variant="h5"
             gutterBottom
-            sx={{ color: "#006983", mb: 3, fontWeight: 700 }}
+            sx={{
+              color: "#006983",
+              mb: 3,
+              fontWeight: 700,
+              fontSize: { xs: "1.25rem", md: "1.5rem" },
+            }}
           >
             Contact Information
           </Typography>
           <Typography
             variant="h6"
             gutterBottom
-            sx={{ color: "#006983", fontWeight: 500 }}
+            sx={{
+              color: "#006983",
+              fontWeight: 500,
+              fontSize: { xs: "1rem", md: "1.25rem" },
+            }}
           >
             Ruutikellarintie 2, 65100 VAASA
           </Typography>
           <Typography
             variant="h6"
             gutterBottom
-            sx={{ color: "#006983", fontWeight: 500 }}
+            sx={{
+              color: "#006983",
+              fontWeight: 500,
+              fontSize: { xs: "1rem", md: "1.25rem" },
+            }}
           >
             Info: Mon - Fri 8.00-15.45
           </Typography>
           <Typography
             variant="h6"
             gutterBottom
-            sx={{ color: "#006983", fontWeight: 500 }}
+            sx={{
+              color: "#006983",
+              fontWeight: 500,
+              fontSize: { xs: "1rem", md: "1.25rem" },
+            }}
           >
             Tel. +358 6 325 7411
           </Typography>
@@ -131,21 +158,34 @@ export default function Footer() {
           <Typography
             variant="h5"
             gutterBottom
-            sx={{ color: "#006983", mb: 3, fontWeight: 700 }}
+            sx={{
+              color: "#006983",
+              mb: 3,
+              fontWeight: 700,
+              fontSize: { xs: "1.25rem", md: "1.5rem" },
+            }}
           >
             Browse our selection
           </Typography>
           <Typography
             variant="h6"
             gutterBottom
-            sx={{ color: "#006983", fontWeight: 500 }}
+            sx={{
+              color: "#006983",
+              fontWeight: 500,
+              fontSize: { xs: "1rem", md: "1.25rem" },
+            }}
           >
             Programmes
           </Typography>
           <Typography
             variant="h6"
             gutterBottom
-            sx={{ color: "#006983", fontWeight: 500 }}
+            sx={{
+              color: "#006983",
+              fontWeight: 500,
+              fontSize: { xs: "1rem", md: "1.25rem" },
+            }}
           >
             About us
           </Typography>
@@ -155,7 +195,12 @@ export default function Footer() {
           <Typography
             variant="h5"
             gutterBottom
-            sx={{ color: "#006983", mb: 3, fontWeight: 700 }}
+            sx={{
+              color: "#006983",
+              mb: 3,
+              fontWeight: 700,
+              fontSize: { xs: "1.25rem", md: "1.5rem" },
+            }}
           >
             Useful links
           </Typography>
@@ -163,14 +208,22 @@ export default function Footer() {
           <Typography
             variant="h6"
             gutterBottom
-            sx={{ color: "#006983", fontWeight: 500 }}
+            sx={{
+              color: "#006983",
+              fontWeight: 500,
+              fontSize: { xs: "1rem", md: "1.25rem" },
+            }}
           >
             VamiaGuide
           </Typography>
           <Typography
             variant="h6"
             gutterBottom
-            sx={{ color: "#006983", fontWeight: 500 }}
+            sx={{
+              color: "#006983",
+              fontWeight: 500,
+              fontSize: { xs: "1rem", md: "1.25rem" },
+            }}
           >
             Contact us
           </Typography>

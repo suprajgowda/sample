@@ -1,5 +1,5 @@
 import React from "react";
-import Footer from "./Footer";
+import { useNavigate } from "react-router-dom";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -17,41 +17,69 @@ import ListItemText from "@mui/material/ListItemText";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import YouTubeIcon from "@mui/icons-material/YouTube";
-import { useNavigate } from "react-router-dom";
+import Footer from "./Footer";
+import "./HomePage.css";
 
 export default function HomePage() {
   return (
     <>
       <DrawerAppBar />
-      <Box sx={{ display: "flex", mt: "5%" }}>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: { xs: "column", md: "row" },
+          mt: { xs: "55px", md: "5%" },
+        }}
+      >
         <img
           src="https://vamia.fi/wp-content/uploads/2023/06/brooke-cagle-uHVRvDr7pg-unsplash.jpg"
           alt="Home Page"
-          style={{ width: "60%" }}
+          className="hmp1"
         />
         <Box
           sx={{
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
-            pl: 6,
+            pl: { xs: 0, sm: 6 },
+            mt: { xs: 5, sm: 0 },
           }}
         >
           <Typography
             variant="h3"
             component="div"
-            sx={{ pb: 4, fontWeight: 700 }}
+            sx={{
+              pb: 4,
+              fontWeight: 700,
+              fontSize: { xs: "2rem", sm: "3rem" },
+              textAlign: { xs: "center", sm: "left" },
+            }}
           >
             Welcome to Maple
           </Typography>
-          <Typography variant="h5" component="div" sx={{ fontWeight: 700 }}>
+          <Typography
+            variant="h5"
+            component="div"
+            sx={{
+              fontWeight: 700,
+              fontSize: { xs: "1.25rem", sm: "1.5rem" },
+              textAlign: { xs: "center", sm: "left" },
+            }}
+          >
             Where Innovation Meets Opportunity!
           </Typography>
         </Box>
       </Box>
 
       <Box
-        sx={{ display: "flex", justifyContent: "space-evenly", py: 4, my: 6 }}
+        sx={{
+          display: "flex",
+          flexDirection: { xs: "column", md: "row" },
+          justifyContent: "space-evenly",
+          py: 4,
+          my: { xs: 2, md: 6 },
+          mx: { xs: 2, md: 0 },
+        }}
       >
         <Box
           sx={{ backgroundColor: "#fdb2c2", py: 2, px: 8, borderRadius: "5px" }}
@@ -66,7 +94,13 @@ export default function HomePage() {
         </Box>
 
         <Box
-          sx={{ backgroundColor: "#ef9780", py: 2, px: 8, borderRadius: "5px" }}
+          sx={{
+            backgroundColor: "#ef9780",
+            my: { xs: 2, md: 0 },
+            py: 2,
+            px: 8,
+            borderRadius: "5px",
+          }}
         >
           <Typography
             variant="h5"
@@ -116,6 +150,7 @@ export default function HomePage() {
             alignItems: "center",
             mx: "10%",
             mb: 4,
+            flexDirection: { xs: "column", md: "row" },
           }}
         >
           <Typography
@@ -126,7 +161,14 @@ export default function HomePage() {
             What's happening at Maplex
           </Typography>
 
-          <Box>
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "start",
+              width: { xs: "100%", md: "auto" },
+              flexWrap: { xs: "wrap", md: "nowrap" },
+            }}
+          >
             <IconButton
               aria-label="delete"
               size="large"
@@ -136,6 +178,7 @@ export default function HomePage() {
                 boxShadow: "5px 5px 0px 0px #EF9780",
                 mr: 2,
                 p: 1,
+                mt: { xs: 2, sm: 0 },
                 "&:hover": {
                   backgroundColor: "#006983",
                 },
@@ -153,6 +196,7 @@ export default function HomePage() {
                 boxShadow: "5px 5px 0px 0px #FDB2C2",
                 mr: 2,
                 p: 1,
+                mt: { xs: 2, sm: 0 },
                 "&:hover": {
                   backgroundColor: "#006983",
                 },
@@ -170,6 +214,7 @@ export default function HomePage() {
                 boxShadow: "5px 5px 0px 0px #D6E3C5",
                 mr: 2,
                 p: 1,
+                mt: { xs: 2, sm: 0 },
                 "&:hover": {
                   backgroundColor: "#006983",
                 },
@@ -184,6 +229,7 @@ export default function HomePage() {
                 color: "#fff",
                 px: 3,
                 py: 1.1,
+                mt: { xs: 2, sm: 0 },
                 fontSize: "1rem",
                 borderRadius: "0.65rem",
                 fontWeight: 700,
@@ -202,13 +248,14 @@ export default function HomePage() {
               display: "flex",
               boxShadow: "0px 3px 35px 0px rgba(0, 0, 0, 0.29)",
               mx: "10%",
+              flexDirection: { xs: "column", md: "row" },
             }}
           >
             <Box>
               <img
                 alt="Home Page Banner"
                 src="https://vamia.fi/wp-content/uploads/2023/10/DM0A2435-1024x683.jpg"
-                style={{ maxWidth: "700px", height: "500px" }}
+                className="hom1"
               />
             </Box>
             <Box
@@ -217,18 +264,23 @@ export default function HomePage() {
                 flexDirection: "column",
                 flexWrap: "wrap",
                 justifyContent: "center",
-                px: 5,
+                px: { xs: 2, md: 5 },
+                py: { xs: 2, md: 0 },
               }}
             >
               <Typography
                 variant="h6"
-                sx={{ fontSize: "20px", fontWeight: 700 }}
+                sx={{ fontSize: { xs: "18px", md: "20px" }, fontWeight: 700 }}
               >
                 Status update on the December application round
               </Typography>
               <Typography
                 variant="h6"
-                sx={{ fontSize: "1rem", fontWeight: 500, mt: 4 }}
+                sx={{
+                  fontSize: { xs: "0.85rem", md: "1rem" },
+                  fontWeight: 500,
+                  mt: { xs: 2, md: 4 },
+                }}
               >
                 The processing phase of the December application round is still
                 ongoing. Interview invitations will be sent out by January 12th,
@@ -252,6 +304,7 @@ export default function HomePage() {
               <Box
                 sx={{
                   display: "flex",
+                  flexDirection: { xs: "column", sm: "row" },
                   maxWidth: "450px",
                   borderRadius: "50px",
                   boxShadow: "0px 3px 35px 0px rgba(0, 0, 0, 0.29)",
@@ -265,8 +318,11 @@ export default function HomePage() {
                     backgroundPositionY: "center",
                     backgroundImage: `url(https://vamia.fi/wp-content/uploads/2023/11/Kopio-Kopio-Valmistujaisjuhla-23.png)`,
                     height: "200px",
-                    width: "50%",
-                    borderRadius: "0px 0px 0px 50px",
+                    width: { xs: "100%", sm: "50%" },
+                    borderRadius: {
+                      xs: "50px 0px 0px 0px",
+                      sm: "0px 0px 0px 50px",
+                    },
                   }}
                 ></Box>
                 <Box
@@ -277,8 +333,11 @@ export default function HomePage() {
                     alignItems: "center",
                     justifyContent: "center",
                     p: 2.5,
-                    width: "50%",
-                    borderRadius: "0px 50px 0px 0px",
+                    borderRadius: {
+                      xs: "0px 0px 50px 0px",
+                      sm: "0px 50px 0px 0px",
+                    },
+                    width: { xs: "100%", sm: "100%" },
                   }}
                 >
                   <Typography
@@ -287,7 +346,7 @@ export default function HomePage() {
                     sx={{
                       textAlign: "center",
                       color: "#000",
-                      fontSize: "20px",
+                      fontSize: { xs: "15px", sm: "20px" },
                       fontWeight: "700",
                     }}
                   >
