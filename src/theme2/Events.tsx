@@ -11,6 +11,7 @@ import PriceAndRecognition from "../assets/price_and_recognition.jpg";
 import Skill from "../assets/skillDevelopment.jpg";
 import Networking from "../assets/networking.jpg";
 import ProblemSolving from "../assets/problemSolving.jpg";
+import "./HomePage.css";
 
 const events1 = [
   {
@@ -68,11 +69,17 @@ export default function Events() {
     <>
       <DrawerAppBar />
 
-      <Box sx={{ display: "flex", mt: "5%" }}>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: { xs: "column", md: "row" },
+          mt: { xs: "55px", md: "5%" },
+        }}
+      >
         <img
           src="https://vamia.fi/wp-content/uploads/2023/06/brooke-cagle-uHVRvDr7pg-unsplash.jpg"
           alt="Home Page"
-          style={{ width: "60%" }}
+          className="hmp1"
         />
         <Box
           sx={{
@@ -104,7 +111,11 @@ export default function Events() {
           >
             What is a Hackathon ?
           </Typography>
-          <Typography variant="h6" component="div" sx={{ fontWeight: 400 }}>
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{ fontWeight: 400, fontSize: { xs: "1rem", sm: "1.25rem" } }}
+          >
             Welcome to the InnovateCode Hackathon, where innovation meets
             collaboration! If you're new to the concept of a hackathon, you're
             in for an exciting journey into the heart of creative
@@ -128,7 +139,11 @@ export default function Events() {
             Defining the Hackathon Experience
           </Typography>
 
-          <Typography variant="h6" component="div" sx={{ fontWeight: 400 }}>
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{ fontWeight: 400, fontSize: { xs: "1rem", sm: "1.25rem" } }}
+          >
             A hackathon is an intensive, time-limited event that gathers
             individuals with diverse skills, ranging from coding and design to
             entrepreneurship and project management. Participants, often
@@ -153,14 +168,14 @@ export default function Events() {
                 sx={{
                   display: "flex",
                   flexDirection: "column",
-                  width: "43%",
+                  width: { xs: "100%", sm: "43%" },
                   justifyContent: "space-between",
                   alignItems: "center",
                   border: "1px solid #4b4b4b29",
                   borderTop: "5px solid #006983",
                   boxShadow: "0px 3px 6px #00000029",
-                  mx: 4,
-                  my: 4,
+                  mx: { xs: 0, sm: 4 },
+                  my: { xs: 2, sm: 4 },
                 }}
               >
                 <img
@@ -176,8 +191,9 @@ export default function Events() {
                     fontWeight: 700,
                     textAlign: "left",
                     width: "100%",
-                    px: 4,
+                    px: { xs: 2, sm: 4 },
                     my: 2,
+                    fontSize: { xs: "1.25rem", sm: "1.5rem" },
                   }}
                 >
                   {event1.title}
@@ -186,7 +202,13 @@ export default function Events() {
                 <Typography
                   variant="subtitle1"
                   gutterBottom
-                  sx={{ textAlign: "left", px: 4, mb: 4, fontWeight: 500 }}
+                  sx={{
+                    textAlign: "left",
+                    px: { xs: 2, sm: 4 },
+                    mb: 4,
+                    fontWeight: 500,
+                    fontSize: { xs: "0.75rem", sm: "1rem" },
+                  }}
                 >
                   {event1.desc}
                 </Typography>
@@ -195,11 +217,22 @@ export default function Events() {
           })}
         </Box>
 
-        <Box sx={{ display: "flex", flexDirection: "column", mt: 12, mb: 6 }}>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            mt: { xs: 8, sm: 12 },
+            mb: 6,
+          }}
+        >
           <Typography
             variant="h3"
             component="div"
-            sx={{ pb: 0, fontWeight: 700 }}
+            sx={{
+              pb: 0,
+              fontWeight: 700,
+              fontSize: { xs: "2rem", sm: "3rem" },
+            }}
           >
             Why Participate in a Hackathon?
           </Typography>
@@ -210,7 +243,7 @@ export default function Events() {
               flexDirection: "row",
               flexWrap: "wrap",
               justifyContent: "space-between",
-              my: 6,
+              my: { xs: 0, sm: 6 },
             }}
           >
             {events2.map((event2) => {
@@ -219,14 +252,14 @@ export default function Events() {
                   sx={{
                     display: "flex",
                     flexDirection: "column",
-                    width: "43%",
+                    width: { xs: "100%", sm: "43%" },
                     justifyContent: "space-between",
                     alignItems: "center",
                     border: "1px solid #4b4b4b29",
                     borderTop: "5px solid #006983",
                     boxShadow: "0px 3px 6px #00000029",
-                    mx: 4,
-                    my: 4,
+                    mx: { xs: 0, sm: 4 },
+                    my: { xs: 2, sm: 4 },
                   }}
                 >
                   <img
@@ -242,8 +275,9 @@ export default function Events() {
                       fontWeight: 700,
                       textAlign: "left",
                       width: "100%",
-                      px: 4,
+                      px: { xs: 2, sm: 4 },
                       my: 2,
+                      fontSize: { xs: "1.25rem", sm: "1.5rem" },
                     }}
                   >
                     {event2.title}
@@ -252,7 +286,13 @@ export default function Events() {
                   <Typography
                     variant="subtitle1"
                     gutterBottom
-                    sx={{ textAlign: "left", px: 4, mb: 4, fontWeight: 500 }}
+                    sx={{
+                      textAlign: "left",
+                      px: { xs: 2, sm: 4 },
+                      mb: 4,
+                      fontWeight: 500,
+                      fontSize: { xs: "0.75rem", sm: "1rem" },
+                    }}
                   >
                     {event2.desc}
                   </Typography>
@@ -262,16 +302,30 @@ export default function Events() {
           </Box>
         </Box>
 
-        <Box sx={{ display: "flex", flexDirection: "column", my: 10 }}>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            my: { xs: 5, md: 10 },
+          }}
+        >
           <Typography
             variant="h5"
             component="div"
-            sx={{ pb: 4, fontWeight: 700 }}
+            sx={{
+              pb: 4,
+              fontWeight: 700,
+              fontSize: { xs: "1.25rem", md: "1.5rem" },
+            }}
           >
             InnovateCode Hackathon: Your Gateway to Innovation!
           </Typography>
 
-          <Typography variant="h6" component="div" sx={{ fontWeight: 400 }}>
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{ fontWeight: 400, fontSize: { xs: "1rem", md: "1.25rem" } }}
+          >
             At InnovateCode, we believe in the power of collaboration and the
             limitless potential of creative minds. Our hackathon is designed to
             provide a platform where participants can push their boundaries,
@@ -281,17 +335,31 @@ export default function Events() {
           </Typography>
         </Box>
 
-        <Box sx={{ display: "flex", flexDirection: "column", my: 10 }}>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            my: { xs: 5, md: 10 },
+          }}
+        >
           <Typography
             variant="h5"
             component="div"
-            sx={{ pb: 4, fontWeight: 700 }}
+            sx={{
+              pb: 4,
+              fontWeight: 700,
+              fontSize: { xs: "1.25rem", md: "1.5rem" },
+            }}
           >
             Welcome to [Your Organization's] Hackathon Collaboration
             Opportunity!
           </Typography>
 
-          <Typography variant="h6" component="div" sx={{ fontWeight: 400 }}>
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{ fontWeight: 400, fontSize: { xs: "1rem", md: "1.25rem" } }}
+          >
             Are you passionate about fostering innovation, supporting emerging
             talent, and contributing to the ever-evolving landscape of
             technology? If so, collaborating with us in our upcoming hackathon

@@ -2,6 +2,7 @@ import React from "react";
 import { Box, Typography } from "@mui/material";
 import { DrawerAppBar } from "./HomePage";
 import Footer from "./Footer";
+import "./HomePage.css";
 
 const skillsList = [
   {
@@ -214,11 +215,17 @@ export default function Skills() {
     <>
       <DrawerAppBar />
 
-      <Box sx={{ display: "flex", mt: "5%" }}>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: { xs: "column", md: "row" },
+          mt: { xs: "55px", md: "5%" },
+        }}
+      >
         <img
           src="https://vamia.fi/wp-content/uploads/2023/06/brooke-cagle-uHVRvDr7pg-unsplash.jpg"
           alt="Home Page"
-          style={{ width: "60%" }}
+          className="hmp1"
         />
         <Box
           sx={{
@@ -250,7 +257,11 @@ export default function Skills() {
           >
             Overview of Live Projects at MAPLE
           </Typography>
-          <Typography variant="h6" component="div" sx={{ fontWeight: 400 }}>
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{ fontWeight: 400, fontSize: { xs: "1rem", sm: "1.25rem" } }}
+          >
             Embark on a transformative journey where theoretical knowledge meets
             real-world application through our Live Projects at MAPLE. Our
             projects are carefully crafted to provide participants with hands-on
@@ -262,13 +273,19 @@ export default function Skills() {
 
       <Box
         sx={{
-          mx: "10%",
+          mx: { xs: "5%", sm: "10%" },
           mt: "8%",
         }}
       >
         {skillsList.map((skill) => {
           return (
-            <Box sx={{ display: "flex", flexDirection: "column", my: 10 }}>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                my: { xs: 5, sm: 10 },
+              }}
+            >
               <Typography
                 variant="h5"
                 component="div"
@@ -277,7 +294,14 @@ export default function Skills() {
                 {skill.title}
               </Typography>
 
-              <Typography variant="h6" component="div" sx={{ fontWeight: 400 }}>
+              <Typography
+                variant="h6"
+                component="div"
+                sx={{
+                  fontWeight: 400,
+                  fontSize: { xs: "1rem", sm: "1.25rem" },
+                }}
+              >
                 {skill.desc}
               </Typography>
             </Box>
@@ -290,7 +314,7 @@ export default function Skills() {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            my: 10,
+            my: { xs: 5, sm: 10 },
           }}
         >
           <Typography
@@ -301,7 +325,11 @@ export default function Skills() {
             Explore Our Project Domains in Detail
           </Typography>
 
-          <Typography variant="h6" component="div" sx={{ fontWeight: 400 }}>
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{ fontWeight: 400, fontSize: { xs: "1rem", sm: "1.25rem" } }}
+          >
             At MAPLE , we offer a spectrum of project domains, each designed to
             immerse participants in the latest technologies and industry trends.
             Choose your area of interest and dive into a hands-on learning
@@ -325,14 +353,14 @@ export default function Skills() {
                 sx={{
                   display: "flex",
                   flexDirection: "column",
-                  width: "43%",
+                  width: { xs: "100%", sm: "43%" },
                   justifyContent: "space-between",
                   alignItems: "start",
                   border: "1px solid #4b4b4b29",
                   borderTop: "5px solid #006983",
                   boxShadow: "0px 3px 6px #00000029",
-                  mx: 4,
-                  my: 4,
+                  mx: { xs: 0, sm: 4 },
+                  my: { xs: 2, sm: 4 },
                 }}
               >
                 <img
@@ -348,8 +376,9 @@ export default function Skills() {
                     fontWeight: 700,
                     textAlign: "left",
                     width: "100%",
-                    px: 4,
+                    px: { xs: 2, sm: 4 },
                     my: 2,
+                    fontSize: { xs: "1.25rem", sm: "1.5rem" },
                   }}
                 >
                   {proj.header}
@@ -363,9 +392,10 @@ export default function Skills() {
                         gutterBottom
                         sx={{
                           textAlign: "left",
-                          px: 4,
+                          px: { xs: 2, sm: 4 },
                           mb: 1,
                           fontWeight: 500,
+                          fontSize: { xs: "0.75rem", sm: "1rem" },
                         }}
                       >
                         {prjLs.key1}
@@ -375,9 +405,10 @@ export default function Skills() {
                         gutterBottom
                         sx={{
                           textAlign: "left",
-                          px: 4,
+                          px: { xs: 2, sm: 4 },
                           mb: 3,
                           fontWeight: 400,
+                          fontSize: { xs: "0.75rem", sm: "1rem" },
                         }}
                       >
                         {prjLs.value}
@@ -393,7 +424,11 @@ export default function Skills() {
         <Typography
           variant="h6"
           component="div"
-          sx={{ fontWeight: 400, mb: 6 }}
+          sx={{
+            fontWeight: 400,
+            mb: 6,
+            fontSize: { xs: "1rem", sm: "1.25rem" },
+          }}
         >
           Each project domain at MAPLE offers a unique learning experience,
           providing participants with the skills and knowledge necessary to

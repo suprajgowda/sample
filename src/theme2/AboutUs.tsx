@@ -11,6 +11,7 @@ import Adaptability from "../assets/Adaptability.jpg";
 import Empowerment from "../assets/Empowerment.jpg";
 import Continuous_Learning from "../assets/Continuous-Learning.jpg";
 import Fun_and_Enjoyment from "../assets/Fun-and-Enjoyment.jpg";
+import "./HomePage.css";
 
 const listOfAboutUs = [
   {
@@ -73,11 +74,17 @@ export default function AboutUs() {
     <>
       <DrawerAppBar />
 
-      <Box sx={{ display: "flex", mt: "5%" }}>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: { xs: "column", md: "row" },
+          mt: { xs: "55px", md: "5%" },
+        }}
+      >
         <img
           src="https://vamia.fi/wp-content/uploads/2023/06/brooke-cagle-uHVRvDr7pg-unsplash.jpg"
           alt="Home Page"
-          style={{ width: "60%" }}
+          className="hmp1"
         />
         <Box
           sx={{
@@ -109,7 +116,11 @@ export default function AboutUs() {
           >
             Vision
           </Typography>
-          <Typography variant="h6" component="div" sx={{ fontWeight: 400 }}>
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{ fontWeight: 400, fontSize: { xs: "1rem", sm: "1.25rem" } }}
+          >
             "Empowering Tomorrow's Industry Leaders: Our vision is to provide
             industry-ready education that transcends traditional boundaries,
             shaping graduates who lead with expertise and hands-on skills."
@@ -152,7 +163,11 @@ export default function AboutUs() {
           <Typography
             variant="h6"
             component="div"
-            sx={{ fontWeight: 400, textAlign: "justify" }}
+            sx={{
+              fontWeight: 400,
+              textAlign: "justify",
+              fontSize: { xs: "1rem", sm: "1.25rem" },
+            }}
           >
             "At Maple TechX, we are on a mission to revolutionize education with
             hands-on, skill-based learning. Our commitment is to equip students
@@ -185,7 +200,7 @@ export default function AboutUs() {
                     my: 4,
                     px: 2,
                     py: 2,
-                    mx: 4,
+                    mx: { xs: 0, sm: 4 },
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "center",
@@ -206,13 +221,22 @@ export default function AboutUs() {
                       margin: "25px",
                     }}
                   />
-                  <Typography variant="h6" gutterBottom>
+                  <Typography
+                    variant="h6"
+                    gutterBottom
+                    sx={{
+                      fontSize: { xs: "1rem", sm: "1.25rem" },
+                    }}
+                  >
                     {aboutUs.key1}
                   </Typography>{" "}
                   <Typography
                     variant="subtitle1"
                     gutterBottom
-                    sx={{ color: "#76777a" }}
+                    sx={{
+                      color: "#76777a",
+                      fontSize: { xs: "0.75rem", sm: "1rem" },
+                    }}
                   >
                     {aboutUs.key2}
                   </Typography>
@@ -248,14 +272,14 @@ export default function AboutUs() {
                 sx={{
                   display: "flex",
                   flexDirection: "column",
-                  width: "43%",
+                  width: { xs: "100%", sm: "43%" },
                   justifyContent: "space-between",
                   alignItems: "start",
                   border: "1px solid #4b4b4b29",
                   borderTop: "5px solid #006983",
                   boxShadow: "0px 3px 6px #00000029",
-                  mx: 4,
-                  my: 4,
+                  mx: { xs: 0, sm: 4 },
+                  my: { xs: 2, sm: 4 },
                 }}
               >
                 <img
@@ -271,8 +295,9 @@ export default function AboutUs() {
                     fontWeight: 700,
                     textAlign: "left",
                     width: "100%",
-                    px: 4,
+                    px: { xs: 2, sm: 4 },
                     my: 2,
+                    fontSize: { xs: "1.25rem", sm: "1.5rem" },
                   }}
                 >
                   {about.key1}
@@ -282,9 +307,10 @@ export default function AboutUs() {
                   gutterBottom
                   sx={{
                     textAlign: "left",
-                    px: 4,
+                    px: { xs: 2, sm: 4 },
                     mb: 3,
                     fontWeight: 400,
+                    fontSize: { xs: "0.75rem", sm: "1rem" },
                   }}
                 >
                   {about.key2}

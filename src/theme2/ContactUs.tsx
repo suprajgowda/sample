@@ -12,7 +12,7 @@ export default function ContactUs() {
       <Box
         sx={{
           mx: "10%",
-          mt: "8%",
+          mt: { xs: "75px", md: "8%" },
         }}
       >
         <Typography
@@ -35,7 +35,7 @@ export default function ContactUs() {
             flexDirection: "column",
             mt: 4,
             mb: 5,
-            mx: "10%",
+            mx: { xs: "0%", md: "10%" },
             justifyContent: "center",
             alignItems: "center",
           }}
@@ -48,7 +48,7 @@ export default function ContactUs() {
           <Button
             variant="contained"
             sx={{
-              width: { xs: "50%", md: "40%" },
+              width: { xs: "100%", sm: "40%" },
               backgroundColor: "#006983",
               "&:hover": {
                 backgroundColor: "#006983",

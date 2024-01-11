@@ -318,7 +318,7 @@ export default function HomePage() {
                     backgroundPositionY: "center",
                     backgroundImage: `url(https://vamia.fi/wp-content/uploads/2023/11/Kopio-Kopio-Valmistujaisjuhla-23.png)`,
                     height: "200px",
-                    width: { xs: "100%", sm: "50%" },
+                    width: { xs: "100%", sm: "100%" },
                     borderRadius: {
                       xs: "50px 0px 0px 0px",
                       sm: "0px 0px 0px 50px",
