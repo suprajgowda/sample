@@ -513,14 +513,7 @@ export function DrawerAppBar(props: Props) {
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
-              <Button
-                key={item.title}
-                onClick={() => {
-                  console.log(":ink = ", item.link);
-                  navigate(item.link);
-                }}
-                sx={{ color: "#fff" }}
-              >
+              <Button key={item.title} href={item.link} sx={{ color: "#fff" }}>
                 {item.title}
               </Button>
             ))}
