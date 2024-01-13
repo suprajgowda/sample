@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -367,7 +367,7 @@ export default function HomePage() {
 // const pages = ["Products", "Pricing", "Blog"];
 
 // function ResponsiveAppBar() {
-//   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
+//   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(
 //     null
 //   );
 
@@ -507,9 +507,9 @@ const navItems = [
   },
 ];
 
-export function DrawerAppBar(props: Props) {
+export const DrawerAppBar = (props: Props) => {
   const { window } = props;
-  const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
   const navigate = useNavigate();
 
   const handleDrawerToggle = () => {
@@ -603,4 +603,4 @@ export function DrawerAppBar(props: Props) {
       </nav>
     </Box>
   );
-}
+};

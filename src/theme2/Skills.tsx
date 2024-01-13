@@ -2,6 +2,16 @@ import React from "react";
 import { Box, Typography } from "@mui/material";
 import { DrawerAppBar } from "./HomePage";
 import Footer from "./Footer";
+import AI from "../assets/ai3.jpg";
+import Natural from "../assets/nlp.png";
+import Block from "../assets/block-chain.jpg";
+import Machine from "../assets/machineLearning2.jpg";
+import Neural from "../assets/neural-network.jpg";
+import Cloud from "../assets/cloud-computing.jpg";
+import Web from "../assets/webprojects.jpg";
+import Aero from "../assets/aerospace.jpg";
+import Robotics from "../assets/robotics.jpg";
+import ThreeD from "../assets/3DPrinter.jpg";
 import "./HomePage.css";
 
 const skillsList = [
@@ -55,6 +65,7 @@ const projectDomainList = [
         value: " Programming in Python, machine learning, data analysis.",
       },
     ],
+    img: AI,
   },
   {
     header: "Natural Language Detection:",
@@ -76,6 +87,7 @@ const projectDomainList = [
           " Natural language processing, text analysis, algorithm development.",
       },
     ],
+    img: Natural,
   },
   {
     header: "Blockchain:",
@@ -97,6 +109,7 @@ const projectDomainList = [
           " Smart contract development, decentralized application (DApp) creation, blockchain architecture.",
       },
     ],
+    img: Block,
   },
   {
     header: "Machine Learning:",
@@ -118,6 +131,7 @@ const projectDomainList = [
           " Data preprocessing, model training, evaluation, and optimization.",
       },
     ],
+    img: Machine,
   },
   {
     header: "Neural Network:",
@@ -137,6 +151,7 @@ const projectDomainList = [
         value: " Deep learning, neural network architecture, model tuning.",
       },
     ],
+    img: Neural,
   },
   {
     header: "Cloud Computing:",
@@ -157,6 +172,7 @@ const projectDomainList = [
         value: " Cloud architecture, deployment, and management.",
       },
     ],
+    img: Cloud,
   },
   {
     header: "Web-Based Projects:",
@@ -177,6 +193,7 @@ const projectDomainList = [
         value: " Front-end and back-end development, database management.",
       },
     ],
+    img: Web,
   },
   {
     header: "Aerospace and Thermal:",
@@ -197,16 +214,19 @@ const projectDomainList = [
         value: " Aerospace engineering principles, thermal system design.",
       },
     ],
+    img: Aero,
   },
   {
     header: "Robotics",
     key: "Robotics",
     list: [],
+    img: Robotics,
   },
   {
     header: "3D Printer",
     key: "3D Printer",
     list: [],
+    img: ThreeD,
   },
 ];
 
@@ -364,7 +384,7 @@ export default function Skills() {
                 }}
               >
                 <img
-                  src="https://vamia.fi/wp-content/uploads/2023/06/brooke-cagle-uHVRvDr7pg-unsplash.jpg"
+                  src={proj.img}
                   alt="Home Page"
                   style={{ width: "100%", height: "100%" }}
                 />
