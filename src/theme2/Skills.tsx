@@ -10,7 +10,7 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import { DrawerAppBar, HeaderNew } from "./HomePage";
+import { HeaderNew } from "./HomePage";
 import Footer from "./Footer";
 import AI from "../assets/ai3.jpg";
 import Natural from "../assets/nlp.png";

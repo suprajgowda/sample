@@ -642,28 +642,12 @@ function NewHeader() {
 
 const homeLink = "/";
 const eventsLink = "/events";
-const aboutUsLink = "/about-us";
 const skillsLink = "/skills";
 const contactUsLink = "/contact-us";
-
-const homeList = {
-  link: homeLink,
-  list: ["Welcome Message", "Overview of Maple TechX"],
-};
 
 const skillsTraining = {
   link: skillsLink,
   list: ["Internship", "Projects", "M-SpaceX", "M-AirX"],
-};
-
-const aboutUs = {
-  link: aboutUsLink,
-  list: ["Vision", "Mission", "Value and Culture", "Why choose us"],
-};
-
-const skills = {
-  link: skillsLink,
-  list: ["Overview of Live Projects", "Project domains"],
 };
 
 const eventsList = {
