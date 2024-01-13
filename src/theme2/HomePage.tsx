@@ -19,6 +19,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import Footer from "./Footer";
 import "./HomePage.css";
+import { Link } from "@mui/material";
 
 export default function HomePage() {
   return (
@@ -41,8 +42,17 @@ export default function HomePage() {
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
-            pl: { xs: 0, sm: 6 },
+            px: { xs: "10%", sm: 6 },
+            pl: { xs: "10%", sm: 6 },
+            py: { xs: "10%" },
             mt: { xs: 5, sm: 0 },
+            boxShadow: "0px 5px 10px 0px rgba(0, 0, 0, 0.29)",
+            position: { xs: "absolute", sm: "static" },
+            zIndex: { xs: 1 },
+            backgroundColor: "white",
+            width: { xs: "80%", sm: "auto" },
+            bottom: { xs: "36%", sm: "0" },
+            left: { xs: "8%", sm: "0" },
           }}
         >
           <Typography
@@ -51,7 +61,7 @@ export default function HomePage() {
             sx={{
               pb: 4,
               fontWeight: 700,
-              fontSize: { xs: "2rem", sm: "3rem" },
+              fontSize: { xs: "1.75rem", sm: "2.5rem" },
               textAlign: { xs: "center", sm: "left" },
             }}
           >
@@ -62,7 +72,7 @@ export default function HomePage() {
             component="div"
             sx={{
               fontWeight: 700,
-              fontSize: { xs: "1.25rem", sm: "1.5rem" },
+              fontSize: { xs: "1rem", sm: "1.25rem" },
               textAlign: { xs: "center", sm: "left" },
             }}
           >
@@ -346,7 +356,7 @@ export default function HomePage() {
                     sx={{
                       textAlign: "center",
                       color: "#000",
-                      fontSize: { xs: "15px", sm: "20px" },
+                      fontSize: { xs: "15px", sm: "18px" },
                       fontWeight: "700",
                     }}
                   >
@@ -521,9 +531,11 @@ export const DrawerAppBar = (props: Props) => {
       onClick={handleDrawerToggle}
       sx={{ textAlign: "center", backgroundColor: "#006983" }}
     >
-      <Typography variant="h6" sx={{ my: 2 }}>
-        Maple Tech
-      </Typography>
+      <Link href="/" color="inherit" underline="none">
+        <Typography variant="h6" sx={{ my: 2 }}>
+          Maple Tech
+        </Typography>
+      </Link>
       <Divider />
       <List>
         {navItems.map((item) => (
@@ -568,13 +580,20 @@ export const DrawerAppBar = (props: Props) => {
             component="div"
             sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
           >
-            Maple Tech
+            <Link href="/" color="inherit" underline="none">
+              Maple Tech
+            </Link>
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
-              <Button key={item.title} href={item.link} sx={{ color: "#fff" }}>
+              <Link
+                href={item.link}
+                color="inherit"
+                underline="none"
+                sx={{ mx: 2 }}
+              >
                 {item.title}
-              </Button>
+              </Link>
             ))}
           </Box>
         </Toolbar>
