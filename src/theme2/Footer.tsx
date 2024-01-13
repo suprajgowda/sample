@@ -33,10 +33,10 @@ export default function Footer() {
             m: 0,
             fontWeight: 700,
             mr: 4,
-            fontSize: { xs: "2rem", md: "3rem" },
+            fontSize: { xs: "1.75rem", md: "2.5rem" },
           }}
         >
-          Maple Tech
+          Maple Tech X
         </Typography>
 
         <Box sx={{ my: 0 }}>

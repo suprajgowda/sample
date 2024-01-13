@@ -166,9 +166,13 @@ export default function HomePage() {
           <Typography
             variant="h3"
             gutterBottom
-            sx={{ fontWeight: 700, marginBottom: 0 }}
+            sx={{
+              fontWeight: 700,
+              marginBottom: 0,
+              fontSize: { xs: "1.75rem", md: "2.5rem" },
+            }}
           >
-            What's happening at Maplex
+            What's happening at Maple Tech X
           </Typography>
 
           <Box
@@ -176,7 +180,7 @@ export default function HomePage() {
               display: "flex",
               justifyContent: "start",
               width: { xs: "100%", md: "auto" },
-              flexWrap: { xs: "wrap", md: "nowrap" },
+              flexWrap: { xs: "wrap", md: "wrap" },
             }}
           >
             <IconButton
@@ -192,6 +196,7 @@ export default function HomePage() {
                 "&:hover": {
                   backgroundColor: "#006983",
                 },
+                maxHeight: "50px",
               }}
             >
               <FacebookIcon fontSize="inherit" sx={{ color: "#fff" }} />
@@ -210,6 +215,7 @@ export default function HomePage() {
                 "&:hover": {
                   backgroundColor: "#006983",
                 },
+                maxHeight: "50px",
               }}
             >
               <InstagramIcon fontSize="inherit" sx={{ color: "#fff" }} />
@@ -228,6 +234,7 @@ export default function HomePage() {
                 "&:hover": {
                   backgroundColor: "#006983",
                 },
+                maxHeight: "50px",
               }}
             >
               <YouTubeIcon fontSize="inherit" sx={{ color: "#fff" }} />
@@ -533,7 +540,7 @@ export const DrawerAppBar = (props: Props) => {
     >
       <Link href="/" color="inherit" underline="none">
         <Typography variant="h6" sx={{ my: 2 }}>
-          Maple Tech
+          Maple Tech X
         </Typography>
       </Link>
       <Divider />
@@ -581,7 +588,7 @@ export const DrawerAppBar = (props: Props) => {
             sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
           >
             <Link href="/" color="inherit" underline="none">
-              Maple Tech
+              Maple Tech X
             </Link>
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
