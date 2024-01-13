@@ -108,7 +108,7 @@ export default function HomePage() {
             gutterBottom
             sx={{ fontWeight: 700, fontSize: "1rem", marginBottom: 0 }}
           >
-            Programmes
+            Projects
           </Typography>
         </Box>
 
@@ -126,7 +126,7 @@ export default function HomePage() {
             gutterBottom
             sx={{ fontWeight: 700, fontSize: "1rem", marginBottom: 0 }}
           >
-            VamiaGuide
+            Training
           </Typography>
         </Box>
 
@@ -543,7 +543,7 @@ function NewHeader() {
             variant="h5"
             noWrap
             component="a"
-            href="#app-bar-with-responsive-menu"
+            href="/"
             sx={{
               mr: 2,
               display: { xs: "flex", md: "flex" },
@@ -567,7 +567,15 @@ function NewHeader() {
             <Typography
               variant="body2"
               gutterBottom
-              sx={{ m: 0, color: "#000", fontWeight: 500, fontSize: "0.8rem" }}
+              component="a"
+              href="/about-us"
+              sx={{
+                m: 0,
+                color: "#000",
+                fontWeight: 500,
+                fontSize: "0.8rem",
+                textDecoration: "none",
+              }}
             >
               About Us
             </Typography>
@@ -581,7 +589,10 @@ function NewHeader() {
                 color: "#000",
                 fontWeight: 500,
                 fontSize: "0.8rem",
+                textDecoration: "none",
               }}
+              component="a"
+              href="/skills"
             >
               Projects
             </Typography>
@@ -615,6 +626,11 @@ const contactUsLink = "/contact-us";
 const homeList = {
   link: homeLink,
   list: ["Welcome Message", "Overview of Maple TechX"],
+};
+
+const skillsTraining = {
+  link: skillsLink,
+  list: ["Internship", "Projects", "M-SpaceX", "M-AirX"],
 };
 
 const aboutUs = {
@@ -783,19 +799,9 @@ function MobileHeader() {
           }}
         >
           <NavDropdown
-            mainBtnTxt={"Home"}
-            link={homeLink}
-            drpDwnList={homeList.list}
-          />
-          <NavDropdown
-            mainBtnTxt={"About Us"}
-            link={aboutUsLink}
-            drpDwnList={aboutUs.list}
-          />
-          <NavDropdown
-            mainBtnTxt={"Skills"}
+            mainBtnTxt={"Skills and Training"}
             link={skillsLink}
-            drpDwnList={skills.list}
+            drpDwnList={skillsTraining.list}
           />
           <NavDropdown
             mainBtnTxt={"Events"}
@@ -814,8 +820,33 @@ function MobileHeader() {
               borderRadius: 0,
             }}
           >
-            Contact Us
+            Contact Info
           </IconButton>
+
+          <IconButton
+            onClick={() => navigate(homeLink)}
+            sx={{
+              p: 2,
+              fontSize: "0.85rem",
+              textTransform: "uppercase",
+              color: "#fff",
+              fontWeight: 500,
+              borderRadius: 0,
+            }}
+          >
+            Students
+          </IconButton>
+
+          {/* <NavDropdown
+            mainBtnTxt={"About Us"}
+            link={aboutUsLink}
+            drpDwnList={aboutUs.list}
+          />
+          <NavDropdown
+            mainBtnTxt={"Skills"}
+            link={skillsLink}
+            drpDwnList={skills.list}
+          /> */}
         </Menu>
       </Box>
     </Box>
@@ -832,24 +863,6 @@ function NewHeader2() {
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters sx={{ minHeight: "38px !important" }}>
-          {/* <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            onClick={() => navigate(homeLink)}
-            sx={{
-              mr: 2,
-              display: { xs: "none", md: "flex" },
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              textDecoration: "none",
-              color: "#384158",
-            }}
-          >
-            Maple TechX
-          </Typography> */}
-
           <MobileHeader />
 
           <Box
@@ -860,19 +873,9 @@ function NewHeader2() {
             }}
           >
             <NavDropdown
-              mainBtnTxt={"Home"}
-              link={homeLink}
-              drpDwnList={homeList.list}
-            />
-            <NavDropdown
-              mainBtnTxt={"About Us"}
-              link={aboutUsLink}
-              drpDwnList={aboutUs.list}
-            />
-            <NavDropdown
-              mainBtnTxt={"Skills"}
+              mainBtnTxt={"Skills and Training"}
               link={skillsLink}
-              drpDwnList={skills.list}
+              drpDwnList={skillsTraining.list}
             />
             <NavDropdown
               mainBtnTxt={"Events"}
@@ -891,8 +894,33 @@ function NewHeader2() {
                 borderRadius: 0,
               }}
             >
-              Contact Us
+              Contact Info
             </IconButton>
+
+            <IconButton
+              onClick={() => navigate(homeLink)}
+              sx={{
+                p: 2,
+                fontSize: "0.85rem",
+                fontWeight: 700,
+                textTransform: "uppercase",
+                color: "#fff",
+                borderRadius: 0,
+              }}
+            >
+              Students
+            </IconButton>
+
+            {/* <NavDropdown
+              mainBtnTxt={"About Us"}
+              link={aboutUsLink}
+              drpDwnList={aboutUs.list}
+            />
+            <NavDropdown
+              mainBtnTxt={"Skills"}
+              link={skillsLink}
+              drpDwnList={skills.list}
+            /> */}
           </Box>
         </Toolbar>
       </Container>
