@@ -11,6 +11,7 @@ import Events2 from "./theme2/Events";
 import AboutUs2 from "./theme2/AboutUs";
 import ContactUs2 from "./theme2/ContactUs";
 import Skills2 from "./theme2/Skills";
+import "./App.css";
 
 function App() {
   return (
