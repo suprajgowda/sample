@@ -10,7 +10,7 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import { DrawerAppBar } from "./HomePage";
+import { DrawerAppBar, HeaderNew } from "./HomePage";
 import Footer from "./Footer";
 import AI from "../assets/ai3.jpg";
 import Natural from "../assets/nlp.png";
@@ -252,13 +252,13 @@ export default function Skills() {
   };
   return (
     <>
-      <DrawerAppBar />
+      <HeaderNew />
 
       <Box
         sx={{
           display: "flex",
           flexDirection: { xs: "column", md: "row" },
-          mt: { xs: "55px", md: "5%" },
+          // mt: { xs: "55px", md: "5%" },
         }}
       >
         <img

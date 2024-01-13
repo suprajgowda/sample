@@ -1,5 +1,5 @@
 import React from "react";
-import { DrawerAppBar } from "./HomePage";
+import { DrawerAppBar, HeaderNew } from "./HomePage";
 import { Box, Button, Typography } from "@mui/material";
 import Footer from "./Footer";
 import FullWidthTextField from "../FullWidthTextField";
@@ -7,7 +7,7 @@ import FullWidthTextField from "../FullWidthTextField";
 export default function ContactUs() {
   return (
     <>
-      <DrawerAppBar />
+      <HeaderNew />
 
       <Box
         sx={{

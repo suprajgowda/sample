@@ -1,5 +1,5 @@
 import React from "react";
-import { DrawerAppBar } from "./HomePage";
+import { DrawerAppBar, HeaderNew } from "./HomePage";
 import Footer from "./Footer";
 import { Box, Typography } from "@mui/material";
 import TeamCollImage from "../assets/Team_Collaboration.jpg";
@@ -67,13 +67,13 @@ const events2 = [
 export default function Events() {
   return (
     <>
-      <DrawerAppBar />
+      <HeaderNew />
 
       <Box
         sx={{
           display: "flex",
           flexDirection: { xs: "column", md: "row" },
-          mt: { xs: "55px", md: "5%" },
+          // mt: { xs: "55px", md: "5%" },
         }}
       >
         <img

@@ -1,5 +1,5 @@
 import React from "react";
-import { DrawerAppBar } from "./HomePage";
+import { DrawerAppBar, HeaderNew } from "./HomePage";
 import { Box, Typography } from "@mui/material";
 import Footer from "./Footer";
 import Excellence from "../assets/Excellence.png";
@@ -72,13 +72,13 @@ const listOfAboutUs1 = [
 export default function AboutUs() {
   return (
     <>
-      <DrawerAppBar />
+      <HeaderNew />
 
       <Box
         sx={{
           display: "flex",
           flexDirection: { xs: "column", md: "row" },
-          mt: { xs: "55px", md: "5%" },
+          // mt: { xs: "55px", md: "5%" },
         }}
       >
         <img

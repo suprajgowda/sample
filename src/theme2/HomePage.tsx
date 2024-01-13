@@ -17,19 +17,28 @@ import ListItemText from "@mui/material/ListItemText";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import YouTubeIcon from "@mui/icons-material/YouTube";
+import { Container, Link, Menu, MenuItem, TextField } from "@mui/material";
 import Footer from "./Footer";
 import "./HomePage.css";
-import { Link } from "@mui/material";
+
+export function HeaderNew() {
+  return (
+    <>
+      <NewHeader />
+      <NewHeader2 />
+    </>
+  );
+}
 
 export default function HomePage() {
   return (
     <>
-      <DrawerAppBar />
+      <HeaderNew />
       <Box
         sx={{
           display: "flex",
           flexDirection: { xs: "column", md: "row" },
-          mt: { xs: "55px", md: "5%" },
+          // mt: { xs: "55px", md: "5%" },
         }}
       >
         <img
@@ -51,8 +60,8 @@ export default function HomePage() {
             zIndex: { xs: 1 },
             backgroundColor: "white",
             width: { xs: "80%", sm: "auto" },
-            bottom: { xs: "36%", sm: "0" },
-            left: { xs: "8%", sm: "0" },
+            bottom: { xs: "30%", sm: "0" },
+            left: { xs: "0", sm: "0" },
           }}
         >
           <Typography
@@ -381,117 +390,6 @@ export default function HomePage() {
   );
 }
 
-// const pages = ["Products", "Pricing", "Blog"];
-
-// function ResponsiveAppBar() {
-//   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(
-//     null
-//   );
-
-//   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
-//     setAnchorElNav(event.currentTarget);
-//   };
-
-//   const handleCloseNavMenu = () => {
-//     setAnchorElNav(null);
-//   };
-
-//   return (
-//     <AppBar
-//       position="static"
-//       sx={{ backgroundColor: "#efefef", boxShadow: "none" }}
-//     >
-//       <Container maxWidth="xl">
-//         <Toolbar disableGutters>
-//           <Typography
-//             variant="h6"
-//             noWrap
-//             component="a"
-//             sx={{
-//               mr: 2,
-//               display: { xs: "none", md: "flex" },
-//               fontFamily: "monospace",
-//               fontWeight: 700,
-//               letterSpacing: ".3rem",
-//               color: "black",
-//               textDecoration: "none",
-//             }}
-//           >
-//             LOGO
-//           </Typography>
-
-//           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-//             <IconButton
-//               size="large"
-//               aria-label="account of current user"
-//               aria-controls="menu-appbar"
-//               aria-haspopup="true"
-//               onClick={handleOpenNavMenu}
-//               color="inherit"
-//             >
-//               <MenuIcon />
-//             </IconButton>
-//             <Menu
-//               id="menu-appbar"
-//               anchorEl={anchorElNav}
-//               anchorOrigin={{
-//                 vertical: "bottom",
-//                 horizontal: "left",
-//               }}
-//               keepMounted
-//               transformOrigin={{
-//                 vertical: "top",
-//                 horizontal: "left",
-//               }}
-//               open={Boolean(anchorElNav)}
-//               onClose={handleCloseNavMenu}
-//               sx={{
-//                 display: { xs: "block", md: "none" },
-//               }}
-//             >
-//               {pages.map((page) => (
-//                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-//                   <Typography textAlign="center">{page}</Typography>
-//                 </MenuItem>
-//               ))}
-//             </Menu>
-//           </Box>
-
-//           <Typography
-//             variant="h5"
-//             noWrap
-//             component="a"
-//             href="#app-bar-with-responsive-menu"
-//             sx={{
-//               mr: 2,
-//               display: { xs: "flex", md: "none" },
-//               flexGrow: 1,
-//               fontFamily: "monospace",
-//               fontWeight: 700,
-//               letterSpacing: ".3rem",
-//               color: "black",
-//               textDecoration: "none",
-//             }}
-//           >
-//             LOGO
-//           </Typography>
-//           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-//             {pages.map((page) => (
-//               <Button
-//                 key={page}
-//                 onClick={handleCloseNavMenu}
-//                 sx={{ my: 2, color: "black", display: "block" }}
-//               >
-//                 {page}
-//               </Button>
-//             ))}
-//           </Box>
-//         </Toolbar>
-//       </Container>
-//     </AppBar>
-//   );
-// }
-
 interface Props {
   /**
    * Injected by the documentation to work in an iframe.
@@ -566,67 +464,438 @@ export const DrawerAppBar = (props: Props) => {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: "flex", backgroundColor: "#006983" }}>
-      <CssBaseline />
-      <AppBar
-        component="nav"
-        sx={{ backgroundColor: "#006983", boxShadow: "none" }}
-      >
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: "none" } }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
-          >
-            <Link href="/" color="inherit" underline="none">
-              Maple Tech X
-            </Link>
-          </Typography>
-          <Box sx={{ display: { xs: "none", sm: "block" } }}>
-            {navItems.map((item) => (
-              <Link
-                href={item.link}
-                color="inherit"
-                underline="none"
-                sx={{ mx: 2 }}
-              >
-                {item.title}
+    <>
+      <Box sx={{ display: "flex", backgroundColor: "#006983" }}>
+        <CssBaseline />
+        <AppBar
+          component="nav"
+          sx={{ backgroundColor: "#006983", boxShadow: "none" }}
+        >
+          <Toolbar>
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              edge="start"
+              onClick={handleDrawerToggle}
+              sx={{ mr: 2, display: { sm: "none" } }}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Typography
+              variant="h6"
+              component="div"
+              sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
+            >
+              <Link href="/" color="inherit" underline="none">
+                Maple Tech X
               </Link>
-            ))}
+            </Typography>
+            <Box sx={{ display: { xs: "none", sm: "block" } }}>
+              {navItems.map((item) => (
+                <Link
+                  href={item.link}
+                  color="inherit"
+                  underline="none"
+                  sx={{ mx: 2 }}
+                >
+                  {item.title}
+                </Link>
+              ))}
+            </Box>
+          </Toolbar>
+        </AppBar>
+        <nav>
+          <Drawer
+            container={container}
+            variant="temporary"
+            open={mobileOpen}
+            onClose={handleDrawerToggle}
+            ModalProps={{
+              keepMounted: true, // Better open performance on mobile.
+            }}
+            sx={{
+              display: { xs: "block", sm: "none" },
+              backgroundColor: "#006983",
+              boxShadow: "none",
+              "& .MuiDrawer-paper": {
+                boxSizing: "border-box",
+                width: drawerWidth,
+              },
+            }}
+          >
+            {drawer}
+          </Drawer>
+        </nav>
+      </Box>
+    </>
+  );
+};
+
+function NewHeader() {
+  return (
+    <AppBar
+      position="static"
+      sx={{ backgroundColor: "#EFEFEF", boxShadow: "none" }}
+    >
+      <Container maxWidth="xl">
+        <Toolbar disableGutters>
+          <Typography
+            variant="h5"
+            noWrap
+            component="a"
+            href="#app-bar-with-responsive-menu"
+            sx={{
+              mr: 2,
+              display: { xs: "flex", md: "flex" },
+              flexGrow: 1,
+              fontWeight: 700,
+              color: "#000",
+              textDecoration: "none",
+            }}
+          >
+            Maple Tech X
+          </Typography>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: "none", md: "flex" },
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "flex-end",
+            }}
+          >
+            <Typography
+              variant="body2"
+              gutterBottom
+              sx={{ m: 0, color: "#000", fontWeight: 500, fontSize: "0.8rem" }}
+            >
+              About Us
+            </Typography>
+
+            <Typography
+              variant="body2"
+              gutterBottom
+              sx={{
+                my: 0,
+                mx: 4,
+                color: "#000",
+                fontWeight: 500,
+                fontSize: "0.8rem",
+              }}
+            >
+              Projects
+            </Typography>
+
+            <TextField
+              label="Search"
+              id="outlined-size-small"
+              defaultValue=""
+              size="small"
+              sx={{
+                fontSize: "0.8rem",
+                "& div": {
+                  fontSize: "0.8rem",
+                  "& fieldset": { borderColor: "#006983", fontSize: "0.8rem" },
+                },
+              }}
+            />
           </Box>
         </Toolbar>
-      </AppBar>
-      <nav>
-        <Drawer
-          container={container}
-          variant="temporary"
-          open={mobileOpen}
-          onClose={handleDrawerToggle}
-          ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
-          }}
+      </Container>
+    </AppBar>
+  );
+}
+
+const homeLink = "/";
+const eventsLink = "/events";
+const aboutUsLink = "/about-us";
+const skillsLink = "/skills";
+const contactUsLink = "/contact-us";
+
+const homeList = {
+  link: homeLink,
+  list: ["Welcome Message", "Overview of Maple TechX"],
+};
+
+const aboutUs = {
+  link: aboutUsLink,
+  list: ["Vision", "Mission", "Value and Culture", "Why choose us"],
+};
+
+const skills = {
+  link: skillsLink,
+  list: ["Overview of Live Projects", "Project domains"],
+};
+
+const eventsList = {
+  link: eventsLink,
+  list: ["Hackathons", "Workshops", "Conference"],
+};
+
+function NavDropdown(props: any) {
+  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
+    null
+  );
+
+  const drpDwnList =
+    props.drpDwnList && props.drpDwnList.length > 0 ? props.drpDwnList : [];
+  const mainBtnTxt = props.mainBtnTxt;
+
+  const navLink = props.link;
+  const navigate = useNavigate();
+
+  const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorElUser(event.currentTarget);
+  };
+
+  const handleCloseUserMenu = () => {
+    navigate(navLink);
+    setAnchorElUser(null);
+  };
+
+  return (
+    <>
+      <IconButton
+        onClick={handleOpenUserMenu}
+        sx={{
+          p: 2,
+          textTransform: "uppercase",
+          color: "#fff",
+          borderRadius: 0,
+          fontSize: "0.85rem",
+          fontWeight: 700,
+        }}
+      >
+        {mainBtnTxt}
+      </IconButton>
+      <Menu
+        sx={{ mt: "55px" }}
+        id="menu-appbar"
+        anchorEl={anchorElUser}
+        anchorOrigin={{
+          vertical: "top",
+          horizontal: "right",
+        }}
+        keepMounted
+        transformOrigin={{
+          vertical: "top",
+          horizontal: "right",
+        }}
+        open={Boolean(anchorElUser)}
+        onClose={handleCloseUserMenu}
+      >
+        {drpDwnList.map((event: string) => (
+          <MenuItem key={event} onClick={handleCloseUserMenu}>
+            <Typography textAlign="center">{event}</Typography>
+          </MenuItem>
+        ))}
+      </Menu>
+    </>
+  );
+}
+
+function MobileHeader() {
+  const navigate = useNavigate();
+  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
+    null
+  );
+
+  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) =>
+    setAnchorElNav(event.currentTarget);
+
+  const handleCloseNavMenu = () => setAnchorElNav(null);
+
+  return (
+    <Box
+      sx={{
+        display: { xs: "flex", sm: "none" },
+        justifyContent: "space-between",
+        width: "100%",
+        alignItems: "center",
+        backgroundColor: "#006983",
+      }}
+    >
+      <Typography
+        variant="h5"
+        noWrap
+        component="a"
+        href="/"
+        sx={{
+          mr: 2,
+          display: { xs: "flex", md: "none" },
+          flexGrow: 1,
+          fontSize: "1em",
+          fontWeight: 700,
+          letterSpacing: ".13rem",
+          color: "#fff",
+          textDecoration: "none",
+        }}
+      >
+        Maple Mobile
+      </Typography>
+
+      <Box
+        sx={{
+          flexGrow: 1,
+          display: { xs: "flex", md: "none" },
+          justifyContent: "flex-end",
+          backgroundColor: "#006983",
+        }}
+      >
+        <IconButton
+          size="large"
+          aria-label="account of current user"
+          aria-controls="menu-appbar"
+          aria-haspopup="true"
+          onClick={handleOpenNavMenu}
           sx={{
-            display: { xs: "block", sm: "none" },
-            backgroundColor: "#006983",
-            boxShadow: "none",
-            "& .MuiDrawer-paper": {
-              boxSizing: "border-box",
-              width: drawerWidth,
+            color: "#fff",
+          }}
+        >
+          <MenuIcon />
+        </IconButton>
+        <Menu
+          id="menu-appbar"
+          anchorEl={anchorElNav}
+          anchorOrigin={{
+            vertical: "bottom",
+            horizontal: "left",
+          }}
+          keepMounted
+          transformOrigin={{
+            vertical: "top",
+            horizontal: "left",
+          }}
+          open={Boolean(anchorElNav)}
+          onClose={handleCloseNavMenu}
+          sx={{
+            "& div": {
+              "& ul": {
+                display: { xs: "flex", md: "none" },
+                flexDirection: { xs: "column", md: "none" },
+                justifyContent: { xs: "center", md: "none" },
+              },
+            },
+            "& div.MuiPaper-root": {
+              backgroundColor: "#006983",
+              borderRadius: "0px",
             },
           }}
         >
-          {drawer}
-        </Drawer>
-      </nav>
+          <NavDropdown
+            mainBtnTxt={"Home"}
+            link={homeLink}
+            drpDwnList={homeList.list}
+          />
+          <NavDropdown
+            mainBtnTxt={"About Us"}
+            link={aboutUsLink}
+            drpDwnList={aboutUs.list}
+          />
+          <NavDropdown
+            mainBtnTxt={"Skills"}
+            link={skillsLink}
+            drpDwnList={skills.list}
+          />
+          <NavDropdown
+            mainBtnTxt={"Events"}
+            link={eventsLink}
+            drpDwnList={eventsList.list}
+          />
+
+          <IconButton
+            onClick={() => navigate(contactUsLink)}
+            sx={{
+              p: 2,
+              fontSize: "0.85rem",
+              textTransform: "uppercase",
+              color: "#fff",
+              fontWeight: 500,
+              borderRadius: 0,
+            }}
+          >
+            Contact Us
+          </IconButton>
+        </Menu>
+      </Box>
     </Box>
   );
-};
+}
+
+function NewHeader2() {
+  const navigate = useNavigate();
+
+  return (
+    <AppBar
+      position="static"
+      sx={{ backgroundColor: "#006983", boxShadow: "0px 2px 5px #eee" }}
+    >
+      <Container maxWidth="xl">
+        <Toolbar disableGutters sx={{ minHeight: "38px !important" }}>
+          {/* <Typography
+            variant="h6"
+            noWrap
+            component="a"
+            onClick={() => navigate(homeLink)}
+            sx={{
+              mr: 2,
+              display: { xs: "none", md: "flex" },
+              fontFamily: "monospace",
+              fontWeight: 700,
+              letterSpacing: ".3rem",
+              textDecoration: "none",
+              color: "#384158",
+            }}
+          >
+            Maple TechX
+          </Typography> */}
+
+          <MobileHeader />
+
+          <Box
+            sx={{
+              display: { xs: "none", md: "flex" },
+              flexGrow: 1,
+              justifyContent: "space-evenly",
+            }}
+          >
+            <NavDropdown
+              mainBtnTxt={"Home"}
+              link={homeLink}
+              drpDwnList={homeList.list}
+            />
+            <NavDropdown
+              mainBtnTxt={"About Us"}
+              link={aboutUsLink}
+              drpDwnList={aboutUs.list}
+            />
+            <NavDropdown
+              mainBtnTxt={"Skills"}
+              link={skillsLink}
+              drpDwnList={skills.list}
+            />
+            <NavDropdown
+              mainBtnTxt={"Events"}
+              link={eventsLink}
+              drpDwnList={eventsList.list}
+            />
+
+            <IconButton
+              onClick={() => navigate(contactUsLink)}
+              sx={{
+                p: 2,
+                fontSize: "0.85rem",
+                fontWeight: 700,
+                textTransform: "uppercase",
+                color: "#fff",
+                borderRadius: 0,
+              }}
+            >
+              Contact Us
+            </IconButton>
+          </Box>
+        </Toolbar>
+      </Container>
+    </AppBar>
+  );
+}
