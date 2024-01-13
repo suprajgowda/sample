@@ -3,7 +3,8 @@
   height: 100%;
 }
 
-.hmp1 {
+.hmp1,
+.hmp12 {
   width: 60%;
 }
 
@@ -13,11 +14,21 @@
     height: auto;
   }
 
-  .hmp1 {
+  .hmp1,
+  .hmp12 {
     width: 100%;
-    margin-bottom: 30%;
+    margin-bottom: -10%;
   }
 }
 
 @media only screen and (max-width: 600px) {
+  .hmp1 {
+    width: 100%;
+    margin-bottom: 60%;
+  }
+
+  .hmp12 {
+    width: 100%;
+    margin-bottom: 10%;
+  }
 }

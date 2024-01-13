@@ -214,7 +214,7 @@ export default function Footer() {
               fontSize: { xs: "1rem", md: "1.25rem" },
             }}
           >
-            VamiaGuide
+            Skills and Training
           </Typography>
           <Typography
             variant="h6"

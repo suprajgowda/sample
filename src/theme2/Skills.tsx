@@ -22,6 +22,7 @@ import Web from "../assets/webprojects.jpg";
 import Aero from "../assets/aerospace.jpg";
 import Robotics from "../assets/robotics.jpg";
 import ThreeD from "../assets/3DPrinter.jpg";
+import SkillsBanner2 from "../assets/skills-banner-2.jpg";
 import "./HomePage.css";
 
 const skillsList = [
@@ -212,16 +213,16 @@ const projectDomainList = [
       {
         key1: "Description:",
         value:
-          " Embark on projects that explore the challenges and innovations in aerospace engineering and thermal technology.",
+          "Embark on projects that explore the challenges and innovations in aerospace engineering and thermal technology.",
       },
       {
         key1: "Project Examples:",
         value:
-          " Design aircraft systems, optimize thermal efficiency in engineering applications.",
+          "Design aircraft systems, optimize thermal efficiency in engineering applications.",
       },
       {
         key1: "Skills Gained:",
-        value: " Aerospace engineering principles, thermal system design.",
+        value: "Aerospace engineering principles, thermal system design.",
       },
     ],
     img: Aero,
@@ -229,13 +230,45 @@ const projectDomainList = [
   {
     header: "Robotics",
     key: "Robotics",
-    list: [],
+    list: [
+      {
+        key1: "Description:",
+        value:
+          "Develop a web-based control system for a robot, allowing users to remotely control its movements, interact with sensors, and monitor its status.",
+      },
+      {
+        key1: "Project Examples:",
+        value:
+          "Build a robotic arm control system, a mobile robot with camera integration, or a drone control platform.",
+      },
+      {
+        key1: "Skills Gained:",
+        value:
+          "Front-end development for the control interface, back-end for processing user commands and interfacing with the robot's hardware, and database management for storing sensor data.",
+      },
+    ],
     img: Robotics,
   },
   {
     header: "3D Printer",
     key: "3D Printer",
-    list: [],
+    list: [
+      {
+        key1: "Description:",
+        value:
+          "Create a web-based platform for managing and controlling 3D printers. Users should be able to upload, customize, and monitor their 3D printing jobs remotely.",
+      },
+      {
+        key1: "Project Examples:",
+        value:
+          "Develop a cloud-based 3D printing service, a platform for managing multiple 3D printers, or a collaborative environment for sharing 3D printing projects.",
+      },
+      {
+        key1: "Skills Gained:",
+        value:
+          "Front-end for job submission and monitoring, back-end for handling print job processing and communication with 3D printers, and database management for job tracking.",
+      },
+    ],
     img: ThreeD,
   },
 ];
@@ -261,11 +294,7 @@ export default function Skills() {
           // mt: { xs: "55px", md: "5%" },
         }}
       >
-        <img
-          src="https://vamia.fi/wp-content/uploads/2023/06/brooke-cagle-uHVRvDr7pg-unsplash.jpg"
-          alt="Home Page"
-          className="hmp1"
-        />
+        <img src={SkillsBanner2} alt="Skills Page" className="hmp12" />
         <Box
           sx={{
             display: "flex",

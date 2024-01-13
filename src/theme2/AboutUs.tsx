@@ -1,5 +1,5 @@
 import React from "react";
-import { DrawerAppBar, HeaderNew } from "./HomePage";
+import { HeaderNew } from "./HomePage";
 import { Box, Typography } from "@mui/material";
 import Footer from "./Footer";
 import Excellence from "../assets/Excellence.png";
@@ -84,7 +84,7 @@ export default function AboutUs() {
         <img
           src="https://vamia.fi/wp-content/uploads/2023/06/brooke-cagle-uHVRvDr7pg-unsplash.jpg"
           alt="Home Page"
-          className="hmp1"
+          className="hmp12"
         />
         <Box
           sx={{

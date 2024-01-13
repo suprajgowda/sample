@@ -11,6 +11,7 @@ import PriceAndRecognition from "../assets/price_and_recognition.jpg";
 import Skill from "../assets/skillDevelopment.jpg";
 import Networking from "../assets/networking.jpg";
 import ProblemSolving from "../assets/problemSolving.jpg";
+import EventsBanner from "../assets/events-banner.jpg";
 import "./HomePage.css";
 
 const events1 = [
@@ -76,11 +77,7 @@ export default function Events() {
           // mt: { xs: "55px", md: "5%" },
         }}
       >
-        <img
-          src="https://vamia.fi/wp-content/uploads/2023/06/brooke-cagle-uHVRvDr7pg-unsplash.jpg"
-          alt="Home Page"
-          className="hmp1"
-        />
+        <img src={EventsBanner} alt="Events Page" className="hmp12" />
         <Box
           sx={{
             display: "flex",

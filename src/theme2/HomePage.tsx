@@ -19,6 +19,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import { Container, Link, Menu, MenuItem, TextField } from "@mui/material";
 import Footer from "./Footer";
+import HomePage2 from "../assets/Home-Page-2.jpg";
 import "./HomePage.css";
 
 export function HeaderNew() {
@@ -41,11 +42,7 @@ export default function HomePage() {
           // mt: { xs: "55px", md: "5%" },
         }}
       >
-        <img
-          src="https://vamia.fi/wp-content/uploads/2023/06/brooke-cagle-uHVRvDr7pg-unsplash.jpg"
-          alt="Home Page"
-          className="hmp1"
-        />
+        <img src={HomePage2} alt="Home Page" className="hmp1" />
         <Box
           sx={{
             display: "flex",
@@ -60,7 +57,7 @@ export default function HomePage() {
             zIndex: { xs: 1 },
             backgroundColor: "white",
             width: { xs: "80%", sm: "auto" },
-            bottom: { xs: "30%", sm: "0" },
+            bottom: { xs: "20%", sm: "0" },
             left: { xs: "0", sm: "0" },
           }}
         >
@@ -87,6 +84,26 @@ export default function HomePage() {
           >
             Where Innovation Meets Opportunity!
           </Typography>
+
+          <Button
+            sx={{
+              backgroundColor: "#006983",
+              color: "#fff",
+              px: 1,
+              py: 1,
+              mt: { xs: 2, sm: 2 },
+              borderRadius: "0.65rem",
+              fontWeight: 700,
+              fontSize: "0.8rem",
+              width: { xs: "100%", sm: "30%" },
+              textTransform: "capitalize",
+              "&:hover": {
+                backgroundColor: "#004455",
+              },
+            }}
+          >
+            Read More
+          </Button>
         </Box>
       </Box>
 
@@ -166,7 +183,7 @@ export default function HomePage() {
           sx={{
             display: "flex",
             justifyContent: "space-between",
-            alignItems: "center",
+            alignItems: { xs: "flex-start", md: "center" },
             mx: "10%",
             mb: 4,
             flexDirection: { xs: "column", md: "row" },
@@ -190,6 +207,7 @@ export default function HomePage() {
               justifyContent: "start",
               width: { xs: "100%", md: "auto" },
               flexWrap: { xs: "wrap", md: "wrap" },
+              mt: { xs: 1, md: 0 },
             }}
           >
             <IconButton
@@ -318,7 +336,7 @@ export default function HomePage() {
           <Box
             sx={{
               display: "flex",
-              mx: "10%",
+              mx: { xs: "5%", md: "10%" },
               my: 8,
               flexDirection: "row",
               flexWrap: "wrap",
@@ -363,7 +381,7 @@ export default function HomePage() {
                       xs: "0px 0px 50px 0px",
                       sm: "0px 50px 0px 0px",
                     },
-                    width: { xs: "100%", sm: "100%" },
+                    width: { xs: "auto", sm: "100%" },
                   }}
                 >
                   <Typography
@@ -539,22 +557,27 @@ function NewHeader() {
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="/"
+          <Box
             sx={{
-              mr: 2,
               display: { xs: "flex", md: "flex" },
-              flexGrow: 1,
-              fontWeight: 700,
-              color: "#000",
-              textDecoration: "none",
             }}
           >
-            Maple Tech X
-          </Typography>
+            <Typography
+              variant="h5"
+              noWrap
+              component="a"
+              href="/"
+              sx={{
+                mr: 2,
+                flexGrow: 1,
+                fontWeight: 700,
+                color: "#000",
+                textDecoration: "none",
+              }}
+            >
+              Maple Tech X
+            </Typography>
+          </Box>
           <Box
             sx={{
               flexGrow: 1,
