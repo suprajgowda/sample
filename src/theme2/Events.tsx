@@ -190,7 +190,7 @@ export default function Events() {
                   sx={{
                     fontWeight: 700,
                     textAlign: "left",
-                    width: "100%",
+                    width: "auto",
                     px: { xs: 2, sm: 4 },
                     my: 2,
                     fontSize: { xs: "1.25rem", sm: "1.5rem" },
@@ -274,7 +274,7 @@ export default function Events() {
                     sx={{
                       fontWeight: 700,
                       textAlign: "left",
-                      width: "100%",
+                      width: "auto",
                       px: { xs: 2, sm: 4 },
                       my: 2,
                       fontSize: { xs: "1.25rem", sm: "1.5rem" },
