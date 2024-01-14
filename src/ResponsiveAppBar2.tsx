@@ -134,7 +134,7 @@ function MobileHeader() {
           textDecoration: "none",
         }}
       >
-        Maple Mobile
+        Maple Tech X
       </Typography>
 
       <Box

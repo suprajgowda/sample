@@ -167,27 +167,53 @@ export default function Footer() {
           >
             Browse our selection
           </Typography>
-          <Typography
-            variant="h6"
-            gutterBottom
-            sx={{
-              color: "#006983",
-              fontWeight: 500,
-              fontSize: { xs: "1rem", md: "1.25rem" },
-            }}
-          >
-            Programmes
+
+          <Typography variant="h6" gutterBottom>
+            <Typography
+              variant="h6"
+              gutterBottom
+              component="a"
+              href="/events"
+              sx={{
+                color: "#006983",
+                fontWeight: 500,
+                fontSize: { xs: "1rem", md: "1.25rem", textDecoration: "none" },
+              }}
+            >
+              Events
+            </Typography>
           </Typography>
-          <Typography
-            variant="h6"
-            gutterBottom
-            sx={{
-              color: "#006983",
-              fontWeight: 500,
-              fontSize: { xs: "1rem", md: "1.25rem" },
-            }}
-          >
-            About us
+
+          <Typography variant="h6" gutterBottom>
+            <Typography
+              variant="h6"
+              gutterBottom
+              component="a"
+              href="/skills"
+              sx={{
+                color: "#006983",
+                fontWeight: 500,
+                fontSize: { xs: "1rem", md: "1.25rem", textDecoration: "none" },
+              }}
+            >
+              Projects
+            </Typography>
+          </Typography>
+
+          <Typography variant="h6" gutterBottom>
+            <Typography
+              variant="h6"
+              gutterBottom
+              component="a"
+              href="/about-us"
+              sx={{
+                color: "#006983",
+                fontWeight: 500,
+                fontSize: { xs: "1rem", md: "1.25rem", textDecoration: "none" },
+              }}
+            >
+              About us
+            </Typography>
           </Typography>
         </Box>
 
@@ -199,33 +225,42 @@ export default function Footer() {
               color: "#006983",
               mb: 3,
               fontWeight: 700,
-              fontSize: { xs: "1.25rem", md: "1.5rem" },
+              fontSize: { xs: "1.25rem", md: "1.5rem", textDecoration: "none" },
             }}
           >
             Useful links
           </Typography>
 
-          <Typography
-            variant="h6"
-            gutterBottom
-            sx={{
-              color: "#006983",
-              fontWeight: 500,
-              fontSize: { xs: "1rem", md: "1.25rem" },
-            }}
-          >
-            Skills and Training
+          <Typography variant="h6" gutterBottom>
+            <Typography
+              variant="h6"
+              gutterBottom
+              component="a"
+              href="/skills"
+              sx={{
+                color: "#006983",
+                fontWeight: 500,
+                fontSize: { xs: "1rem", md: "1.25rem", textDecoration: "none" },
+              }}
+            >
+              Skills and Training
+            </Typography>
           </Typography>
-          <Typography
-            variant="h6"
-            gutterBottom
-            sx={{
-              color: "#006983",
-              fontWeight: 500,
-              fontSize: { xs: "1rem", md: "1.25rem" },
-            }}
-          >
-            Contact us
+
+          <Typography variant="h6" gutterBottom>
+            <Typography
+              variant="h6"
+              gutterBottom
+              component="a"
+              href="/contact-us"
+              sx={{
+                color: "#006983",
+                fontWeight: 500,
+                fontSize: { xs: "1rem", md: "1.25rem", textDecoration: "none" },
+              }}
+            >
+              Contact us
+            </Typography>
           </Typography>
         </Box>
       </Box>

@@ -12,6 +12,8 @@ import AboutUs2 from "./theme2/AboutUs";
 import ContactUs2 from "./theme2/ContactUs";
 import Skills2 from "./theme2/Skills";
 import "./App.css";
+import Projects from "./theme2/Projects";
+import MSpaceX from "./theme2/MSpaceX";
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
           <Route path="/about-us" Component={AboutUs2} />
           <Route path="/skills" Component={Skills2} />
           <Route path="/contact-us" Component={ContactUs2} />
+          <Route path="/projects" Component={Projects} />
+          <Route path="/m-space-x" Component={MSpaceX} />
 
           <Route path="/v1/home" Component={HomePage} />
           <Route path="/v1/events" Component={Events} />

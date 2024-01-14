@@ -42,6 +42,7 @@ export function HeaderNew() {
 }
 
 export default function HomePage() {
+  const navigate = useNavigate();
   return (
     <>
       <HeaderNew />
@@ -111,6 +112,7 @@ export default function HomePage() {
                 backgroundColor: "#004455",
               },
             }}
+            onClick={() => navigate("/about-us")}
           >
             Read More
           </Button>
@@ -694,12 +696,21 @@ const contactUsLink = "/contact-us";
 
 const skillsTraining = {
   link: skillsLink,
-  list: ["Internship", "Projects", "M-SpaceX", "M-AirX"],
+  list: [
+    { value: "Internship", link: skillsLink },
+    { value: "Projects", link: "/projects" },
+    { value: "M-SpaceX", link: "/m-space-x" },
+    { value: "M-AirX", link: skillsLink },
+  ],
 };
 
 const eventsList = {
   link: eventsLink,
-  list: ["Hackathons", "Workshops", "Conference"],
+  list: [
+    { value: "Hackathons", link: eventsLink },
+    { value: "Workshops", link: eventsLink },
+    { value: "Conference", link: eventsLink },
+  ],
 };
 
 function NavDropdown(props: any) {
@@ -707,7 +718,9 @@ function NavDropdown(props: any) {
     null
   );
 
-  const drpDwnList =
+  const objectList = props.objectList;
+
+  const drpDwnList: any[] =
     props.drpDwnList && props.drpDwnList.length > 0 ? props.drpDwnList : [];
   const mainBtnTxt = props.mainBtnTxt;
 
@@ -718,8 +731,13 @@ function NavDropdown(props: any) {
     setAnchorElUser(event.currentTarget);
   };
 
-  const handleCloseUserMenu = () => {
-    navigate(navLink);
+  const handleCloseUserMenu = (link: any) => {
+    if (link) {
+      navigate(link);
+    } else {
+      navigate(navLink);
+    }
+
     setAnchorElUser(null);
   };
 
@@ -754,11 +772,24 @@ function NavDropdown(props: any) {
         open={Boolean(anchorElUser)}
         onClose={handleCloseUserMenu}
       >
-        {drpDwnList.map((event: string) => (
-          <MenuItem key={event} onClick={handleCloseUserMenu}>
-            <Typography textAlign="center">{event}</Typography>
-          </MenuItem>
-        ))}
+        {drpDwnList.map((event: any) => {
+          if (objectList) {
+            return (
+              <MenuItem
+                key={event.value}
+                onClick={() => handleCloseUserMenu(event.link)}
+              >
+                <Typography textAlign="center">{event.value}</Typography>
+              </MenuItem>
+            );
+          } else {
+            return (
+              <MenuItem key={event} onClick={handleCloseUserMenu}>
+                <Typography textAlign="center">{event}</Typography>
+              </MenuItem>
+            );
+          }
+        })}
       </Menu>
     </>
   );
@@ -801,7 +832,7 @@ function MobileHeader() {
           textDecoration: "none",
         }}
       >
-        Maple Mobile
+        Maple Tech X
       </Typography>
 
       <Box
@@ -856,11 +887,13 @@ function MobileHeader() {
             mainBtnTxt={"Skills and Training"}
             link={skillsLink}
             drpDwnList={skillsTraining.list}
+            objectList={true}
           />
           <NavDropdown
             mainBtnTxt={"Events"}
             link={eventsLink}
             drpDwnList={eventsList.list}
+            objectList={true}
           />
 
           <IconButton
@@ -930,11 +963,13 @@ function NewHeader2() {
               mainBtnTxt={"Skills and Training"}
               link={skillsLink}
               drpDwnList={skillsTraining.list}
+              objectList={true}
             />
             <NavDropdown
               mainBtnTxt={"Events"}
               link={eventsLink}
               drpDwnList={eventsList.list}
+              objectList={true}
             />
 
             <IconButton

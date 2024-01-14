@@ -56,7 +56,7 @@ const skillsList = [
   },
 ];
 
-const projectDomainList = [
+export const PROJECT_DOMAIN_LIST = [
   {
     header: "Artificial Intelligence (AI):",
     key: "ai",
@@ -415,7 +415,7 @@ export default function Skills() {
             my: 6,
           }}
         >
-          {projectDomainList.map((proj) => {
+          {PROJECT_DOMAIN_LIST.map((proj) => {
             return (
               <Box
                 sx={{
@@ -443,7 +443,7 @@ export default function Skills() {
                   sx={{
                     fontWeight: 700,
                     textAlign: "left",
-                    width: "100%",
+                    width: { xs: "auto", sm: "100%" },
                     px: { xs: 2, sm: 4 },
                     my: 2,
                     fontSize: { xs: "1.25rem", sm: "1.5rem" },
@@ -504,7 +504,7 @@ export default function Skills() {
                     }}
                     onClick={handleClickOpen}
                   >
-                    Im Intrested
+                    Register
                   </Button>
                 </Box>
               </Box>
@@ -540,16 +540,16 @@ export default function Skills() {
   );
 }
 
-const FormDialogue = (props: any) => {
+export const FormDialogue = (props: any) => {
   const { open, handleClose } = props;
 
   return (
     <React.Fragment>
       <Dialog open={open} onClose={handleClose}>
-        <DialogTitle>Subscribe</DialogTitle>
+        <DialogTitle sx={{ color: "#006983" }}>Register</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            To subscribe to this website, please enter your email address and
+            To Register to this website, please enter your email address and
             Phone Number here. We will send updates occasionally.
           </DialogContentText>
           <TextField
@@ -560,6 +560,14 @@ const FormDialogue = (props: any) => {
             type="email"
             fullWidth
             variant="standard"
+            sx={{
+              "& label.Mui-focused": {
+                color: "#006983",
+              },
+              "& div:after": {
+                borderBottom: "2px solid #006983",
+              },
+            }}
           />
           <TextField
             autoFocus
@@ -569,11 +577,23 @@ const FormDialogue = (props: any) => {
             type="phone"
             fullWidth
             variant="standard"
+            sx={{
+              "& label.Mui-focused": {
+                color: "#006983",
+              },
+              "& div:after": {
+                borderBottom: "2px solid #006983",
+              },
+            }}
           />
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose}>Cancel</Button>
-          <Button onClick={handleClose}>Subscribe</Button>
+          <Button onClick={handleClose} sx={{ color: "#006983" }}>
+            Cancel
+          </Button>
+          <Button onClick={handleClose} sx={{ color: "#006983" }}>
+            Register
+          </Button>
         </DialogActions>
       </Dialog>
     </React.Fragment>
