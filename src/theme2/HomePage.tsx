@@ -17,7 +17,17 @@ import ListItemText from "@mui/material/ListItemText";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import YouTubeIcon from "@mui/icons-material/YouTube";
-import { Container, Link, Menu, MenuItem, TextField } from "@mui/material";
+import SearchIcon from "@mui/icons-material/Search";
+import {
+  Container,
+  FormControl,
+  InputAdornment,
+  InputLabel,
+  Link,
+  Menu,
+  MenuItem,
+  OutlinedInput,
+} from "@mui/material";
 import Footer from "./Footer";
 import HomePage2 from "../assets/Home-Page-2.jpg";
 import "./HomePage.css";
@@ -620,19 +630,56 @@ function NewHeader() {
               Projects
             </Typography>
 
-            <TextField
-              label="Search"
-              id="outlined-size-small"
-              defaultValue=""
-              size="small"
+            <FormControl
               sx={{
-                fontSize: "0.8rem",
+                m: 0,
+                width: "25ch",
+                "& label": {
+                  lineHeight: "10px",
+                  fontSize: "12px",
+                },
+                "&.Mui-focused": {
+                  color: "#006983",
+                },
                 "& div": {
-                  fontSize: "0.8rem",
-                  "& fieldset": { borderColor: "#006983", fontSize: "0.8rem" },
+                  "& div": {
+                    "& button": {
+                      "& svg": {
+                        fontSize: "1rem",
+                      },
+                    },
+                  },
+                  "& input": {
+                    fontSize: "10px",
+                    padding: "12px",
+                  },
+                  "& .MuiOutlinedInput-notchedOutline": {
+                    borderColor: "#006983 !important",
+                  },
                 },
               }}
-            />
+              variant="outlined"
+            >
+              <InputLabel htmlFor="outlined-adornment-password">
+                Search
+              </InputLabel>
+              <OutlinedInput
+                id="outlined-adornment-password"
+                type={"text"}
+                size="small"
+                endAdornment={
+                  <InputAdornment position="end">
+                    <IconButton
+                      aria-label="toggle password visibility"
+                      edge="end"
+                    >
+                      <SearchIcon />
+                    </IconButton>
+                  </InputAdornment>
+                }
+                label="Search"
+              />
+            </FormControl>
           </Box>
         </Toolbar>
       </Container>
@@ -686,7 +733,7 @@ function NavDropdown(props: any) {
           color: "#fff",
           borderRadius: 0,
           fontSize: "0.85rem",
-          fontWeight: 700,
+          fontWeight: { xs: 500, sm: 700 },
         }}
       >
         {mainBtnTxt}
