@@ -11,9 +11,9 @@ import Events2 from "./theme2/Events";
 import AboutUs2 from "./theme2/AboutUs";
 import ContactUs2 from "./theme2/ContactUs";
 import Skills2 from "./theme2/Skills";
-import "./App.css";
 import Projects from "./theme2/Projects";
 import MSpaceX from "./theme2/MSpaceX";
+import "./App.css";
 
 function App() {
   return (

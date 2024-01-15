@@ -434,7 +434,7 @@ export default function Skills() {
                 <img
                   src={proj.img}
                   alt="Home Page"
-                  style={{ width: "100%", height: "100%" }}
+                  style={{ width: "100%", height: "300px" }}
                 />
 
                 <Typography

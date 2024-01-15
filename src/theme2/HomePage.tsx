@@ -18,6 +18,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import SearchIcon from "@mui/icons-material/Search";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import {
   Container,
   FormControl,
@@ -26,6 +27,7 @@ import {
   Link,
   Menu,
   MenuItem,
+  MenuProps,
   OutlinedInput,
 } from "@mui/material";
 import Footer from "./Footer";
@@ -135,7 +137,15 @@ export default function HomePage() {
           <Typography
             variant="h5"
             gutterBottom
-            sx={{ fontWeight: 700, fontSize: "1rem", marginBottom: 0 }}
+            component="a"
+            href="/projects"
+            sx={{
+              fontWeight: 700,
+              fontSize: "1rem",
+              marginBottom: 0,
+              textDecoration: "none",
+              color: "#000",
+            }}
           >
             Projects
           </Typography>
@@ -153,7 +163,15 @@ export default function HomePage() {
           <Typography
             variant="h5"
             gutterBottom
-            sx={{ fontWeight: 700, fontSize: "1rem", marginBottom: 0 }}
+            component="a"
+            href="/projects"
+            sx={{
+              fontWeight: 700,
+              fontSize: "1rem",
+              marginBottom: 0,
+              textDecoration: "none",
+              color: "#000",
+            }}
           >
             Training
           </Typography>
@@ -713,87 +731,22 @@ const eventsList = {
   ],
 };
 
-function NavDropdown(props: any) {
-  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
-    null
-  );
-
-  const objectList = props.objectList;
-
-  const drpDwnList: any[] =
-    props.drpDwnList && props.drpDwnList.length > 0 ? props.drpDwnList : [];
-  const mainBtnTxt = props.mainBtnTxt;
-
-  const navLink = props.link;
-  const navigate = useNavigate();
-
-  const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElUser(event.currentTarget);
-  };
-
-  const handleCloseUserMenu = (link: any) => {
-    if (link) {
-      navigate(link);
-    } else {
-      navigate(navLink);
-    }
-
-    setAnchorElUser(null);
-  };
-
+const StyledMenu = (props: MenuProps) => {
   return (
-    <>
-      <IconButton
-        onClick={handleOpenUserMenu}
-        sx={{
-          p: 2,
-          textTransform: "uppercase",
-          color: "#fff",
-          borderRadius: 0,
-          fontSize: "0.85rem",
-          fontWeight: { xs: 500, sm: 700 },
-        }}
-      >
-        {mainBtnTxt}
-      </IconButton>
-      <Menu
-        sx={{ mt: "55px" }}
-        id="menu-appbar"
-        anchorEl={anchorElUser}
-        anchorOrigin={{
-          vertical: "top",
-          horizontal: "right",
-        }}
-        keepMounted
-        transformOrigin={{
-          vertical: "top",
-          horizontal: "right",
-        }}
-        open={Boolean(anchorElUser)}
-        onClose={handleCloseUserMenu}
-      >
-        {drpDwnList.map((event: any) => {
-          if (objectList) {
-            return (
-              <MenuItem
-                key={event.value}
-                onClick={() => handleCloseUserMenu(event.link)}
-              >
-                <Typography textAlign="center">{event.value}</Typography>
-              </MenuItem>
-            );
-          } else {
-            return (
-              <MenuItem key={event} onClick={handleCloseUserMenu}>
-                <Typography textAlign="center">{event}</Typography>
-              </MenuItem>
-            );
-          }
-        })}
-      </Menu>
-    </>
+    <Menu
+      elevation={0}
+      anchorOrigin={{
+        vertical: "bottom",
+        horizontal: "right",
+      }}
+      transformOrigin={{
+        vertical: "top",
+        horizontal: "right",
+      }}
+      {...props}
+    />
   );
-}
+};
 
 function MobileHeader() {
   const navigate = useNavigate();
@@ -883,18 +836,12 @@ function MobileHeader() {
             },
           }}
         >
-          <NavDropdown
-            mainBtnTxt={"Skills and Training"}
-            link={skillsLink}
+          <CustomNavDropDown
+            btnTitle={"Skills and Training"}
             drpDwnList={skillsTraining.list}
-            objectList={true}
           />
-          <NavDropdown
-            mainBtnTxt={"Events"}
-            link={eventsLink}
-            drpDwnList={eventsList.list}
-            objectList={true}
-          />
+
+          <CustomNavDropDown btnTitle={"Events"} drpDwnList={eventsList.list} />
 
           <IconButton
             onClick={() => navigate(contactUsLink)}
@@ -923,22 +870,71 @@ function MobileHeader() {
           >
             Students
           </IconButton>
-
-          {/* <NavDropdown
-            mainBtnTxt={"About Us"}
-            link={aboutUsLink}
-            drpDwnList={aboutUs.list}
-          />
-          <NavDropdown
-            mainBtnTxt={"Skills"}
-            link={skillsLink}
-            drpDwnList={skills.list}
-          /> */}
         </Menu>
       </Box>
     </Box>
   );
 }
+
+const CustomNavDropDown = (props: any) => {
+  const navigate = useNavigate();
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = (navLink?: string) => {
+    setAnchorEl(null);
+    if (navLink) navigate(navLink);
+  };
+
+  const { btnTitle, drpDwnList } = props;
+
+  return (
+    <>
+      <Button
+        id="demo-customized-button"
+        aria-controls={open ? "demo-customized-menu" : undefined}
+        aria-haspopup="true"
+        aria-expanded={open ? "true" : undefined}
+        variant="contained"
+        disableElevation
+        onClick={handleClick}
+        endIcon={<KeyboardArrowDownIcon />}
+        sx={{
+          backgroundColor: "#006983",
+          "&:hover": {
+            backgroundColor: "#006983",
+          },
+        }}
+      >
+        {btnTitle}
+      </Button>
+      <StyledMenu
+        id="demo-customized-menu"
+        MenuListProps={{
+          "aria-labelledby": "demo-customized-button",
+        }}
+        anchorEl={anchorEl}
+        open={open}
+        onClose={() => handleClose()}
+        sx={{
+          "& div.MuiPaper-elevation": {
+            boxShadow: "5px 5px #06495a",
+          },
+        }}
+      >
+        {drpDwnList.map((event: any) => {
+          return (
+            <MenuItem onClick={() => handleClose(event.link)} disableRipple>
+              {event.value}
+            </MenuItem>
+          );
+        })}
+      </StyledMenu>
+    </>
+  );
+};
 
 function NewHeader2() {
   const navigate = useNavigate();
@@ -959,17 +955,14 @@ function NewHeader2() {
               justifyContent: "space-evenly",
             }}
           >
-            <NavDropdown
-              mainBtnTxt={"Skills and Training"}
-              link={skillsLink}
+            <CustomNavDropDown
+              btnTitle={"Skills and Training"}
               drpDwnList={skillsTraining.list}
-              objectList={true}
             />
-            <NavDropdown
-              mainBtnTxt={"Events"}
-              link={eventsLink}
+
+            <CustomNavDropDown
+              btnTitle={"Events"}
               drpDwnList={eventsList.list}
-              objectList={true}
             />
 
             <IconButton
@@ -977,7 +970,7 @@ function NewHeader2() {
               sx={{
                 p: 2,
                 fontSize: "0.85rem",
-                fontWeight: 700,
+                fontWeight: 500,
                 textTransform: "uppercase",
                 color: "#fff",
                 borderRadius: 0,
@@ -991,7 +984,7 @@ function NewHeader2() {
               sx={{
                 p: 2,
                 fontSize: "0.85rem",
-                fontWeight: 700,
+                fontWeight: 500,
                 textTransform: "uppercase",
                 color: "#fff",
                 borderRadius: 0,
@@ -999,17 +992,6 @@ function NewHeader2() {
             >
               Students
             </IconButton>
-
-            {/* <NavDropdown
-              mainBtnTxt={"About Us"}
-              link={aboutUsLink}
-              drpDwnList={aboutUs.list}
-            />
-            <NavDropdown
-              mainBtnTxt={"Skills"}
-              link={skillsLink}
-              drpDwnList={skills.list}
-            /> */}
           </Box>
         </Toolbar>
       </Container>
