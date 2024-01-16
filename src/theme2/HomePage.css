@@ -8,6 +8,16 @@
   width: 60%;
 }
 
+.skillsImg {
+  width: 100%;
+  height: 300px;
+}
+
+.event2Img {
+  width: 100%;
+  height: 350px;
+}
+
 @media only screen and (max-width: 768px) {
   .hom1 {
     max-width: 100%;
@@ -18,6 +28,16 @@
   .hmp12 {
     width: 100%;
     margin-bottom: -10%;
+  }
+
+  .skillsImg {
+    width: 100%;
+    height: 200px;
+  }
+
+  .event2Img {
+    width: 100%;
+    height: 200px;
   }
 }
 

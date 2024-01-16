@@ -51,7 +51,7 @@ const skillsList = [
     desc: "The process is seamless. Participants choose a project domain of interest, engage in hands-on project work, collaborate with peers, and receive guidance from industry experts. The result? A portfolio of real-world projects that showcase your skills and demonstrate your ability to tackle complex challenges.",
   },
   {
-    title: "Ready to Ignite Your Potential?",
+    title: "Ready to Ignite Your Potential ?",
     desc: "Join MAPLE and unlock the door to a world of innovation and growth. Our live projects are more than just learning experiences; they are opportunities to shape the future of technology. Ignite your curiosity, power your future. Welcome to Live Projects at MAPLE - where ideas turn into action, and learning becomes an adventure. Explore, create, and transform with us!",
   },
 ];
@@ -341,71 +341,42 @@ export default function Skills() {
 
       <Box
         sx={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          mt: { xs: 5, sm: 8 },
+          mb: { xs: 0, sm: 0 },
           mx: { xs: "5%", sm: "10%" },
-          mt: "8%",
         }}
       >
-        {skillsList.map((skill) => {
-          return (
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "column",
-                my: { xs: 5, sm: 10 },
-              }}
-            >
-              <Typography
-                variant="h5"
-                component="div"
-                sx={{ pb: 4, fontWeight: 700 }}
-              >
-                {skill.title}
-              </Typography>
-
-              <Typography
-                variant="h6"
-                component="div"
-                sx={{
-                  fontWeight: 400,
-                  fontSize: { xs: "1rem", sm: "1.25rem" },
-                }}
-              >
-                {skill.desc}
-              </Typography>
-            </Box>
-          );
-        })}
-
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            my: { xs: 5, sm: 10 },
-          }}
+        <Typography
+          variant="h5"
+          component="div"
+          sx={{ pb: 4, fontWeight: 700 }}
         >
-          <Typography
-            variant="h5"
-            component="div"
-            sx={{ pb: 4, fontWeight: 700 }}
-          >
-            Explore Our Project Domains in Detail
-          </Typography>
+          Explore Our Project Domains in Detail
+        </Typography>
 
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{ fontWeight: 400, fontSize: { xs: "1rem", sm: "1.25rem" } }}
-          >
-            At MAPLE , we offer a spectrum of project domains, each designed to
-            immerse participants in the latest technologies and industry trends.
-            Choose your area of interest and dive into a hands-on learning
-            experience that goes beyond textbooks. Here's a detailed overview of
-            each project domain:
-          </Typography>
-        </Box>
+        <Typography
+          variant="h6"
+          component="div"
+          sx={{ fontWeight: 400, fontSize: { xs: "1rem", sm: "1.25rem" } }}
+        >
+          At MAPLE , we offer a spectrum of project domains, each designed to
+          immerse participants in the latest technologies and industry trends.
+          Choose your area of interest and dive into a hands-on learning
+          experience that goes beyond textbooks. Here's a detailed overview of
+          each project domain:
+        </Typography>
+      </Box>
 
+      <Box
+        sx={{
+          mx: { xs: "5%", sm: "10%" },
+          mt: "3%",
+        }}
+      >
         <Box
           sx={{
             display: "flex",
@@ -431,11 +402,7 @@ export default function Skills() {
                   my: { xs: 2, sm: 4 },
                 }}
               >
-                <img
-                  src={proj.img}
-                  alt="Home Page"
-                  style={{ width: "100%", height: "300px" }}
-                />
+                <img src={proj.img} alt={proj.header} className="skillsImg" />
 
                 <Typography
                   variant="h5"
@@ -497,20 +464,51 @@ export default function Skills() {
                     variant="contained"
                     sx={{
                       backgroundColor: "#006983",
-                      width: "50%",
+                      width: { xs: "50%", sm: "30%" },
                       "&:hover": {
                         backgroundColor: "#006983",
                       },
                     }}
                     onClick={handleClickOpen}
                   >
-                    Register
+                    Apply
                   </Button>
                 </Box>
               </Box>
             );
           })}
         </Box>
+
+        {skillsList.map((skill) => {
+          return (
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                my: { xs: 4, sm: 4 },
+              }}
+            >
+              <Typography
+                variant="h5"
+                component="div"
+                sx={{ pb: 1, fontWeight: 700 }}
+              >
+                {skill.title}
+              </Typography>
+
+              <Typography
+                variant="h6"
+                component="div"
+                sx={{
+                  fontWeight: 400,
+                  fontSize: { xs: "1rem", sm: "1.25rem" },
+                }}
+              >
+                {skill.desc}
+              </Typography>
+            </Box>
+          );
+        })}
 
         <Typography
           variant="h6"
@@ -546,11 +544,11 @@ export const FormDialogue = (props: any) => {
   return (
     <React.Fragment>
       <Dialog open={open} onClose={handleClose}>
-        <DialogTitle sx={{ color: "#006983" }}>Register</DialogTitle>
+        <DialogTitle sx={{ color: "#006983" }}>Apply</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            To Register to this website, please enter your email address and
-            Phone Number here. We will send updates occasionally.
+            To Apply to this website, please enter your email address and Phone
+            Number here. We will send updates occasionally.
           </DialogContentText>
           <TextField
             autoFocus
@@ -592,7 +590,7 @@ export const FormDialogue = (props: any) => {
             Cancel
           </Button>
           <Button onClick={handleClose} sx={{ color: "#006983" }}>
-            Register
+            Submit
           </Button>
         </DialogActions>
       </Dialog>

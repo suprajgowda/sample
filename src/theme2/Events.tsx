@@ -1,5 +1,5 @@
 import React from "react";
-import { DrawerAppBar, HeaderNew } from "./HomePage";
+import { HeaderNew } from "./HomePage";
 import Footer from "./Footer";
 import { Box, Typography } from "@mui/material";
 import TeamCollImage from "../assets/Team_Collaboration.jpg";
@@ -178,7 +178,8 @@ export default function Events() {
                 <img
                   src={event1.img}
                   alt={event1.title}
-                  style={{ width: "100%", height: "100%" }}
+                  className="skillsImg"
+                  // style={{ width: "100%", height: "300px" }}200px
                 />
 
                 <Typography
@@ -262,7 +263,8 @@ export default function Events() {
                   <img
                     src={event2.img}
                     alt={event2.title}
-                    style={{ width: "100%", height: "100%" }}
+                    className="event2Img"
+                    // style={{ width: "100%", height: "350px" }}
                   />
 
                   <Typography
@@ -348,8 +350,7 @@ export default function Events() {
               fontSize: { xs: "1.25rem", md: "1.5rem" },
             }}
           >
-            Welcome to [Your Organization's] Hackathon Collaboration
-            Opportunity!
+            Welcome to Maple Tech X Hackathon Collaboration Opportunity!
           </Typography>
 
           <Typography
@@ -359,7 +360,7 @@ export default function Events() {
           >
             Are you passionate about fostering innovation, supporting emerging
             talent, and contributing to the ever-evolving landscape of
-            technology? If so, collaborating with us in our upcoming hackathon
+            technology ? If so, collaborating with us in our upcoming hackathon
             could be the perfect opportunity for you and your organization.
           </Typography>
         </Box>

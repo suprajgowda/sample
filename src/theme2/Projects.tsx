@@ -1,10 +1,10 @@
 import React from "react";
 import { HeaderNew } from "./HomePage";
 import { Box, Button, Typography } from "@mui/material";
-import EventsBanner from "../assets/events-banner.jpg";
 import ProjectsBanner from "../assets/ProjectsNewBanner.jpg";
 import Footer from "./Footer";
 import { FormDialogue, PROJECT_DOMAIN_LIST } from "./Skills";
+import "./HomePage.css";
 
 export default function Projects() {
   const [open, setOpen] = React.useState(false);
@@ -67,7 +67,7 @@ export default function Projects() {
       <Box
         sx={{
           mx: "10%",
-          mt: "8%",
+          mt: "3%",
         }}
       >
         <Box
@@ -76,9 +76,17 @@ export default function Projects() {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            my: { xs: 5, sm: 10 },
+            mt: { xs: 3, sm: 3 },
+            mb: { xs: 3, sm: 3 },
           }}
         >
+          <Typography
+            variant="h5"
+            component="div"
+            sx={{ pb: 4, fontWeight: 700 }}
+          >
+            Explore Our Project Domains in Detail
+          </Typography>
           <Typography
             variant="h6"
             component="div"
@@ -121,8 +129,9 @@ export default function Projects() {
               >
                 <img
                   src={proj.img}
-                  alt="Home Page"
-                  style={{ width: "100%", height: "100%" }}
+                  alt={proj.header}
+                  // style={{ width: "100%", height: "300px" }}
+                  className="skillsImg"
                 />
 
                 <Typography
@@ -185,14 +194,15 @@ export default function Projects() {
                     variant="contained"
                     sx={{
                       backgroundColor: "#006983",
-                      width: "50%",
+                      width: { xs: "50%", sm: "30%" },
                       "&:hover": {
                         backgroundColor: "#006983",
                       },
+                      fontSize: "0.875rem",
                     }}
                     onClick={handleClickOpen}
                   >
-                    Register
+                    Apply
                   </Button>
                 </Box>
               </Box>

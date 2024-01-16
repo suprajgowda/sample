@@ -1,9 +1,51 @@
 import React from "react";
-import { Box, List, ListItem, ListItemText, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { HeaderNew } from "./HomePage";
 import Footer from "./Footer";
-import EventsBanner from "../assets/events-banner.jpg";
 import Spacex from "../assets/spacex.jpg";
+import GalaticDiscovery from "../assets/GalaticDiscovery.jpg";
+import Mission_to_Mars from "../assets/Mission_to_Mars.jpg";
+import AstronautTraining from "../assets/AstronautTraining.jpg";
+import StellarExplorations from "../assets/StellarExplorations.jpg";
+
+const WeekList = [
+  {
+    header: 'Week 1: "Galactic Discovery"',
+    list: [
+      "Introduction to the solar system",
+      "Planetarium visit",
+      "Model rocket building and launch",
+    ],
+    img: GalaticDiscovery,
+  },
+  {
+    header: 'Week 2: "Mission to Mars"',
+    list: [
+      "Mars rover simulations",
+      "Martian landscape diorama creation",
+      "Guest speaker from the space industry",
+    ],
+    img: Mission_to_Mars,
+  },
+  {
+    header: 'Week 3: "Astronaut Training"',
+    list: [
+      "Virtual reality spacewalk experience",
+      "Build a mini space station",
+      "Q&A session with an astronaut (virtual or in-person)",
+    ],
+    img: AstronautTraining,
+  },
+  {
+    header: 'Week 4: "Stellar Explorations"',
+    list: [
+      "Star-gazing night",
+      "DIY telescope construction",
+      "Design your own alien life form",
+    ],
+    img: StellarExplorations,
+  },
+];
 
 export default function MSpaceX() {
   return (
@@ -104,97 +146,86 @@ export default function MSpaceX() {
           </Typography>
         </Box>
 
-        <Box sx={{ mb: 3, mx: { xs: 0, sm: 4 } }}>
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{
-              fontWeight: 700,
-              fontSize: { xs: "1rem", sm: "1.25rem" },
-              mb: { xs: 0, sm: 2 },
-            }}
-          >
-            Week 1: "Galactic Discovery"
-          </Typography>
-          <ul>
-            <li style={{ marginBottom: 10 }}>
-              Introduction to the solar system
-            </li>
+        {/* <Box sx={{ mb: 3, mx: { xs: 0, sm: 4 } }}> */}
+        <Box
+          sx={{
+            display: "flex",
+            // mx: { xs: "5%", md: "10%" },
+            my: 8,
+            flexDirection: "row",
+            flexWrap: "wrap",
+            justifyContent: "space-around",
+            alignItems: "center",
+          }}
+        >
+          {WeekList.map((week) => {
+            return (
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: { xs: "column", sm: "row" },
+                  maxWidth: "450px",
+                  borderRadius: "50px",
+                  boxShadow: "0px 3px 35px 0px rgba(0, 0, 0, 0.29)",
+                  mx: { xs: 0, sm: 2 },
+                  my: 4,
+                  width: { xs: "100%", sm: "50%" },
+                }}
+              >
+                <Box
+                  sx={{
+                    backgroundSize: "150% 100%",
+                    backgroundPositionY: "center",
+                    backgroundImage: `url(${week.img})`,
+                    height: { xs: "250px", sm: "auto" },
+                    width: { xs: "100%", sm: "100%" },
+                    borderRadius: {
+                      xs: "50px 0px 0px 0px",
+                      sm: "0px 0px 0px 50px",
+                    },
+                    backgroundRepeat: "no-repeat",
+                    backgroundPositionX: "40%",
+                  }}
+                ></Box>
+                <Box
+                  sx={{
+                    backgroundColor: "#fff",
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    p: 2.5,
+                    borderRadius: {
+                      xs: "0px 0px 50px 0px",
+                      sm: "0px 50px 0px 0px",
+                    },
+                    width: { xs: "auto", sm: "100%" },
+                    height: "300px",
+                  }}
+                >
+                  <Typography
+                    variant="h6"
+                    component="div"
+                    sx={{
+                      fontWeight: 700,
+                      fontSize: { xs: "1rem", sm: "1.15rem" },
+                      mb: { xs: 0, sm: 2 },
+                    }}
+                  >
+                    {week.header}
+                  </Typography>
 
-            <li style={{ marginBottom: 10 }}>Planetarium visit</li>
-
-            <li style={{ marginBottom: 10 }}>
-              Model rocket building and launch
-            </li>
-          </ul>
-
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{
-              fontWeight: 700,
-              fontSize: { xs: "1rem", sm: "1.25rem" },
-              mb: { xs: 0, sm: 2 },
-            }}
-          >
-            Week 2: "Mission to Mars"
-          </Typography>
-          <ul>
-            <li style={{ marginBottom: 10 }}>Mars rover simulations</li>
-
-            <li style={{ marginBottom: 10 }}>
-              Martian landscape diorama creation
-            </li>
-
-            <li style={{ marginBottom: 10 }}>
-              Guest speaker from the space industry
-            </li>
-          </ul>
-
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{
-              fontWeight: 700,
-              fontSize: { xs: "1rem", sm: "1.25rem" },
-              mb: { xs: 0, sm: 2 },
-            }}
-          >
-            Week 3: "Astronaut Training"
-          </Typography>
-          <ul>
-            <li style={{ marginBottom: 10 }}>
-              Virtual reality spacewalk experience
-            </li>
-
-            <li style={{ marginBottom: 10 }}>Build a mini space station</li>
-
-            <li style={{ marginBottom: 10 }}>
-              Q&A session with an astronaut (virtual or in-person)
-            </li>
-          </ul>
-
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{
-              fontWeight: 700,
-              fontSize: { xs: "1rem", sm: "1.25rem" },
-              mb: { xs: 0, sm: 2 },
-            }}
-          >
-            Week 4: "Stellar Explorations"
-          </Typography>
-          <ul>
-            <li style={{ marginBottom: 10 }}>Star-gazing night</li>
-
-            <li style={{ marginBottom: 10 }}>DIY telescope construction</li>
-
-            <li style={{ marginBottom: 10 }}>
-              Design your own alien life form
-            </li>
-          </ul>
+                  <ul>
+                    {week.list.map((wk) => (
+                      <li style={{ marginBottom: 10 }}>{wk}</li>
+                    ))}
+                  </ul>
+                </Box>
+              </Box>
+            );
+          })}
         </Box>
+        {/* </Box> */}
 
         <Typography
           variant="h6"

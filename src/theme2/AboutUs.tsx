@@ -11,6 +11,7 @@ import Adaptability from "../assets/Adaptability.jpg";
 import Empowerment from "../assets/Empowerment.jpg";
 import Continuous_Learning from "../assets/Continuous-Learning.jpg";
 import Fun_and_Enjoyment from "../assets/Fun-and-Enjoyment.jpg";
+import AboutUsNewBanner from "../assets/aboutUsBanner2.jpg";
 import "./HomePage.css";
 
 const listOfAboutUs = [
@@ -81,11 +82,7 @@ export default function AboutUs() {
           // mt: { xs: "55px", md: "5%" },
         }}
       >
-        <img
-          src="https://vamia.fi/wp-content/uploads/2023/06/brooke-cagle-uHVRvDr7pg-unsplash.jpg"
-          alt="Home Page"
-          className="hmp12"
-        />
+        <img src={AboutUsNewBanner} alt="Home Page" className="hmp12" />
         <Box
           sx={{
             display: "flex",
