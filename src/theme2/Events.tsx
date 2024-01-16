@@ -16,6 +16,7 @@ import HostAConference from "../assets/HostAConference.jpg";
 import HackathonBanner from "../assets/HackathonBanner.jpg";
 import ConferenceBanner from "../assets/ConferenceBanner.jpg";
 import "./HomePage.css";
+import { FormDialogue } from "./Skills";
 
 const events1 = [
   {
@@ -100,6 +101,15 @@ export function Conference() {
 
 function EventsDesc(props: any) {
   const { headerTitle, bannerImg } = props;
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   return (
     <>
@@ -236,6 +246,7 @@ function EventsDesc(props: any) {
                 my: 2,
                 boxShadow: "rgb(239, 151, 128) 5px 5px 0px 0px",
               }}
+              onClick={handleClickOpen}
             >
               Apply Now
             </Button>
@@ -481,6 +492,13 @@ function EventsDesc(props: any) {
           </Typography>
         </Box>
       </Box>
+
+      <FormDialogue
+        open={open}
+        setOpen={setOpen}
+        handleClickOpen={handleClickOpen}
+        handleClose={handleClose}
+      />
     </>
   );
 }
