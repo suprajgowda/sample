@@ -1,7 +1,7 @@
 import React from "react";
 import { HeaderNew } from "./HomePage";
 import Footer from "./Footer";
-import { Box, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import TeamCollImage from "../assets/Team_Collaboration.jpg";
 import TimeBound from "../assets/Time_Bound_Challenges.jpg";
 import Innovation from "../assets/Innovation_and_Creativity.jpg";
@@ -12,6 +12,9 @@ import Skill from "../assets/skillDevelopment.jpg";
 import Networking from "../assets/networking.jpg";
 import ProblemSolving from "../assets/problemSolving.jpg";
 import EventsBanner from "../assets/events-banner.jpg";
+import HostAConference from "../assets/HostAConference.jpg";
+import HackathonBanner from "../assets/HackathonBanner.jpg";
+import ConferenceBanner from "../assets/ConferenceBanner.jpg";
 import "./HomePage.css";
 
 const events1 = [
@@ -69,7 +72,37 @@ export default function Events() {
   return (
     <>
       <HeaderNew />
+      <EventsDesc headerTitle={"Hackathon"} bannerImg={HackathonBanner} />
+      <Footer />
+    </>
+  );
+}
 
+export function Workshops() {
+  return (
+    <>
+      <HeaderNew />
+      <EventsDesc headerTitle={"Workshops"} bannerImg={EventsBanner} />
+      <Footer />
+    </>
+  );
+}
+
+export function Conference() {
+  return (
+    <>
+      <HeaderNew />
+      <EventsDesc headerTitle={"Conference"} bannerImg={ConferenceBanner} />
+      <Footer />
+    </>
+  );
+}
+
+function EventsDesc(props: any) {
+  const { headerTitle, bannerImg } = props;
+
+  return (
+    <>
       <Box
         sx={{
           display: "flex",
@@ -77,7 +110,7 @@ export default function Events() {
           // mt: { xs: "55px", md: "5%" },
         }}
       >
-        <img src={EventsBanner} alt="Events Page" className="hmp12" />
+        <img src={bannerImg} alt={headerTitle} className="hmp12" />
         <Box
           sx={{
             display: "flex",
@@ -104,18 +137,22 @@ export default function Events() {
           <Typography
             variant="h5"
             component="div"
-            sx={{ pb: 2, fontWeight: 700 }}
+            sx={{
+              pb: 2,
+              fontWeight: 700,
+              fontSize: { xs: "1.25rem", sm: "1.5rem" },
+            }}
           >
-            What is a Hackathon ?
+            What is a {headerTitle} ?
           </Typography>
           <Typography
             variant="h6"
             component="div"
             sx={{ fontWeight: 400, fontSize: { xs: "1rem", sm: "1.25rem" } }}
           >
-            Welcome to the InnovateCode Hackathon, where innovation meets
-            collaboration! If you're new to the concept of a hackathon, you're
-            in for an exciting journey into the heart of creative
+            Welcome to the InnovateCode {headerTitle}, where innovation meets
+            collaboration! If you're new to the concept of a {headerTitle},
+            you're in for an exciting journey into the heart of creative
             problem-solving and technological exploration.
           </Typography>
         </Box>
@@ -127,13 +164,91 @@ export default function Events() {
           mt: "8%",
         }}
       >
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: { xs: "column", sm: "row-reverse" },
+            boxShadow: "rgba(0, 0, 0, 0.29) 0px 3px 35px 0px",
+          }}
+        >
+          <Box>
+            <img
+              src={HostAConference}
+              alt="Conference"
+              // style={{ width: "500px", height: "100%" }}
+              className="hostConf"
+            />
+          </Box>
+          <Box sx={{ px: 4, py: 4 }}>
+            <Typography
+              variant="h5"
+              gutterBottom
+              sx={{
+                textAlign: "left",
+                color: "#384158",
+                left: { xs: "5%", md: "15%" },
+                fontSize: { xs: "1.15rem", sm: "1.5rem" },
+                fontWeight: 700,
+                pb: 2,
+                mt: 2,
+              }}
+            >
+              Discover the Excitement at Your Institution!
+            </Typography>
+
+            <Typography
+              variant="h5"
+              gutterBottom
+              sx={{
+                textAlign: "left",
+                color: "#006983",
+                left: { xs: "5%", md: "15%" },
+                fontSize: { xs: "1.15rem", sm: "1.35rem" },
+                fontWeight: 500,
+                pb: 2,
+                mt: 2,
+              }}
+            >
+              Host a {headerTitle} with Us
+            </Typography>
+
+            <Typography
+              variant="h6"
+              component="div"
+              sx={{ fontWeight: 400, fontSize: { xs: "0.8rem", sm: "1rem" } }}
+            >
+              Enrich your college, school, or office experience with our
+              engaging hands-on {headerTitle} conducted by our team of experts.
+              We bring the kits, and you bring the enthusiasm for an
+              unforgettable learning adventure! Immerse yourself in a world
+              where learning is not just educational but incredibly fun!
+            </Typography>
+
+            <Button
+              variant="contained"
+              sx={{
+                width: { xs: "100%", sm: "50%" },
+                backgroundColor: "#006983",
+                "&:hover": {
+                  backgroundColor: "#006983",
+                },
+                py: 1,
+                my: 2,
+                boxShadow: "rgb(239, 151, 128) 5px 5px 0px 0px",
+              }}
+            >
+              Apply Now
+            </Button>
+          </Box>
+        </Box>
+
         <Box sx={{ display: "flex", flexDirection: "column", my: 10 }}>
           <Typography
             variant="h5"
             component="div"
             sx={{ pb: 4, fontWeight: 700 }}
           >
-            Defining the Hackathon Experience
+            Defining the {headerTitle} Experience
           </Typography>
 
           <Typography
@@ -141,7 +256,7 @@ export default function Events() {
             component="div"
             sx={{ fontWeight: 400, fontSize: { xs: "1rem", sm: "1.25rem" } }}
           >
-            A hackathon is an intensive, time-limited event that gathers
+            A {headerTitle} is an intensive, time-limited event that gathers
             individuals with diverse skills, ranging from coding and design to
             entrepreneurship and project management. Participants, often
             referred to as "hackers," come together to form teams and
@@ -232,7 +347,7 @@ export default function Events() {
               fontSize: { xs: "2rem", sm: "3rem" },
             }}
           >
-            Why Participate in a Hackathon?
+            Why Participate in a {headerTitle}?
           </Typography>
 
           <Box
@@ -317,7 +432,7 @@ export default function Events() {
               fontSize: { xs: "1.25rem", md: "1.5rem" },
             }}
           >
-            InnovateCode Hackathon: Your Gateway to Innovation!
+            InnovateCode {headerTitle}: Your Gateway to Innovation!
           </Typography>
 
           <Typography
@@ -326,8 +441,8 @@ export default function Events() {
             sx={{ fontWeight: 400, fontSize: { xs: "1rem", md: "1.25rem" } }}
           >
             At InnovateCode, we believe in the power of collaboration and the
-            limitless potential of creative minds. Our hackathon is designed to
-            provide a platform where participants can push their boundaries,
+            limitless potential of creative minds. Our {headerTitle} is designed
+            to provide a platform where participants can push their boundaries,
             learn from one another, and turn their ideas into reality. Join us
             on this exciting journey, where innovation knows no bounds, and
             together, we'll shape the future of technology!
@@ -350,7 +465,7 @@ export default function Events() {
               fontSize: { xs: "1.25rem", md: "1.5rem" },
             }}
           >
-            Welcome to Maple Tech X Hackathon Collaboration Opportunity!
+            Welcome to Maple Tech X {headerTitle} Collaboration Opportunity!
           </Typography>
 
           <Typography
@@ -360,13 +475,12 @@ export default function Events() {
           >
             Are you passionate about fostering innovation, supporting emerging
             talent, and contributing to the ever-evolving landscape of
-            technology ? If so, collaborating with us in our upcoming hackathon
+            technology ? If so, collaborating with us in our upcoming{" "}
+            {headerTitle}
             could be the perfect opportunity for you and your organization.
           </Typography>
         </Box>
       </Box>
-
-      <Footer />
     </>
   );
 }

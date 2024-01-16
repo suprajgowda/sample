@@ -7,7 +7,7 @@ import Skills from "./Skills";
 import ContactUs from "./ContactUs";
 import HomePage from "./Home";
 import HomePage2 from "./theme2/HomePage";
-import Events2 from "./theme2/Events";
+import Events2, { Conference, Workshops } from "./theme2/Events";
 import AboutUs2 from "./theme2/AboutUs";
 import ContactUs2 from "./theme2/ContactUs";
 import Skills2 from "./theme2/Skills";
@@ -21,7 +21,10 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" Component={HomePage2} />
-          <Route path="/events" Component={Events2} />
+          {/* <Route path="/events" Component={Events2} /> */}
+          <Route path="/events/hackathons" Component={Events2} />
+          <Route path="/events/workshops" Component={Workshops} />
+          <Route path="/events/conference" Component={Conference} />
           <Route path="/about-us" Component={AboutUs2} />
           <Route path="/skills" Component={Skills2} />
           <Route path="/contact-us" Component={ContactUs2} />

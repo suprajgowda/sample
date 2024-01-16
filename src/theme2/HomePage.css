@@ -18,6 +18,11 @@
   height: 350px;
 }
 
+.hostConf {
+  width: 500px;
+  height: 100%;
+}
+
 @media only screen and (max-width: 768px) {
   .hom1 {
     max-width: 100%;
@@ -50,5 +55,10 @@
   .hmp12 {
     width: 100%;
     margin-bottom: 10%;
+  }
+
+  .hostConf {
+    width: 100%;
+    height: 250px;
   }
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import { HeaderNew } from "./HomePage";
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button, TextField, Typography } from "@mui/material";
 import Footer from "./Footer";
 import FullWidthTextField from "../FullWidthTextField";
 import ContactUsImage from "../assets/ContactUs.jpg";
@@ -73,7 +73,23 @@ export default function ContactUs() {
               <FullWidthTextField label={"Name"} id={"Name"} />
               <FullWidthTextField label={"Email"} id={"Email"} />
               <FullWidthTextField label={"Phone Number"} id={"Phone Number"} />
-              <FullWidthTextField label={"College"} id={"College"} />
+              <FullWidthTextField
+                label={"Designation / Branch"}
+                id={"Branch"}
+              />
+              <FullWidthTextField
+                label={"Organization / College"}
+                id={"College"}
+              />
+              <TextField
+                id="outlined-multiline-static"
+                label="Message"
+                multiline
+                rows={4}
+                sx={{
+                  width: "100%",
+                }}
+              />
 
               <Button
                 variant="contained"

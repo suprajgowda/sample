@@ -725,9 +725,9 @@ const skillsTraining = {
 const eventsList = {
   link: eventsLink,
   list: [
-    { value: "Hackathons", link: eventsLink },
-    { value: "Workshops", link: eventsLink },
-    { value: "Conference", link: eventsLink },
+    { value: "Hackathons", link: "/events/hackathons" },
+    { value: "Workshops", link: "/events/workshops" },
+    { value: "Conference", link: "/events/conference" },
   ],
 };
 
