@@ -637,7 +637,7 @@ export const FormDialogue = (props: any) => {
           />
           <TextField
             id="standard-multiline-static"
-            label="Multiline"
+            label="Message"
             multiline
             rows={4}
             variant="standard"
