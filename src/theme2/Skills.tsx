@@ -547,9 +547,26 @@ export const FormDialogue = (props: any) => {
         <DialogTitle sx={{ color: "#006983" }}>Apply</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            To Apply to this website, please enter your email address and Phone
-            Number here. We will send updates occasionally.
+            To Apply to this website, please enter your details here. We will
+            send updates occasionally.
           </DialogContentText>
+          <TextField
+            autoFocus
+            margin="dense"
+            id="name"
+            label="Name"
+            type="text"
+            fullWidth
+            variant="standard"
+            sx={{
+              "& label.Mui-focused": {
+                color: "#006983",
+              },
+              "& div:after": {
+                borderBottom: "2px solid #006983",
+              },
+            }}
+          />
           <TextField
             autoFocus
             margin="dense"
@@ -583,6 +600,48 @@ export const FormDialogue = (props: any) => {
                 borderBottom: "2px solid #006983",
               },
             }}
+          />
+          <TextField
+            autoFocus
+            margin="dense"
+            id="name"
+            label="Designation / Branch"
+            type="text"
+            fullWidth
+            variant="standard"
+            sx={{
+              "& label.Mui-focused": {
+                color: "#006983",
+              },
+              "& div:after": {
+                borderBottom: "2px solid #006983",
+              },
+            }}
+          />
+          <TextField
+            autoFocus
+            margin="dense"
+            id="name"
+            label="Organization / College"
+            type="text"
+            fullWidth
+            variant="standard"
+            sx={{
+              "& label.Mui-focused": {
+                color: "#006983",
+              },
+              "& div:after": {
+                borderBottom: "2px solid #006983",
+              },
+            }}
+          />
+          <TextField
+            id="standard-multiline-static"
+            label="Multiline"
+            multiline
+            rows={4}
+            variant="standard"
+            sx={{ width: "100%" }}
           />
         </DialogContent>
         <DialogActions>
