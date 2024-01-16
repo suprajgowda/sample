@@ -3,7 +3,7 @@ import { HeaderNew } from "./HomePage";
 import { Box, Button, TextField, Typography } from "@mui/material";
 import Footer from "./Footer";
 import FullWidthTextField from "../FullWidthTextField";
-import ContactUsImage from "../assets/ContactUs.jpg";
+import ContactUsImage from "../assets/ContactUsBanner.jpg";
 
 export default function ContactUs() {
   return (
@@ -13,12 +13,12 @@ export default function ContactUs() {
       <Box
         sx={{
           mx: "10%",
-          mt: { xs: "75px", md: "8%" },
-          mb: { xs: "75px", md: "8%" },
+          mt: { xs: "0", md: "8%" },
+          mb: { xs: "0", md: "8%" },
           py: 4,
-          backgroundSize: "150% 100%",
-          backgroundPositionY: "center",
-          backgroundImage: `url(${ContactUsImage})`,
+          // backgroundSize: "150% 100%",
+          // backgroundPositionY: "center",
+          // backgroundImage: `url(${ContactUsImage})`,
         }}
       >
         <Box
@@ -26,22 +26,18 @@ export default function ContactUs() {
             display: "flex",
             justifyContent: "space-evenly",
             mb: 4,
+            flexDirection: { xs: "column", sm: "row" },
           }}
         >
-          {/* <Box sx={{ display: "flex" }}>
-            <img
-              src={ContactUsImage}
-              alt="Contact Us"
-              style={{ width: "100%" }}
-            />
-          </Box> */}
-
           <Box
             sx={{
               display: "flex",
               flexDirection: "column",
               backgroundColor: "#fff",
               opacity: "0.9",
+              border: { xs: "1px solid #d6d5d0", sm: "5px solid #d6d5d0" },
+              borderRight: { xs: "1px solid #d6d5d0", sm: "none" },
+              p: { xs: 2, sm: 0 },
             }}
           >
             <Typography
@@ -49,7 +45,7 @@ export default function ContactUs() {
               gutterBottom
               sx={{
                 textAlign: "center",
-                color: "#384158",
+                color: "#000",
                 left: { xs: "5%", md: "15%" },
                 fontSize: { xs: "25px", md: "50px" },
                 fontWeight: 700,
@@ -99,6 +95,7 @@ export default function ContactUs() {
                   "&:hover": {
                     backgroundColor: "#006983",
                   },
+                  boxShadow: "5px 5px 0px 0px #bed89d",
                   py: 2,
                   my: 2,
                 }}
@@ -106,6 +103,13 @@ export default function ContactUs() {
                 Contact Me
               </Button>
             </Box>
+          </Box>
+          <Box sx={{ display: "flex" }}>
+            <img
+              src={ContactUsImage}
+              alt="Contact Us"
+              style={{ width: "100%" }}
+            />
           </Box>
         </Box>
       </Box>
