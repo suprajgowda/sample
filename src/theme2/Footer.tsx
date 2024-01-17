@@ -106,7 +106,7 @@ export default function Footer() {
           justifyContent: "space-between",
         }}
       >
-        <Box sx={{ flex: 2, mb: { xs: 5, md: 0 } }}>
+        <Box sx={{ flex: 2, mb: { xs: 5, md: 0 }, mr: { xs: 0, sm: 6 } }}>
           <Typography
             variant="h5"
             gutterBottom
@@ -128,7 +128,8 @@ export default function Footer() {
               fontSize: { xs: "1rem", md: "1.25rem" },
             }}
           >
-            Ruutikellarintie 2, 65100 VAASA
+            No.37, 18th Cross, Ullal Main Road, Opp Bank of India, Bangalore
+            560056
           </Typography>
           <Typography
             variant="h6"
@@ -139,7 +140,7 @@ export default function Footer() {
               fontSize: { xs: "1rem", md: "1.25rem" },
             }}
           >
-            Info: Mon - Fri 8.00-15.45
+            Info: Mon - Fri 8.00-6.00
           </Typography>
           <Typography
             variant="h6"
@@ -150,7 +151,7 @@ export default function Footer() {
               fontSize: { xs: "1rem", md: "1.25rem" },
             }}
           >
-            Tel. +358 6 325 7411
+            Tel. +91 9019743939
           </Typography>
         </Box>
 
@@ -166,6 +167,22 @@ export default function Footer() {
             }}
           >
             Browse our selection
+          </Typography>
+
+          <Typography variant="h6" gutterBottom>
+            <Typography
+              variant="h6"
+              gutterBottom
+              component="a"
+              href="/skills"
+              sx={{
+                color: "#006983",
+                fontWeight: 500,
+                fontSize: { xs: "1rem", md: "1.25rem", textDecoration: "none" },
+              }}
+            >
+              Skills and Training
+            </Typography>
           </Typography>
 
           <Typography variant="h6" gutterBottom>
@@ -199,22 +216,6 @@ export default function Footer() {
               Projects
             </Typography>
           </Typography>
-
-          <Typography variant="h6" gutterBottom>
-            <Typography
-              variant="h6"
-              gutterBottom
-              component="a"
-              href="/about-us"
-              sx={{
-                color: "#006983",
-                fontWeight: 500,
-                fontSize: { xs: "1rem", md: "1.25rem", textDecoration: "none" },
-              }}
-            >
-              About us
-            </Typography>
-          </Typography>
         </Box>
 
         <Box sx={{ flex: 1, mb: { xs: 5, md: 0 } }}>
@@ -236,22 +237,6 @@ export default function Footer() {
               variant="h6"
               gutterBottom
               component="a"
-              href="/skills"
-              sx={{
-                color: "#006983",
-                fontWeight: 500,
-                fontSize: { xs: "1rem", md: "1.25rem", textDecoration: "none" },
-              }}
-            >
-              Skills and Training
-            </Typography>
-          </Typography>
-
-          <Typography variant="h6" gutterBottom>
-            <Typography
-              variant="h6"
-              gutterBottom
-              component="a"
               href="/contact-us"
               sx={{
                 color: "#006983",
@@ -260,6 +245,22 @@ export default function Footer() {
               }}
             >
               Contact us
+            </Typography>
+          </Typography>
+
+          <Typography variant="h6" gutterBottom>
+            <Typography
+              variant="h6"
+              gutterBottom
+              component="a"
+              href="/about-us"
+              sx={{
+                color: "#006983",
+                fontWeight: 500,
+                fontSize: { xs: "1rem", md: "1.25rem", textDecoration: "none" },
+              }}
+            >
+              About us
             </Typography>
           </Typography>
         </Box>
