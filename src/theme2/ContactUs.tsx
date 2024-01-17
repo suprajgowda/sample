@@ -13,8 +13,8 @@ export default function ContactUs() {
       <Box
         sx={{
           mx: "10%",
-          mt: { xs: "0", md: "8%" },
-          mb: { xs: "0", md: "8%" },
+          mt: { xs: "0", md: "4%" },
+          mb: { xs: "0", md: "4%" },
           py: 4,
           // backgroundSize: "150% 100%",
           // backgroundPositionY: "center",
@@ -98,6 +98,7 @@ export default function ContactUs() {
                   boxShadow: "5px 5px 0px 0px #bed89d",
                   py: 2,
                   my: 2,
+                  mt: 4,
                 }}
               >
                 Contact Me
