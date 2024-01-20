@@ -1,5 +1,4 @@
 import React from "react";
-import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Events from "./Events";
 import AboutUs from "./AboutUs";
@@ -13,7 +12,27 @@ import ContactUs2 from "./theme2/ContactUs";
 import Skills2 from "./theme2/Skills";
 import Projects from "./theme2/Projects";
 import MSpaceX from "./theme2/MSpaceX";
+// import firebase from "firebase/app";
+import "firebase/firestore";
+import "firebase/auth";
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+// import { getAnalytics } from "firebase/analytics";
 import "./App.css";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBhXpy3TvXhlR_11ws5PrcaxQ-j3X6s5uI",
+  authDomain: "maple-tech-x.firebaseapp.com",
+  projectId: "maple-tech-x",
+  storageBucket: "maple-tech-x.appspot.com",
+  messagingSenderId: "125669444876",
+  appId: "1:125669444876:web:a6a613b4a09a0192fe0d29",
+  measurementId: "G-FSRQZBK6QS",
+};
+
+const app = initializeApp(firebaseConfig);
+// const analytics = getAnalytics(app);
+export const textDB = getFirestore(app);
 
 function App() {
   return (
@@ -21,7 +40,6 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" Component={HomePage2} />
-          {/* <Route path="/events" Component={Events2} /> */}
           <Route path="/events/hackathons" Component={Events2} />
           <Route path="/events/workshops" Component={Workshops} />
           <Route path="/events/conference" Component={Conference} />

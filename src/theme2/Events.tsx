@@ -498,6 +498,8 @@ function EventsDesc(props: any) {
         setOpen={setOpen}
         handleClickOpen={handleClickOpen}
         handleClose={handleClose}
+        formType="Events"
+        triggerType={headerTitle}
       />
     </>
   );

@@ -2,8 +2,15 @@ import React from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 
-export default function FullWidthTextField(props: any) {
-  const { label, id } = props;
+interface FullWidthTextFieldInterface {
+  label: string;
+  id: string;
+  value: string;
+  onChangeFunc?: any;
+}
+
+export default function FullWidthTextField(props: FullWidthTextFieldInterface) {
+  const { label, id, value, onChangeFunc } = props;
 
   return (
     <Box
@@ -13,7 +20,13 @@ export default function FullWidthTextField(props: any) {
         mb: 4,
       }}
     >
-      <TextField fullWidth label={label} id={id} />
+      <TextField
+        fullWidth
+        label={label}
+        value={value}
+        id={id}
+        onChange={onChangeFunc}
+      />
     </Box>
   );
 }

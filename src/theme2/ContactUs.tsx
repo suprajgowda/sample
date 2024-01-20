@@ -1,11 +1,46 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { HeaderNew } from "./HomePage";
 import { Box, Button, TextField, Typography } from "@mui/material";
 import Footer from "./Footer";
 import FullWidthTextField from "../FullWidthTextField";
 import ContactUsImage from "../assets/ContactUsBanner.jpg";
+import { textDB } from "../App";
+import { addDoc, collection } from "firebase/firestore";
+
+interface ContactUsInterface {
+  name: string;
+  email: string;
+  phone_number: string;
+  branch: string;
+  college: string;
+  message: string;
+}
 
 export default function ContactUs() {
+  const [contactInfo, setContactInfo] = useState<ContactUsInterface>({
+    name: "",
+    email: "",
+    phone_number: "",
+    branch: "",
+    college: "",
+    message: "",
+  });
+
+  const onChangeFunction = (e: any) => {
+    const inputId = e.target.id;
+    const inputValue = e.target.value;
+    console.log("inputId      = ", inputId);
+    console.log("inputValue   = ", inputValue);
+
+    let tempObj: any = {};
+    tempObj[inputId] = inputValue;
+    console.log("The Existing info in contact info Object = ", tempObj);
+
+    setContactInfo({ ...contactInfo, ...tempObj });
+  };
+
+  useEffect(() => console.log("contactInfo ==== ", contactInfo), [contactInfo]);
+
   return (
     <>
       <HeaderNew />
@@ -16,9 +51,6 @@ export default function ContactUs() {
           mt: { xs: "0", md: "4%" },
           mb: { xs: "0", md: "4%" },
           py: 4,
-          // backgroundSize: "150% 100%",
-          // backgroundPositionY: "center",
-          // backgroundImage: `url(${ContactUsImage})`,
         }}
       >
         <Box
@@ -66,25 +98,46 @@ export default function ContactUs() {
                 alignItems: "center",
               }}
             >
-              <FullWidthTextField label={"Name"} id={"Name"} />
-              <FullWidthTextField label={"Email"} id={"Email"} />
-              <FullWidthTextField label={"Phone Number"} id={"Phone Number"} />
+              <FullWidthTextField
+                label={"Name"}
+                id={"name"}
+                value={contactInfo.name}
+                onChangeFunc={onChangeFunction}
+              />
+              <FullWidthTextField
+                label={"Email"}
+                id={"email"}
+                value={contactInfo.email}
+                onChangeFunc={onChangeFunction}
+              />
+              <FullWidthTextField
+                label={"Phone Number"}
+                id={"phone_number"}
+                value={contactInfo.phone_number}
+                onChangeFunc={onChangeFunction}
+              />
               <FullWidthTextField
                 label={"Designation / Branch"}
-                id={"Branch"}
+                id={"branch"}
+                value={contactInfo.branch}
+                onChangeFunc={onChangeFunction}
               />
               <FullWidthTextField
                 label={"Organization / College"}
-                id={"College"}
+                id={"college"}
+                value={contactInfo.college}
+                onChangeFunc={onChangeFunction}
               />
               <TextField
-                id="outlined-multiline-static"
+                id="message"
                 label="Message"
                 multiline
                 rows={4}
                 sx={{
                   width: "100%",
                 }}
+                onChange={onChangeFunction}
+                value={contactInfo.message}
               />
 
               <Button
@@ -99,6 +152,39 @@ export default function ContactUs() {
                   py: 2,
                   my: 2,
                   mt: 4,
+                }}
+                onClick={async () => {
+                  console.log("contactInfo to send ------ ", contactInfo);
+                  if (
+                    contactInfo.name !== "" &&
+                    contactInfo.email !== "" &&
+                    contactInfo.phone_number !== "" &&
+                    contactInfo.branch !== "" &&
+                    contactInfo.college !== ""
+                  ) {
+                    const valRef = collection(textDB, "contact");
+                    await addDoc(valRef, { contactInfo: contactInfo });
+                    setContactInfo({
+                      name: "",
+                      email: "",
+                      phone_number: "",
+                      branch: "",
+                      college: "",
+                      message: "",
+                    });
+
+                    alert("Data added successfully");
+                  } else if (contactInfo.name === "") {
+                    alert("Please Enter Name");
+                  } else if (contactInfo.email === "") {
+                    alert("Please Enter Email");
+                  } else if (contactInfo.phone_number === "") {
+                    alert("Please Enter Phone Number");
+                  } else if (contactInfo.branch === "") {
+                    alert("Please Enter Branch");
+                  } else if (contactInfo.college === "") {
+                    alert("Please Enter College");
+                  }
                 }}
               >
                 Contact Me

@@ -37,10 +37,14 @@ export default function ContactUs() {
           alignItems: "center",
         }}
       >
-        <FullWidthTextField label={"Name"} id={"Name"} />
-        <FullWidthTextField label={"Email"} id={"Email"} />
-        <FullWidthTextField label={"Phone Number"} id={"Phone Number"} />
-        <FullWidthTextField label={"College"} id={"College"} />
+        <FullWidthTextField label={"Name"} id={"Name"} value={""} />
+        <FullWidthTextField label={"Email"} id={"Email"} value={""} />
+        <FullWidthTextField
+          label={"Phone Number"}
+          id={"Phone Number"}
+          value={""}
+        />
+        <FullWidthTextField label={"College"} id={"College"} value={""} />
 
         <Button
           variant="contained"

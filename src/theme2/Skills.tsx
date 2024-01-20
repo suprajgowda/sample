@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
   Button,
@@ -24,6 +24,8 @@ import Robotics from "../assets/robotics.jpg";
 import ThreeD from "../assets/3DPrinter.jpg";
 import SkillsBanner2 from "../assets/skills-banner-2.jpg";
 import "./HomePage.css";
+import { addDoc, collection } from "firebase/firestore";
+import { textDB } from "../App";
 
 const skillsList = [
   {
@@ -275,8 +277,10 @@ export const PROJECT_DOMAIN_LIST = [
 
 export default function Skills() {
   const [open, setOpen] = React.useState(false);
+  const [triggerType, setTriggerType] = React.useState("");
 
-  const handleClickOpen = () => {
+  const handleClickOpen = (trigger: any) => {
+    setTriggerType(trigger);
     setOpen(true);
   };
 
@@ -469,7 +473,7 @@ export default function Skills() {
                         backgroundColor: "#006983",
                       },
                     }}
-                    onClick={handleClickOpen}
+                    onClick={() => handleClickOpen(proj.header)}
                   >
                     Apply
                   </Button>
@@ -533,13 +537,72 @@ export default function Skills() {
         setOpen={setOpen}
         handleClickOpen={handleClickOpen}
         handleClose={handleClose}
+        formType={"skills"}
+        triggerType={triggerType}
       />
     </>
   );
 }
 
 export const FormDialogue = (props: any) => {
-  const { open, handleClose } = props;
+  const { open, handleClose, formType, triggerType } = props;
+  const [contactInfo, setContactInfo] = useState<any>({
+    name: "",
+    email: "",
+    phone_number: "",
+    branch: "",
+    college: "",
+    message: "",
+  });
+
+  const onChangeFunction = (e: any) => {
+    const inputId = e.target.id;
+    const inputValue = e.target.value;
+    console.log("inputId      = ", inputId);
+    console.log("inputValue   = ", inputValue);
+
+    let tempObj: any = {};
+    tempObj[inputId] = inputValue;
+    console.log("The Existing info in contact info Object = ", tempObj);
+
+    setContactInfo({ ...contactInfo, ...tempObj });
+  };
+
+  const onSubmit = async () => {
+    console.log("contactInfo to send ------ ", contactInfo);
+    if (
+      contactInfo.name !== "" &&
+      contactInfo.email !== "" &&
+      contactInfo.phone_number !== "" &&
+      contactInfo.branch !== "" &&
+      contactInfo.college !== ""
+    ) {
+      const valRef = collection(textDB, formType);
+      let contactInfo2Save = { ...contactInfo, intrestedIn: triggerType };
+      await addDoc(valRef, { contactInfo: contactInfo2Save });
+      setContactInfo({
+        name: "",
+        email: "",
+        phone_number: "",
+        branch: "",
+        college: "",
+        message: "",
+      });
+
+      alert("Data added successfully");
+    } else if (contactInfo.name === "") {
+      alert("Please Enter Name");
+    } else if (contactInfo.email === "") {
+      alert("Please Enter Email");
+    } else if (contactInfo.phone_number === "") {
+      alert("Please Enter Phone Number");
+    } else if (contactInfo.branch === "") {
+      alert("Please Enter Branch");
+    } else if (contactInfo.college === "") {
+      alert("Please Enter College");
+    }
+    handleClose();
+  };
 
   return (
     <React.Fragment>
@@ -566,11 +629,12 @@ export const FormDialogue = (props: any) => {
                 borderBottom: "2px solid #006983",
               },
             }}
+            onChange={onChangeFunction}
           />
           <TextField
             autoFocus
             margin="dense"
-            id="name"
+            id="email"
             label="Email Address"
             type="email"
             fullWidth
@@ -583,11 +647,12 @@ export const FormDialogue = (props: any) => {
                 borderBottom: "2px solid #006983",
               },
             }}
+            onChange={onChangeFunction}
           />
           <TextField
             autoFocus
             margin="dense"
-            id="name"
+            id="phone_number"
             label="Phone Number"
             type="phone"
             fullWidth
@@ -600,11 +665,12 @@ export const FormDialogue = (props: any) => {
                 borderBottom: "2px solid #006983",
               },
             }}
+            onChange={onChangeFunction}
           />
           <TextField
             autoFocus
             margin="dense"
-            id="name"
+            id="branch"
             label="Designation / Branch"
             type="text"
             fullWidth
@@ -617,11 +683,12 @@ export const FormDialogue = (props: any) => {
                 borderBottom: "2px solid #006983",
               },
             }}
+            onChange={onChangeFunction}
           />
           <TextField
             autoFocus
             margin="dense"
-            id="name"
+            id="college"
             label="Organization / College"
             type="text"
             fullWidth
@@ -634,21 +701,23 @@ export const FormDialogue = (props: any) => {
                 borderBottom: "2px solid #006983",
               },
             }}
+            onChange={onChangeFunction}
           />
           <TextField
-            id="standard-multiline-static"
+            id="message"
             label="Message"
             multiline
             rows={4}
             variant="standard"
             sx={{ width: "100%" }}
+            onChange={onChangeFunction}
           />
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} sx={{ color: "#006983" }}>
             Cancel
           </Button>
-          <Button onClick={handleClose} sx={{ color: "#006983" }}>
+          <Button onClick={onSubmit} sx={{ color: "#006983" }}>
             Submit
           </Button>
         </DialogActions>

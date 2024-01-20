@@ -8,8 +8,10 @@ import "./HomePage.css";
 
 export default function Projects() {
   const [open, setOpen] = React.useState(false);
+  const [triggerType, setTriggerType] = React.useState("");
 
-  const handleClickOpen = () => {
+  const handleClickOpen = (trigger: any) => {
+    setTriggerType(trigger);
     setOpen(true);
   };
 
@@ -200,7 +202,7 @@ export default function Projects() {
                       },
                       fontSize: "0.875rem",
                     }}
-                    onClick={handleClickOpen}
+                    onClick={() => handleClickOpen(proj.header)}
                   >
                     Apply
                   </Button>
@@ -218,6 +220,8 @@ export default function Projects() {
         setOpen={setOpen}
         handleClickOpen={handleClickOpen}
         handleClose={handleClose}
+        formType="Projects"
+        triggerType={triggerType}
       />
     </>
   );
