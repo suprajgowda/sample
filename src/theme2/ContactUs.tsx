@@ -7,7 +7,7 @@ import ContactUsImage from "../assets/ContactUsBanner.jpg";
 import { textDB } from "../App";
 import { addDoc, collection } from "firebase/firestore";
 
-interface ContactUsInterface {
+export interface ContactUsInterface {
   name: string;
   email: string;
   phone_number: string;

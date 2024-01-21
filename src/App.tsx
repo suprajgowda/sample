@@ -12,12 +12,13 @@ import ContactUs2 from "./theme2/ContactUs";
 import Skills2 from "./theme2/Skills";
 import Projects from "./theme2/Projects";
 import MSpaceX from "./theme2/MSpaceX";
-// import firebase from "firebase/app";
+import Login, { Register } from "./Login";
+import DashBoard from "./DashBoard";
 import "firebase/firestore";
 import "firebase/auth";
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-// import { getAnalytics } from "firebase/analytics";
+import { getAuth } from "firebase/auth";
 import "./App.css";
 
 const firebaseConfig = {
@@ -31,8 +32,8 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-// const analytics = getAnalytics(app);
 export const textDB = getFirestore(app);
+export const database = getAuth(app);
 
 function App() {
   return (
@@ -48,6 +49,9 @@ function App() {
           <Route path="/contact-us" Component={ContactUs2} />
           <Route path="/projects" Component={Projects} />
           <Route path="/m-space-x" Component={MSpaceX} />
+          <Route path="/dashboard" Component={DashBoard} />
+          <Route path="/login" Component={Login} />
+          <Route path="/register" Component={Register} />
 
           <Route path="/v1/home" Component={HomePage} />
           <Route path="/v1/events" Component={Events} />
