@@ -19,6 +19,7 @@ import "firebase/auth";
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
+import ReactGA from "react-ga4";
 import "./App.css";
 
 const firebaseConfig = {
@@ -34,6 +35,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 export const textDB = getFirestore(app);
 export const database = getAuth(app);
+
+ReactGA.initialize("G-RKJZBBSC7C");
 
 function App() {
   return (

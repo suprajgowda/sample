@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { HeaderNew } from "./HomePage";
 import { Box, Button, Typography } from "@mui/material";
 import ProjectsBanner from "../assets/ProjectsNewBanner.jpg";
 import Footer from "./Footer";
 import { FormDialogue, PROJECT_DOMAIN_LIST } from "./Skills";
 import "./HomePage.css";
+import ReactGA from "react-ga4";
 
 export default function Projects() {
   const [open, setOpen] = React.useState(false);
@@ -18,6 +19,10 @@ export default function Projects() {
   const handleClose = () => {
     setOpen(false);
   };
+
+  useEffect(() => {
+    ReactGA._gaCommandSendPageview(window.location.pathname, "");
+  }, []);
 
   return (
     <>
@@ -48,11 +53,23 @@ export default function Projects() {
               left: { xs: "5%", md: "15%" },
               fontSize: { xs: "25px", md: "40px" },
               fontWeight: 700,
-              pb: 2,
               mt: 2,
             }}
           >
-            Projects
+            Final Year Projects
+          </Typography>
+
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{
+              fontWeight: 700,
+              fontSize: { xs: "1rem", sm: "1rem" },
+              pb: 2,
+              color: "#fc6c47",
+            }}
+          >
+            BE / MTECH / MCA / BCA / MSC / DIPLOMA / INTERNSHIP / MINI PROJECT
           </Typography>
 
           <Typography

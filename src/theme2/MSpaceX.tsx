@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Box, Typography } from "@mui/material";
 import { HeaderNew } from "./HomePage";
 import Footer from "./Footer";
@@ -7,6 +7,7 @@ import GalaticDiscovery from "../assets/GalaticDiscovery.jpg";
 import Mission_to_Mars from "../assets/Mission_to_Mars.jpg";
 import AstronautTraining from "../assets/AstronautTraining.jpg";
 import StellarExplorations from "../assets/StellarExplorations.jpg";
+import ReactGA from "react-ga4";
 
 const WeekList = [
   {
@@ -48,6 +49,10 @@ const WeekList = [
 ];
 
 export default function MSpaceX() {
+  useEffect(() => {
+    ReactGA._gaCommandSendPageview(window.location.pathname, "");
+  }, []);
+
   return (
     <>
       <HeaderNew />

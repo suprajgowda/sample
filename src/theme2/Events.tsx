@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { HeaderNew } from "./HomePage";
 import Footer from "./Footer";
 import { Box, Button, Typography } from "@mui/material";
@@ -17,6 +17,7 @@ import HackathonBanner from "../assets/HackathonBanner.jpg";
 import ConferenceBanner from "../assets/ConferenceBanner.jpg";
 import "./HomePage.css";
 import { FormDialogue } from "./Skills";
+import ReactGA from "react-ga4";
 
 const events1 = [
   {
@@ -70,6 +71,9 @@ const events2 = [
 ];
 
 export default function Events() {
+  useEffect(() => {
+    ReactGA._gaCommandSendPageview(window.location.pathname, "");
+  }, []);
   return (
     <>
       <HeaderNew />
@@ -80,6 +84,9 @@ export default function Events() {
 }
 
 export function Workshops() {
+  useEffect(() => {
+    ReactGA._gaCommandSendPageview(window.location.pathname, "");
+  }, []);
   return (
     <>
       <HeaderNew />
@@ -90,6 +97,9 @@ export function Workshops() {
 }
 
 export function Conference() {
+  useEffect(() => {
+    ReactGA._gaCommandSendPageview(window.location.pathname, "");
+  }, []);
   return (
     <>
       <HeaderNew />

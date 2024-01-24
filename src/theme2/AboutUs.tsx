@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { HeaderNew } from "./HomePage";
 import { Box, Typography } from "@mui/material";
 import Footer from "./Footer";
@@ -13,6 +13,7 @@ import Continuous_Learning from "../assets/Continuous-Learning.jpg";
 import Fun_and_Enjoyment from "../assets/Fun-and-Enjoyment.jpg";
 import AboutUsNewBanner from "../assets/aboutUsBanner2.jpg";
 import "./HomePage.css";
+import ReactGA from "react-ga4";
 
 const listOfAboutUs = [
   {
@@ -71,6 +72,9 @@ const listOfAboutUs1 = [
 ];
 
 export default function AboutUs() {
+  useEffect(() => {
+    ReactGA._gaCommandSendPageview(window.location.pathname, "");
+  }, []);
   return (
     <>
       <HeaderNew />

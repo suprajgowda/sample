@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -33,6 +33,7 @@ import {
 import Footer from "./Footer";
 import HomePage2 from "../assets/Home-Page-2.jpg";
 import "./HomePage.css";
+import ReactGA from "react-ga4";
 
 export function HeaderNew() {
   return (
@@ -45,6 +46,11 @@ export function HeaderNew() {
 
 export default function HomePage() {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    ReactGA._gaCommandSendPageview(window.location.pathname, "");
+  }, []);
+
   return (
     <>
       <HeaderNew />
@@ -86,6 +92,7 @@ export default function HomePage() {
           >
             Welcome to Maple
           </Typography>
+
           <Typography
             variant="h5"
             component="div"
@@ -93,9 +100,22 @@ export default function HomePage() {
               fontWeight: 700,
               fontSize: { xs: "1rem", sm: "1.25rem" },
               textAlign: { xs: "center", sm: "left" },
+              pb: 2,
             }}
           >
-            Where Innovation Meets Opportunity!
+            Where Innovation Meets Opportunity! - Explore our projects in{" "}
+          </Typography>
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{
+              fontWeight: 700,
+              fontSize: { xs: "0.8rem", sm: "0.8rem" },
+              pb: 2,
+              color: "#fc6c47",
+            }}
+          >
+            BE / MTECH / MCA / BCA / MSC / DIPLOMA / INTERNSHIP / MINI PROJECT
           </Typography>
 
           <Button

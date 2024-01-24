@@ -5,11 +5,16 @@ import Footer from "./theme2/Footer";
 import TableView from "./TableView";
 import { textDB } from "./App";
 import { collection, getDocs } from "firebase/firestore";
+import ReactGA from "react-ga4";
 
 export default function DashBoard() {
   const [skills, setSkills] = useState<any>([]);
   const [events, setEvents] = useState<any>([]);
   const [contacts, setContacts] = useState<any>([]);
+
+  useEffect(() => {
+    ReactGA._gaCommandSendPageview(window.location.pathname, "");
+  }, []);
 
   const getData = async () => {
     ["Events", "contact", "skills"].map(async (coll) => {

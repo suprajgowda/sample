@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Box,
   Button,
@@ -26,6 +26,7 @@ import SkillsBanner2 from "../assets/skills-banner-2.jpg";
 import "./HomePage.css";
 import { addDoc, collection } from "firebase/firestore";
 import { textDB } from "../App";
+import ReactGA from "react-ga4";
 
 const skillsList = [
   {
@@ -287,6 +288,11 @@ export default function Skills() {
   const handleClose = () => {
     setOpen(false);
   };
+
+  useEffect(() => {
+    ReactGA._gaCommandSendPageview(window.location.pathname, "");
+  }, []);
+
   return (
     <>
       <HeaderNew />
@@ -316,11 +322,23 @@ export default function Skills() {
               left: { xs: "5%", md: "15%" },
               fontSize: { xs: "25px", md: "40px" },
               fontWeight: 700,
-              pb: 2,
               mt: 2,
             }}
           >
-            Skills
+            Final Year Projects
+          </Typography>
+
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{
+              fontWeight: 700,
+              fontSize: { xs: "1rem", sm: "1rem" },
+              pb: 2,
+              color: "#fc6c47",
+            }}
+          >
+            BE / MTECH / MCA / BCA / MSC / DIPLOMA / INTERNSHIP / MINI PROJECT
           </Typography>
           <Typography
             variant="h5"

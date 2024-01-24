@@ -6,6 +6,7 @@ import FullWidthTextField from "../FullWidthTextField";
 import ContactUsImage from "../assets/ContactUsBanner.jpg";
 import { textDB } from "../App";
 import { addDoc, collection } from "firebase/firestore";
+import ReactGA from "react-ga4";
 
 export interface ContactUsInterface {
   name: string;
@@ -40,6 +41,10 @@ export default function ContactUs() {
   };
 
   useEffect(() => console.log("contactInfo ==== ", contactInfo), [contactInfo]);
+
+  useEffect(() => {
+    ReactGA._gaCommandSendPageview(window.location.pathname, "");
+  }, []);
 
   return (
     <>

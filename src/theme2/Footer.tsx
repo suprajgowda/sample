@@ -128,8 +128,8 @@ export default function Footer() {
               fontSize: { xs: "1rem", md: "1.25rem" },
             }}
           >
-            No.37, 18th Cross, Ullal Main Road, Opp Bank of India, Bangalore
-            560056
+            Brahmi Building, 218/19, 28th Cross Road, 2nd Block, Rajajinagar,
+            Bengaluru, Karnataka 560010
           </Typography>
           <Typography
             variant="h6"

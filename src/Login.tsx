@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Box, Button, Typography } from "@mui/material";
 import { HeaderNew } from "./theme2/HomePage";
 import Footer from "./theme2/Footer";
@@ -9,12 +9,17 @@ import {
   signInWithEmailAndPassword,
 } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import ReactGA from "react-ga4";
 
 export default function Login() {
   const [loginInfo, setLoginInfo] = useState<any>({
     email: "",
     password: "",
   });
+
+  useEffect(() => {
+    ReactGA._gaCommandSendPageview(window.location.pathname, "");
+  }, []);
 
   const history = useNavigate();
 
@@ -148,6 +153,10 @@ export function Register() {
     email: "",
     password: "",
   });
+
+  useEffect(() => {
+    ReactGA._gaCommandSendPageview(window.location.pathname, "");
+  }, []);
 
   const onChangeFunction = (e: any) => {
     const inputId = e.target.id;
