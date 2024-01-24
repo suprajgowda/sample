@@ -4,7 +4,7 @@ import { HeaderNew } from "./theme2/HomePage";
 import Footer from "./theme2/Footer";
 import TableView from "./TableView";
 import { textDB } from "./App";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, query } from "firebase/firestore";
 import ReactGA from "react-ga4";
 
 export default function DashBoard() {
@@ -17,25 +17,41 @@ export default function DashBoard() {
   }, []);
 
   const getData = async () => {
-    ["Events", "contact", "skills"].map(async (coll) => {
-      const valRef = collection(textDB, coll);
-      const dataDB = await getDocs(valRef);
-      let tempList: any[] = [];
-      console.log("coll------", coll);
-      dataDB.forEach((event) => {
-        console.log("The Event DATA () - ", event.data());
-        tempList.push({ ...event.data().contactInfo });
-      });
-      console.log("The tempList = ", tempList);
+    const collections = ["Events", "contact", "skills"];
 
-      if (coll === "Events") {
-        setEvents(tempList);
-      } else if (coll === "contact") {
-        setContacts(tempList);
-      } else if (coll === "skills") {
-        setSkills(tempList);
+    try {
+      for (const coll of collections) {
+        const valRef = collection(textDB, coll);
+        const orderedQuery = query(valRef);
+        const dataDB = await getDocs(orderedQuery);
+
+        console.log(
+          `Data for ${coll}:`,
+          dataDB.docs.map((doc) => doc.data())
+        );
+
+        let tempList = dataDB.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data().contactInfo,
+          createdAt: doc.data().contactInfo.createdAt.toDate().toLocaleString(),
+        }));
+
+        console.log(`The tempList for ${coll} = `, tempList);
+
+        // Sort tempList based on the document ID (which is a timestamp)
+        tempList.sort((a, b) => b.id.localeCompare(a.id));
+
+        if (coll === "Events") {
+          setEvents(tempList);
+        } else if (coll === "contact") {
+          setContacts(tempList);
+        } else if (coll === "skills") {
+          setSkills(tempList);
+        }
       }
-    });
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
   };
 
   useEffect(() => {

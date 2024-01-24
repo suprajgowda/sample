@@ -5,7 +5,7 @@ import Footer from "./Footer";
 import FullWidthTextField from "../FullWidthTextField";
 import ContactUsImage from "../assets/ContactUsBanner.jpg";
 import { textDB } from "../App";
-import { addDoc, collection } from "firebase/firestore";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import ReactGA from "react-ga4";
 
 export interface ContactUsInterface {
@@ -15,6 +15,7 @@ export interface ContactUsInterface {
   branch: string;
   college: string;
   message: string;
+  createdAt: any;
 }
 
 export default function ContactUs() {
@@ -25,6 +26,7 @@ export default function ContactUs() {
     branch: "",
     college: "",
     message: "",
+    createdAt: "",
   });
 
   const onChangeFunction = (e: any) => {
@@ -167,6 +169,8 @@ export default function ContactUs() {
                     contactInfo.branch !== "" &&
                     contactInfo.college !== ""
                   ) {
+                    contactInfo.createdAt = serverTimestamp();
+
                     const valRef = collection(textDB, "contact");
                     await addDoc(valRef, { contactInfo: contactInfo });
                     setContactInfo({
@@ -176,6 +180,7 @@ export default function ContactUs() {
                       branch: "",
                       college: "",
                       message: "",
+                      createdAt: "",
                     });
 
                     alert("Data added successfully");

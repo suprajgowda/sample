@@ -24,7 +24,7 @@ import Robotics from "../assets/robotics.jpg";
 import ThreeD from "../assets/3DPrinter.jpg";
 import SkillsBanner2 from "../assets/skills-banner-2.jpg";
 import "./HomePage.css";
-import { addDoc, collection } from "firebase/firestore";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { textDB } from "../App";
 import ReactGA from "react-ga4";
 
@@ -571,6 +571,7 @@ export const FormDialogue = (props: any) => {
     branch: "",
     college: "",
     message: "",
+    createdAt: "",
   });
 
   const onChangeFunction = (e: any) => {
@@ -595,9 +596,14 @@ export const FormDialogue = (props: any) => {
       contactInfo.branch !== "" &&
       contactInfo.college !== ""
     ) {
+      contactInfo.createdAt = serverTimestamp();
+
       const valRef = collection(textDB, formType);
+
       let contactInfo2Save = { ...contactInfo, intrestedIn: triggerType };
+
       await addDoc(valRef, { contactInfo: contactInfo2Save });
+
       setContactInfo({
         name: "",
         email: "",
@@ -605,6 +611,7 @@ export const FormDialogue = (props: any) => {
         branch: "",
         college: "",
         message: "",
+        createdAt: "",
       });
 
       alert("Data added successfully");

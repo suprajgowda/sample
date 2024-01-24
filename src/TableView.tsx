@@ -164,6 +164,9 @@ export default function TableView(props: any) {
             <TableCell align="left" sx={tableHeaderStyle}>
               Message
             </TableCell>
+            <TableCell align="left" sx={tableHeaderStyle}>
+              Created At
+            </TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -213,6 +216,13 @@ export default function TableView(props: any) {
                 sx={{ border: "1px solid #e2e2e2" }}
               >
                 {row.message}
+              </TableCell>
+              <TableCell
+                style={{ width: 160 }}
+                align="left"
+                sx={{ border: "1px solid #e2e2e2" }}
+              >
+                {row.createdAt}
               </TableCell>
             </TableRow>
           ))}
