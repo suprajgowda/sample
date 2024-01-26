@@ -603,7 +603,10 @@ function NewHeader() {
   return (
     <AppBar
       position="static"
-      sx={{ backgroundColor: "#EFEFEF", boxShadow: "none" }}
+      sx={{
+        backgroundColor: "#EFEFEF",
+        boxShadow: "none",
+      }}
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
@@ -842,6 +845,7 @@ function MobileHeader() {
           }}
           open={Boolean(anchorElNav)}
           onClose={handleCloseNavMenu}
+          disableScrollLock={true}
           sx={{
             "& div": {
               "& ul": {
@@ -943,6 +947,7 @@ const CustomNavDropDown = (props: any) => {
             boxShadow: "5px 5px #06495a",
           },
         }}
+        disableScrollLock={true}
       >
         {drpDwnList.map((event: any) => {
           return (
@@ -961,8 +966,8 @@ function NewHeader2() {
 
   return (
     <AppBar
-      position="static"
-      sx={{ backgroundColor: "#006983", boxShadow: "0px 2px 5px #eee" }}
+      position="sticky"
+      sx={{ backgroundColor: "#006983", boxShadow: "none" }}
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters sx={{ minHeight: "38px !important" }}>
