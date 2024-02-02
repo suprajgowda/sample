@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { HeaderNew } from "./HomePage";
 import Footer from "./Footer";
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button, Link, Typography } from "@mui/material";
 import TeamCollImage from "../assets/Team_Collaboration.jpg";
 import TimeBound from "../assets/Time_Bound_Challenges.jpg";
 import Innovation from "../assets/Innovation_and_Creativity.jpg";
@@ -17,6 +17,7 @@ import HackathonBanner from "../assets/HackathonBanner.jpg";
 import ConferenceBanner from "../assets/ConferenceBanner.jpg";
 import "./HomePage.css";
 import { FormDialogue } from "./Skills";
+import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import ReactGA from "react-ga4";
 
 const events1 = [
@@ -139,6 +140,25 @@ function EventsDesc(props: any) {
             p: 3,
           }}
         >
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "flex-start",
+              alignItems: "center",
+            }}
+          >
+            <Link href="/" underline="none" sx={{ color: "#006983" }}>
+              Home
+            </Link>
+            <ArrowRightIcon sx={{ color: "#f4587a" }} />
+            <Typography
+              variant="h6"
+              component="div"
+              sx={{ fontWeight: 400, fontSize: { xs: "0.75rem", sm: "1rem" } }}
+            >
+              Events
+            </Typography>
+          </Box>
           <Typography
             variant="h4"
             gutterBottom

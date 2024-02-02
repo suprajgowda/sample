@@ -7,6 +7,7 @@ import {
   DialogContent,
   DialogContentText,
   DialogTitle,
+  Link,
   TextField,
   Typography,
 } from "@mui/material";
@@ -27,6 +28,7 @@ import "./HomePage.css";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { textDB } from "../App";
 import ReactGA from "react-ga4";
+import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 
 const skillsList = [
   {
@@ -313,6 +315,25 @@ export default function Skills() {
             p: 3,
           }}
         >
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "flex-start",
+              alignItems: "center",
+            }}
+          >
+            <Link href="/" underline="none" sx={{ color: "#006983" }}>
+              Home
+            </Link>
+            <ArrowRightIcon sx={{ color: "#f4587a" }} />
+            <Typography
+              variant="h6"
+              component="div"
+              sx={{ fontWeight: 400, fontSize: { xs: "0.75rem", sm: "1rem" } }}
+            >
+              Skills
+            </Typography>
+          </Box>
           <Typography
             variant="h4"
             gutterBottom

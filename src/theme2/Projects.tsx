@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
 import { HeaderNew } from "./HomePage";
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button, Link, Typography } from "@mui/material";
 import ProjectsBanner from "../assets/ProjectsNewBanner.jpg";
 import Footer from "./Footer";
 import { FormDialogue, PROJECT_DOMAIN_LIST } from "./Skills";
 import "./HomePage.css";
 import ReactGA from "react-ga4";
+import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 
 export default function Projects() {
   const [open, setOpen] = React.useState(false);
@@ -44,6 +45,25 @@ export default function Projects() {
             p: 3,
           }}
         >
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "flex-start",
+              alignItems: "center",
+            }}
+          >
+            <Link href="/" underline="none" sx={{ color: "#006983" }}>
+              Home
+            </Link>
+            <ArrowRightIcon sx={{ color: "#f4587a" }} />
+            <Typography
+              variant="h6"
+              component="div"
+              sx={{ fontWeight: 400, fontSize: { xs: "0.75rem", sm: "1rem" } }}
+            >
+              Projects
+            </Typography>
+          </Box>
           <Typography
             variant="h4"
             gutterBottom

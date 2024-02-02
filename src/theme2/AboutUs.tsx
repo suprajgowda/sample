@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { HeaderNew } from "./HomePage";
-import { Box, Typography } from "@mui/material";
+import { Box, Link, Typography } from "@mui/material";
 import Footer from "./Footer";
 import Excellence from "../assets/Excellence.png";
 import Integrity from "../assets/Integrity.png";
@@ -14,6 +14,7 @@ import Fun_and_Enjoyment from "../assets/Fun-and-Enjoyment.jpg";
 import AboutUsNewBanner from "../assets/aboutUsBanner2.jpg";
 import "./HomePage.css";
 import ReactGA from "react-ga4";
+import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 
 const listOfAboutUs = [
   {
@@ -75,6 +76,7 @@ export default function AboutUs() {
   useEffect(() => {
     ReactGA._gaCommandSendPageview(window.location.pathname, "");
   }, []);
+
   return (
     <>
       <HeaderNew />
@@ -83,7 +85,6 @@ export default function AboutUs() {
         sx={{
           display: "flex",
           flexDirection: { xs: "column", md: "row" },
-          // mt: { xs: "55px", md: "5%" },
         }}
       >
         <img src={AboutUsNewBanner} alt="Home Page" className="hmp12" />
@@ -95,6 +96,25 @@ export default function AboutUs() {
             p: 3,
           }}
         >
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "flex-start",
+              alignItems: "center",
+            }}
+          >
+            <Link href="/" underline="none" sx={{ color: "#006983" }}>
+              Home
+            </Link>
+            <ArrowRightIcon sx={{ color: "#f4587a" }} />
+            <Typography
+              variant="h6"
+              component="div"
+              sx={{ fontWeight: 400, fontSize: { xs: "0.75rem", sm: "1rem" } }}
+            >
+              About Us
+            </Typography>
+          </Box>
           <Typography
             variant="h4"
             gutterBottom
