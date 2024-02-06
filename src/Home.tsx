@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Fab, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import HomeSlider from "./assets/home_slider_1.jpg";
 import ResponsiveAppBar2 from "./ResponsiveAppBar2";
 import ResponsiveAppBar from "./ResponsiveAppBar";
@@ -8,7 +8,6 @@ import NewsLetter from "./NewsLetter";
 import HomePageBanner2 from "./assets/homepage_banner_2.jpg";
 import HomePageBanner3 from "./assets/homepage_banner_3.jpg";
 import HomePageBanner4 from "./assets/homepage_banner_4.jpg";
-import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 
 function Home() {
   return (

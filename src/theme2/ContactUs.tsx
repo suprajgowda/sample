@@ -3,7 +3,6 @@ import { HeaderNew } from "./HomePage";
 import { Box, Button, Link, TextField, Typography } from "@mui/material";
 import Footer from "./Footer";
 import FullWidthTextField from "../FullWidthTextField";
-import ContactUsImage from "../assets/ContactUsBanner.jpg";
 import { textDB } from "../App";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import ReactGA from "react-ga4";

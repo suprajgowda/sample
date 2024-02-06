@@ -1,9 +1,11 @@
 import React from "react";
-import { Box, IconButton, Typography } from "@mui/material";
+import { Box, Fab, IconButton, Typography } from "@mui/material";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import "./Footer.css";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import CallIcon from "@mui/icons-material/Call";
 
 export default function Footer() {
   return (
@@ -265,6 +267,42 @@ export default function Footer() {
           </Typography>
         </Box>
       </Box>
+
+      <Fab
+        size="medium"
+        color="secondary"
+        aria-label="add"
+        sx={{
+          position: "fixed",
+          bottom: "5%",
+          left: "2%",
+          backgroundColor: "#0dc043",
+          "&:hover": {
+            backgroundColor: "#0dc043",
+          },
+        }}
+        href="https://wa.me/9019743939"
+      >
+        <WhatsAppIcon />
+      </Fab>
+
+      <Fab
+        size="medium"
+        color="secondary"
+        aria-label="add"
+        sx={{
+          position: "fixed",
+          bottom: "5%",
+          right: "2%",
+          backgroundColor: "#267bc0",
+          "&:hover": {
+            backgroundColor: "#267bc0",
+          },
+        }}
+        href="tel:9019743939"
+      >
+        <CallIcon />
+      </Fab>
     </Box>
   );
 }
