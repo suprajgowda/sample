@@ -32,6 +32,7 @@ import {
 } from "@mui/material";
 import Footer from "./Footer";
 import HomePage2 from "../assets/Home-Page-2.jpg";
+import MapleLogo from "../assets/logo-img.jpeg";
 import "./HomePage.css";
 import ReactGA from "react-ga4";
 
@@ -613,9 +614,10 @@ function NewHeader() {
           <Box
             sx={{
               display: { xs: "flex", md: "flex" },
+              // display: { xs: "none", md: "flex" },
             }}
           >
-            <Typography
+            {/* <Typography
               variant="h5"
               noWrap
               component="a"
@@ -629,6 +631,9 @@ function NewHeader() {
               }}
             >
               Maple Tech X
+            </Typography> */}
+            <Typography variant="h5" noWrap component="a" href="/">
+              <img alt="Logo" src={MapleLogo} className="homeLogo" />
             </Typography>
           </Box>
           <Box

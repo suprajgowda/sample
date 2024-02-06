@@ -499,8 +499,8 @@ export default function Events() {
                     },
                   }}
                 >
-                  Teams present their projects to a panel of judges or industry
-                  experts.
+                  Teams present their final year projects to a panel of judges
+                  or industry experts.
                 </Typography>
                 <Typography
                   variant="subtitle1"
@@ -513,8 +513,8 @@ export default function Events() {
                     },
                   }}
                 >
-                  Projects are evaluated based on criteria such as creativity,
-                  functionality, and overall impact.
+                  Final year projects are evaluated based on criteria such as
+                  creativity, functionality, and overall impact.
                 </Typography>
               </Box>
             </Box>

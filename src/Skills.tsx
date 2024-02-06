@@ -415,7 +415,7 @@ export default function Skills() {
                 },
               }}
             >
-              Overview of Live Projects at MAPLE
+              Overview of Live final year projects at MAPLE
             </Typography>
             <Typography
               variant="body2"
@@ -423,10 +423,11 @@ export default function Skills() {
               sx={{ textAlign: "center", color: "#FFF", mx: 5, mb: 5 }}
             >
               Embark on a transformative journey where theoretical knowledge
-              meets real-world application through our Live Projects at MAPLE.
-              Our projects are carefully crafted to provide participants with
-              hands-on experience in cutting-edge domains, fostering innovation,
-              and preparing them for the dynamic landscape of the tech industry.
+              meets real-world application through our Live final year projects
+              at MAPLE. Our final year projects are carefully crafted to provide
+              participants with hands-on experience in cutting-edge domains,
+              fostering innovation, and preparing them for the dynamic landscape
+              of the tech industry.
             </Typography>
           </Box>
         </Box>

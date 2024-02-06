@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, Fab, Typography } from "@mui/material";
 import HomeSlider from "./assets/home_slider_1.jpg";
 import ResponsiveAppBar2 from "./ResponsiveAppBar2";
 import ResponsiveAppBar from "./ResponsiveAppBar";
@@ -8,6 +8,7 @@ import NewsLetter from "./NewsLetter";
 import HomePageBanner2 from "./assets/homepage_banner_2.jpg";
 import HomePageBanner3 from "./assets/homepage_banner_3.jpg";
 import HomePageBanner4 from "./assets/homepage_banner_4.jpg";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 
 function Home() {
   return (
@@ -139,13 +140,13 @@ function Home() {
             fontSize: { xs: "0.9rem", md: "1.25rem" },
           }}
         >
-          Our commitment is simple: to provide students with live projects that
-          go beyond traditional learning. These are not mere assignments; they
-          are opportunities to explore, experiment, and contribute to the
-          ever-evolving world of technology. Whether you are passionate about
-          unraveling the mysteries of Neural Networks, exploring the potential
-          of Blockchain, or pushing the boundaries of Cloud Computing,MAPLE is
-          your platform for growth.
+          Our commitment is simple: to provide students with live final year
+          projects that go beyond traditional learning. These are not mere
+          assignments; they are opportunities to explore, experiment, and
+          contribute to the ever-evolving world of technology. Whether you are
+          passionate about unraveling the mysteries of Neural Networks,
+          exploring the potential of Blockchain, or pushing the boundaries of
+          Cloud Computing,MAPLE is your platform for growth.
         </Typography>
 
         <Box sx={{ display: "flex", flexDirection: "column" }}>
@@ -188,9 +189,9 @@ function Home() {
               >
                 We invite you to discover the domains of expertise that await
                 you, guided by industry experts and a collaborative learning
-                environment. Our projects are designed not only to equip you
-                with industry-relevant skills but also to ignite your passion
-                for innovation.
+                environment. Our final year projects are designed not only to
+                equip you with industry-relevant skills but also to ignite your
+                passion for innovation.
               </Typography>
             </Box>
           </Box>

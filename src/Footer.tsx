@@ -2,6 +2,7 @@ import * as React from "react";
 import {
   Box,
   Container,
+  Fab,
   Grid,
   IconButton,
   Link,
@@ -107,6 +108,9 @@ function Footer() {
       className="footerComp"
       sx={footerStyle}
     >
+      <Fab color="primary" aria-label="add">
+        <WhatsAppIcon />
+      </Fab>
       <Grid container spacing={4} className="" justifyContent="space-evenly">
         <Grid item xs={12} sm={12} md={3} key={"Company"}>
           <Typography

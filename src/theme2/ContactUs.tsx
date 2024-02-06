@@ -8,6 +8,7 @@ import { textDB } from "../App";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import ReactGA from "react-ga4";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
+import ContactUsBanner from "../assets/contactUsBanner1.jpg";
 
 export interface ContactUsInterface {
   name: string;
@@ -92,7 +93,9 @@ export default function ContactUs() {
               Contact Us
             </Typography>
           </Box>
-          <Box sx={{ display: "flex" }}>
+          <Box
+            sx={{ display: "flex", flexDirection: { xs: "column", sm: "row" } }}
+          >
             <Box
               sx={{
                 display: "flex",
@@ -102,6 +105,7 @@ export default function ContactUs() {
                 border: { xs: "1px solid #d6d5d0", sm: "5px solid #d6d5d0" },
                 borderRight: { xs: "1px solid #d6d5d0", sm: "none" },
                 p: { xs: 2, sm: 0 },
+                flex: 1,
               }}
             >
               <Typography
@@ -226,9 +230,9 @@ export default function ContactUs() {
                 </Button>
               </Box>
             </Box>
-            <Box sx={{ display: "flex" }}>
+            <Box sx={{ display: "flex", flex: 1 }}>
               <img
-                src={ContactUsImage}
+                src={ContactUsBanner}
                 alt="Contact Us"
                 style={{ width: "100%" }}
               />
