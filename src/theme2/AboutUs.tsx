@@ -459,6 +459,36 @@ export default function AboutUs() {
             );
           })}
         </Box>
+
+        <Typography
+          variant="h6"
+          component="div"
+          sx={{
+            fontWeight: 400,
+            mb: 4,
+            fontSize: { xs: "1rem", sm: "1.25rem" },
+            textAlign: "center",
+          }}
+        >
+          Join us at Maple TechX and unlock the door to a world of engineering
+          possibilities. Let's shape the future together!
+        </Typography>
+
+        <Typography
+          variant="h6"
+          component="div"
+          sx={{
+            fontWeight: 400,
+            mb: 4,
+            fontSize: { xs: "1rem", sm: "1.25rem" },
+            textAlign: "center",
+          }}
+        >
+          For more information or to get started on your engineering journey,{" "}
+          <Link href="/" underline="none" sx={{ color: "#006983" }}>
+            Contact Us.
+          </Link>
+        </Typography>
       </Box>
 
       <Footer />
