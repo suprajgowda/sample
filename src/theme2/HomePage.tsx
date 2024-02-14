@@ -35,6 +35,14 @@ import HomePage2 from "../assets/Home-Page-2.jpg";
 import MapleLogo from "../assets/logo-img.jpeg";
 import "./HomePage.css";
 import ReactGA from "react-ga4";
+import MapleTransparent from "../assets/maple_transparent.jpeg";
+import homepageBanner2 from "../assets/homepageBanner2.jpeg";
+import homepg1 from "../assets/homepg1.png";
+import homepg2 from "../assets/homepg2.png";
+import homepg3 from "../assets/homepg3.png";
+import homepg4 from "../assets/homepg4.png";
+
+const imgList = [homepg1, homepg2, homepg3, homepg4];
 
 export function HeaderNew() {
   return (
@@ -276,6 +284,8 @@ export default function HomePage() {
                 },
                 maxHeight: "50px",
               }}
+              href="https://www.facebook.com/people/Maple-TechX/61556152647517/"
+              target="_blank"
             >
               <FacebookIcon fontSize="inherit" sx={{ color: "#fff" }} />
             </IconButton>
@@ -295,6 +305,8 @@ export default function HomePage() {
                 },
                 maxHeight: "50px",
               }}
+              href="https://www.instagram.com/mapletechx/"
+              target="_blank"
             >
               <InstagramIcon fontSize="inherit" sx={{ color: "#fff" }} />
             </IconButton>
@@ -349,7 +361,7 @@ export default function HomePage() {
             <Box>
               <img
                 alt="Home Page Banner"
-                src="https://vamia.fi/wp-content/uploads/2023/10/DM0A2435-1024x683.jpg"
+                src={homepageBanner2}
                 className="hom1"
               />
             </Box>
@@ -395,7 +407,14 @@ export default function HomePage() {
               alignItems: "center",
             }}
           >
-            {[1, 2, 3, 4, 5, 6].map((e) => (
+            {[
+              { id: 1, img: homepg1 },
+              { id: 2, img: homepg2 },
+              { id: 3, img: homepg3 },
+              { id: 4, img: homepg4 },
+              { id: 5, img: homepg1 },
+              { id: 6, img: homepg2 },
+            ].map((e) => (
               <Box
                 sx={{
                   display: "flex",
@@ -404,14 +423,14 @@ export default function HomePage() {
                   borderRadius: "50px",
                   boxShadow: "0px 3px 35px 0px rgba(0, 0, 0, 0.29)",
                   mx: 2,
-                  my: 4,
+                  my: 3,
                 }}
               >
                 <Box
                   sx={{
-                    backgroundSize: "100% 100%",
+                    backgroundSize: "120% 100%",
                     backgroundPositionY: "center",
-                    backgroundImage: `url(https://vamia.fi/wp-content/uploads/2023/11/Kopio-Kopio-Valmistujaisjuhla-23.png)`,
+                    backgroundImage: `url(${e.img})`,
                     height: "200px",
                     width: { xs: "100%", sm: "100%" },
                     borderRadius: {
@@ -633,7 +652,7 @@ function NewHeader() {
               Maple Tech X
             </Typography> */}
             <Typography variant="h5" noWrap component="a" href="/">
-              <img alt="Logo" src={MapleLogo} className="homeLogo" />
+              <img alt="Logo" src={MapleTransparent} className="homeLogo" />
             </Typography>
           </Box>
           <Box

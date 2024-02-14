@@ -56,6 +56,8 @@ export default function Footer() {
                 backgroundColor: "#006983",
               },
             }}
+            href="https://www.facebook.com/people/Maple-TechX/61556152647517/"
+            target="_blank"
           >
             <FacebookIcon fontSize="inherit" sx={{ color: "#fff" }} />
           </IconButton>
@@ -74,6 +76,8 @@ export default function Footer() {
                 backgroundColor: "#006983",
               },
             }}
+            href="https://www.instagram.com/mapletechx/"
+            target="_blank"
           >
             <InstagramIcon fontSize="inherit" sx={{ color: "#fff" }} />
           </IconButton>
@@ -153,7 +157,7 @@ export default function Footer() {
               fontSize: { xs: "1rem", md: "1.25rem" },
             }}
           >
-            Tel. +91 9019743939
+            Tel. +91 8310973377
           </Typography>
         </Box>
 
@@ -281,7 +285,7 @@ export default function Footer() {
             backgroundColor: "#0dc043",
           },
         }}
-        href="https://wa.me/9019743939"
+        href="https://wa.me/8310973377"
       >
         <WhatsAppIcon />
       </Fab>
@@ -299,7 +303,7 @@ export default function Footer() {
             backgroundColor: "#267bc0",
           },
         }}
-        href="tel:9019743939"
+        href="tel:8310973377"
       >
         <CallIcon />
       </Fab>

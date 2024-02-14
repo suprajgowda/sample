@@ -12,6 +12,9 @@ import Empowerment from "../assets/Empowerment.jpg";
 import Continuous_Learning from "../assets/Continuous-Learning.jpg";
 import Fun_and_Enjoyment from "../assets/Fun-and-Enjoyment.jpg";
 import AboutUsNewBanner from "../assets/aboutUsBanner2.jpg";
+import ThreeD from "../assets/3DPrinter.jpg";
+import HomePage2 from "../assets/Home-Page-2.jpg";
+import Robotics from "../assets/robotics.jpg";
 import "./HomePage.css";
 import ReactGA from "react-ga4";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
@@ -69,6 +72,52 @@ const listOfAboutUs1 = [
     key1: "Fun and Enjoyment:",
     key2: " Creating a positive and enjoyable atmosphere for a vibrant community.",
     image: Fun_and_Enjoyment,
+  },
+];
+
+const listAbtUs1 = [
+  {
+    title: "Final Year Engineering Projects",
+    desc: "Embark on a journey of discovery with our comprehensive range of engineering projects tailored to various academic levels. From foundational projects for BCA and Diploma students to advanced projects for MTech and MSc scholars, we cater to the diverse needs of the engineering community.",
+    image: Continuous_Learning,
+  },
+  {
+    title: "Internship Opportunities",
+    desc: "Fuel your academic journey with hands-on experience through our carefully curated internship programs. Gain exposure to real-world challenges, collaborate with industry professionals, and build a solid foundation for your future career.",
+    image: Fun_and_Enjoyment,
+  },
+  {
+    title: "Mini Projects",
+    desc: "Perfect for those looking to delve into focused, practical applications of engineering concepts, our mini projects offer a condensed yet comprehensive learning experience. These projects are designed to enhance your understanding and skills in specific areas of interest.",
+    image: Robotics,
+  },
+  {
+    title: "Meticulous Guidance",
+    desc: "At Maple TechX, we understand the importance of guidance in the academic journey. Our team of mentors is committed to providing personalized support, ensuring that you not only complete your projects successfully but also gain valuable insights along the way.",
+    image: HomePage2,
+  },
+];
+
+const listAbtUs2 = [
+  {
+    title: "Expert Guidance:",
+    desc: "Benefit from the wealth of experience our mentors bring to the table.",
+    image: Fun_and_Enjoyment,
+  },
+  {
+    title: "Cutting-Edge Projects:",
+    desc: "Stay ahead with projects that reflect the latest industry trends and technological advancements.",
+    image: ThreeD,
+  },
+  {
+    title: "Holistic Learning:",
+    desc: "Our programs are designed to go beyond textbooks, providing a holistic learning experience.",
+    image: Continuous_Learning,
+  },
+  {
+    title: "Industry Connections:",
+    desc: "Forge valuable connections through our internship programs and industry collaborations.",
+    image: Empowerment,
   },
 ];
 
@@ -135,16 +184,19 @@ export default function AboutUs() {
             component="div"
             sx={{ pb: 2, fontWeight: 700 }}
           >
-            Vision
+            Welcome to Maple TechX- Your Gateway to Engineering Excellence!
           </Typography>
           <Typography
             variant="h6"
             component="div"
             sx={{ fontWeight: 400, fontSize: { xs: "1rem", sm: "1.25rem" } }}
           >
-            "Empowering Tomorrow's Industry Leaders: Our vision is to provide
-            industry-ready education that transcends traditional boundaries,
-            shaping graduates who lead with expertise and hands-on skills."
+            At Maple TechX we are on a mission to revolutionize the way
+            engineering projects are conceived, developed, and executed. With a
+            focus on fostering innovation and cultivating talent, we offer a
+            diverse range of services tailored to students pursuing BE, MTech,
+            MCA, BCA, MSc, Diploma, and those seeking valuable internships and
+            mini-projects.
           </Typography>
         </Box>
       </Box>
@@ -155,30 +207,13 @@ export default function AboutUs() {
           mt: "8%",
         }}
       >
-        {/* <Box sx={{ display: "flex" }}>
-          <img
-            src="https://vamia.fi/wp-content/uploads/2023/06/brooke-cagle-uHVRvDr7pg-unsplash.jpg"
-            alt="Home Page"
-            style={{ width: "60%", marginTop: "2%" }}
-          />
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              pl: 6,
-            }}
-          >
-          </Box>
-        </Box> */}
-
         <Box sx={{ display: "flex", flexDirection: "column", my: 10 }}>
           <Typography
             variant="h5"
             component="div"
             sx={{ pb: 4, fontWeight: 700, textAlign: "center" }}
           >
-            Mission
+            Our Vision
           </Typography>
 
           <Typography
@@ -190,10 +225,9 @@ export default function AboutUs() {
               fontSize: { xs: "1rem", sm: "1.25rem" },
             }}
           >
-            "At Maple TechX, we are on a mission to revolutionize education with
-            hands-on, skill-based learning. Our commitment is to equip students
-            with practical expertise, ensuring they thrive in real-world
-            industry scenarios and make a significant impact."
+            Empowering the next generation of engineers and technologists, Maple
+            TechX envisions a future where creativity knows no bounds and
+            engineering solutions redefine possibilities.
           </Typography>
         </Box>
 
@@ -203,7 +237,37 @@ export default function AboutUs() {
             component="div"
             sx={{ pb: 4, fontWeight: 700, textAlign: "center" }}
           >
-            Values
+            Who We Are
+          </Typography>
+
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{
+              fontWeight: 400,
+              textAlign: "justify",
+              fontSize: { xs: "1rem", sm: "1.25rem" },
+            }}
+          >
+            Driven by a team of seasoned professionals and passionate educators,
+            Maple TechX brings together a wealth of experience in the
+            engineering and technology domain. Our experts are dedicated to
+            nurturing the skills and talents of aspiring engineers, guiding them
+            towards academic success and career excellence.
+          </Typography>
+        </Box>
+
+        <Box sx={{ display: "flex", flexDirection: "column", my: 10 }}>
+          <Typography
+            variant="h3"
+            component="div"
+            sx={{
+              fontWeight: 700,
+              textAlign: "center",
+              fontSize: { xs: "1.85rem", md: "2.25rem" },
+            }}
+          >
+            Services We Offer
           </Typography>
 
           <Box
@@ -214,7 +278,58 @@ export default function AboutUs() {
               justifyContent: "center",
             }}
           >
-            {listOfAboutUs.map((aboutUs) => {
+            {listAbtUs1.map((abt) => {
+              return (
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    width: { xs: "100%", sm: "43%" },
+                    justifyContent: "space-between",
+                    alignItems: "start",
+                    border: "1px solid #4b4b4b29",
+                    borderTop: "5px solid #006983",
+                    boxShadow: "0px 3px 6px #00000029",
+                    mx: { xs: 0, sm: 4 },
+                    my: { xs: 2, sm: 4 },
+                  }}
+                >
+                  <img
+                    src={abt.image}
+                    alt={abt.title}
+                    style={{ width: "100%", height: "100%" }}
+                  />
+                  <Typography
+                    variant="h5"
+                    component="div"
+                    sx={{
+                      fontWeight: 700,
+                      textAlign: "left",
+                      width: "100%",
+                      px: { xs: 2, sm: 4 },
+                      my: 2,
+                      fontSize: { xs: "1.25rem", sm: "1.5rem" },
+                    }}
+                  >
+                    {abt.title}
+                  </Typography>
+                  <Typography
+                    variant="subtitle1"
+                    gutterBottom
+                    sx={{
+                      textAlign: "left",
+                      px: { xs: 2, sm: 4 },
+                      mb: 3,
+                      fontWeight: 400,
+                      fontSize: { xs: "0.75rem", sm: "1rem" },
+                    }}
+                  >
+                    {abt.desc}
+                  </Typography>
+                </Box>
+              );
+            })}
+            {/* {listOfAboutUs.map((aboutUs) => {
               return (
                 <Box
                   sx={{
@@ -263,7 +378,7 @@ export default function AboutUs() {
                   </Typography>
                 </Box>
               );
-            })}
+            })} */}
           </Box>
         </Box>
 
@@ -271,9 +386,13 @@ export default function AboutUs() {
           <Typography
             variant="h3"
             component="div"
-            sx={{ fontWeight: 700, textAlign: "center" }}
+            sx={{
+              fontWeight: 700,
+              textAlign: "center",
+              fontSize: { xs: "1.85rem", md: "2.25rem" },
+            }}
           >
-            Culture
+            Why Choose Us?
           </Typography>
         </Box>
 
@@ -287,7 +406,7 @@ export default function AboutUs() {
             mb: 6,
           }}
         >
-          {listOfAboutUs1.map((about) => {
+          {listAbtUs2.map((about) => {
             return (
               <Box
                 sx={{
@@ -321,7 +440,7 @@ export default function AboutUs() {
                     fontSize: { xs: "1.25rem", sm: "1.5rem" },
                   }}
                 >
-                  {about.key1}
+                  {about.title}
                 </Typography>
                 <Typography
                   variant="subtitle1"
@@ -334,7 +453,7 @@ export default function AboutUs() {
                     fontSize: { xs: "0.75rem", sm: "1rem" },
                   }}
                 >
-                  {about.key2}
+                  {about.desc}
                 </Typography>
               </Box>
             );
