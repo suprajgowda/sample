@@ -485,7 +485,7 @@ export default function AboutUs() {
           }}
         >
           For more information or to get started on your engineering journey,{" "}
-          <Link href="/" underline="none" sx={{ color: "#006983" }}>
+          <Link href="/contact-us" underline="none" sx={{ color: "#006983" }}>
             Contact Us.
           </Link>
         </Typography>
