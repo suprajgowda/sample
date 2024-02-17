@@ -2,12 +2,6 @@ import React, { useEffect } from "react";
 import { HeaderNew } from "./HomePage";
 import { Box, Link, Typography } from "@mui/material";
 import Footer from "./Footer";
-import Excellence from "../assets/Excellence.png";
-import Integrity from "../assets/Integrity.png";
-import Innovation from "../assets/Innovation.png";
-import Collaboration from "../assets/Collaboration.png";
-import Student_Centric_Focus from "../assets/Student_Centric_Focus.png";
-import Adaptability from "../assets/Adaptability.jpg";
 import Empowerment from "../assets/Empowerment.jpg";
 import Continuous_Learning from "../assets/Continuous-Learning.jpg";
 import Fun_and_Enjoyment from "../assets/Fun-and-Enjoyment.jpg";
@@ -19,61 +13,61 @@ import "./HomePage.css";
 import ReactGA from "react-ga4";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 
-const listOfAboutUs = [
-  {
-    key1: "Excellence",
-    key2: " Striving for and delivering the highest standards in education.",
-    img: Excellence,
-  },
-  {
-    key1: "Integrity",
-    key2: " Upholding honesty, transparency, and ethical conduct.",
-    img: Integrity,
-  },
-  {
-    key1: "Innovation",
-    key2: " Embracing creativity and staying at the forefront of educational advancements.",
-    img: Innovation,
-  },
-  {
-    key1: "Collaboration",
-    key2: " Fostering teamwork, open communication, and diverse perspectives.",
-    img: Collaboration,
-  },
-  {
-    key1: "Student-Centric Focus",
-    key2: " Prioritizing the needs and growth of our students.",
-    img: Student_Centric_Focus,
-  },
-];
+// const listOfAboutUs = [
+//   {
+//     key1: "Excellence",
+//     key2: " Striving for and delivering the highest standards in education.",
+//     img: Excellence,
+//   },
+//   {
+//     key1: "Integrity",
+//     key2: " Upholding honesty, transparency, and ethical conduct.",
+//     img: Integrity,
+//   },
+//   {
+//     key1: "Innovation",
+//     key2: " Embracing creativity and staying at the forefront of educational advancements.",
+//     img: Innovation,
+//   },
+//   {
+//     key1: "Collaboration",
+//     key2: " Fostering teamwork, open communication, and diverse perspectives.",
+//     img: Collaboration,
+//   },
+//   {
+//     key1: "Student-Centric Focus",
+//     key2: " Prioritizing the needs and growth of our students.",
+//     img: Student_Centric_Focus,
+//   },
+// ];
 
-const listOfAboutUs1 = [
-  {
-    key1: "Inclusivity:",
-    key2: " Celebrating diversity and creating an inclusive environment.",
-    image: Empowerment,
-  },
-  {
-    key1: "Continuous Learning:",
-    key2: " Encouraging ongoing knowledge-seeking and adaptability.",
-    image: Continuous_Learning,
-  },
-  {
-    key1: "Empowerment:",
-    key2: " Fostering autonomy, initiative, and leadership.",
-    image: Empowerment,
-  },
-  {
-    key1: "Flexibility and Adaptability:",
-    key2: " Navigating change with resilience and responsivenes.",
-    image: Adaptability,
-  },
-  {
-    key1: "Fun and Enjoyment:",
-    key2: " Creating a positive and enjoyable atmosphere for a vibrant community.",
-    image: Fun_and_Enjoyment,
-  },
-];
+// const listOfAboutUs1 = [
+//   {
+//     key1: "Inclusivity:",
+//     key2: " Celebrating diversity and creating an inclusive environment.",
+//     image: Empowerment,
+//   },
+//   {
+//     key1: "Continuous Learning:",
+//     key2: " Encouraging ongoing knowledge-seeking and adaptability.",
+//     image: Continuous_Learning,
+//   },
+//   {
+//     key1: "Empowerment:",
+//     key2: " Fostering autonomy, initiative, and leadership.",
+//     image: Empowerment,
+//   },
+//   {
+//     key1: "Flexibility and Adaptability:",
+//     key2: " Navigating change with resilience and responsivenes.",
+//     image: Adaptability,
+//   },
+//   {
+//     key1: "Fun and Enjoyment:",
+//     key2: " Creating a positive and enjoyable atmosphere for a vibrant community.",
+//     image: Fun_and_Enjoyment,
+//   },
+// ];
 
 const listAbtUs1 = [
   {

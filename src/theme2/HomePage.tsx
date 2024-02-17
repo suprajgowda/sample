@@ -32,17 +32,14 @@ import {
 } from "@mui/material";
 import Footer from "./Footer";
 import HomePage2 from "../assets/Home-Page-2.jpg";
-import MapleLogo from "../assets/logo-img.jpeg";
 import "./HomePage.css";
 import ReactGA from "react-ga4";
-import MapleTransparent from "../assets/maple_transparent.jpeg";
+import MapleTransparent from "../assets/maple_transparent.png";
 import homepageBanner2 from "../assets/homepageBanner2.jpeg";
 import homepg1 from "../assets/homepg1.png";
 import homepg2 from "../assets/homepg2.png";
 import homepg3 from "../assets/homepg3.png";
 import homepg4 from "../assets/homepg4.png";
-
-const imgList = [homepg1, homepg2, homepg3, homepg4];
 
 export function HeaderNew() {
   return (
@@ -371,28 +368,86 @@ export default function HomePage() {
                 flexDirection: "column",
                 flexWrap: "wrap",
                 justifyContent: "center",
-                px: { xs: 2, md: 5 },
+                px: { xs: 2, md: 2 },
                 py: { xs: 2, md: 0 },
               }}
             >
               <Typography
-                variant="h6"
-                sx={{ fontSize: { xs: "18px", md: "20px" }, fontWeight: 700 }}
+                variant="h4"
+                gutterBottom
+                sx={{
+                  textAlign: "left",
+                  color: "#384158",
+                  left: { xs: "5%", md: "15%" },
+                  fontSize: { xs: "20px", md: "25px" },
+                  fontWeight: 700,
+                  mt: 2,
+                }}
               >
-                Status update on the December application round
+                Final Year Projects
+              </Typography>
+
+              <Typography
+                variant="h6"
+                component="div"
+                sx={{
+                  fontWeight: 700,
+                  fontSize: { xs: "0.75rem", sm: "0.75rem" },
+                  pb: 2,
+                  color: "#fc6c47",
+                }}
+              >
+                BE / MTECH / MCA / BCA / MSC / DIPLOMA / INTERNSHIP / MINI
+                PROJECT
+              </Typography>
+              <Typography
+                variant="h5"
+                component="div"
+                sx={{
+                  pb: 2,
+                  fontWeight: 700,
+                  fontSize: { xs: "1rem", sm: "1rem" },
+                }}
+              >
+                Overview of Live Projects at MAPLE
               </Typography>
               <Typography
                 variant="h6"
+                component="div"
                 sx={{
-                  fontSize: { xs: "0.85rem", md: "1rem" },
-                  fontWeight: 500,
-                  mt: { xs: 2, md: 4 },
+                  fontWeight: 400,
+                  fontSize: { xs: "0.9rem", sm: "0.9rem" },
+                  textAlign: "justify",
                 }}
               >
-                The processing phase of the December application round is still
-                ongoing. Interview invitations will be sent out by January 12th,
-                2024. Our school's holiday break
+                Embark on a transformative journey where theoretical knowledge
+                meets real-world application through our Live Projects at MAPLE.
+                Our projects are carefully crafted to provide participants with
+                hands-on experience in cutting-edge domains, fostering
+                innovation, and preparing them for the dynamic landscape of the
+                tech industry.
               </Typography>
+
+              <Button
+                sx={{
+                  backgroundColor: "#006983",
+                  color: "#fff",
+                  px: 2,
+                  py: 1,
+                  my: { xs: 2, sm: 2 },
+                  borderRadius: "0.35rem",
+                  fontWeight: 700,
+                  fontSize: "0.8rem",
+                  width: { xs: "100%", sm: "50%" },
+                  textTransform: "capitalize",
+                  "&:hover": {
+                    backgroundColor: "#004455",
+                  },
+                }}
+                onClick={() => navigate("/skills")}
+              >
+                Read More
+              </Button>
             </Box>
           </Box>
 
@@ -408,12 +463,22 @@ export default function HomePage() {
             }}
           >
             {[
-              { id: 1, img: homepg1 },
-              { id: 2, img: homepg2 },
-              { id: 3, img: homepg3 },
-              { id: 4, img: homepg4 },
-              { id: 5, img: homepg1 },
-              { id: 6, img: homepg2 },
+              { id: 1, desc: "Skills", link: "/skills", img: homepg1 },
+              { id: 2, desc: "Training", link: "/skills", img: homepg2 },
+              { id: 3, desc: "Projects", link: "/projects", img: homepg3 },
+              { id: 4, desc: "M Space X", link: "/m-space-x", img: homepg4 },
+              {
+                id: 5,
+                desc: "Hackathon",
+                link: "/events/hackathons",
+                img: homepg1,
+              },
+              {
+                id: 6,
+                desc: "Workshops",
+                link: "/events/workshops",
+                img: homepg2,
+              },
             ].map((e) => (
               <Box
                 sx={{
@@ -421,6 +486,7 @@ export default function HomePage() {
                   flexDirection: { xs: "column", sm: "row" },
                   maxWidth: "450px",
                   borderRadius: "50px",
+                  width: "400px",
                   boxShadow: "0px 3px 35px 0px rgba(0, 0, 0, 0.29)",
                   mx: 2,
                   my: 3,
@@ -464,9 +530,29 @@ export default function HomePage() {
                       fontWeight: "700",
                     }}
                   >
-                    Christmas graduation ceremony on Friday 22 December 2023 at
-                    9.00
+                    {e.desc}
                   </Typography>
+
+                  <Button
+                    sx={{
+                      backgroundColor: "#006983",
+                      color: "#fff",
+                      px: 1,
+                      py: 1,
+                      my: { xs: 2, sm: 2 },
+                      borderRadius: "0.35rem",
+                      fontWeight: 700,
+                      fontSize: "0.7rem",
+                      width: { xs: "100%", sm: "70%" },
+                      textTransform: "capitalize",
+                      "&:hover": {
+                        backgroundColor: "#004455",
+                      },
+                    }}
+                    onClick={() => navigate(e.link)}
+                  >
+                    Read More
+                  </Button>
                 </Box>
               </Box>
             ))}
