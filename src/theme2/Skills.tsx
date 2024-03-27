@@ -29,6 +29,19 @@ import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { textDB } from "../App";
 import ReactGA from "react-ga4";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
+import Modal from "@mui/material/Modal";
+
+const style = {
+  position: "absolute" as "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 400,
+  bgcolor: "background.paper",
+  //   border: "2px solid #000",
+  boxShadow: 24,
+  p: 4,
+};
 
 const skillsList = [
   {
@@ -608,6 +621,14 @@ export const FormDialogue = (props: any) => {
     setContactInfo({ ...contactInfo, ...tempObj });
   };
 
+  const [popupState, setCustomPopup] = useState(false);
+
+  useEffect(() => {
+    if (popupState) {
+      setTimeout(() => setCustomPopup(!popupState), 5000);
+    }
+  }, [popupState]);
+
   const onSubmit = async () => {
     console.log("contactInfo to send ------ ", contactInfo);
     if (
@@ -635,7 +656,8 @@ export const FormDialogue = (props: any) => {
         createdAt: "",
       });
 
-      alert("Data added successfully");
+      // alert("Data added successfully");
+      setCustomPopup(true);
     } else if (contactInfo.name === "") {
       alert("Please Enter Name");
     } else if (contactInfo.email === "") {
@@ -768,6 +790,19 @@ export const FormDialogue = (props: any) => {
           </Button>
         </DialogActions>
       </Dialog>
+
+      <Modal
+        open={popupState}
+        onClose={() => setCustomPopup(false)}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <Typography id="modal-modal-title" variant="h6" component="h6">
+            Thank you for Applying, we will be in touch with you shortly{" "}
+          </Typography>
+        </Box>
+      </Modal>
     </React.Fragment>
   );
 };

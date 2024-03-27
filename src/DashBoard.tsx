@@ -135,15 +135,15 @@ function BasicTabs(props: any) {
       </Box>
 
       <CustomTabPanel value={value} index={0}>
-        <TableView data={skills} />
+        <TableView data={skills} collection={"skills"} />
       </CustomTabPanel>
 
       <CustomTabPanel value={value} index={1}>
-        <TableView data={events} />
+        <TableView data={events} collection={"Events"} />
       </CustomTabPanel>
 
       <CustomTabPanel value={value} index={2}>
-        <TableView data={contacts} />
+        <TableView data={contacts} collection={"contact"} />
       </CustomTabPanel>
     </Box>
   );

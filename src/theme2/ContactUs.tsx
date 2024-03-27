@@ -8,6 +8,19 @@ import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import ReactGA from "react-ga4";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import ContactUsBanner from "../assets/contactUsBanner1.jpg";
+import Modal from "@mui/material/Modal";
+
+const style = {
+  position: "absolute" as "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 400,
+  bgcolor: "background.paper",
+  //   border: "2px solid #000",
+  boxShadow: 24,
+  p: 4,
+};
 
 export interface ContactUsInterface {
   name: string;
@@ -30,6 +43,8 @@ export default function ContactUs() {
     createdAt: "",
   });
 
+  const [popupState, setCustomPopup] = useState(false);
+
   const onChangeFunction = (e: any) => {
     const inputId = e.target.id;
     const inputValue = e.target.value;
@@ -48,6 +63,12 @@ export default function ContactUs() {
   useEffect(() => {
     ReactGA._gaCommandSendPageview(window.location.pathname, "");
   }, []);
+
+  useEffect(() => {
+    if (popupState) {
+      setTimeout(() => setCustomPopup(!popupState), 5000);
+    }
+  }, [popupState]);
 
   return (
     <>
@@ -211,7 +232,9 @@ export default function ContactUs() {
                         createdAt: "",
                       });
 
-                      alert("Data added successfully");
+                      console.log("-------popupState-----", popupState);
+                      setCustomPopup(true);
+                      debugger;
                     } else if (contactInfo.name === "") {
                       alert("Please Enter Name");
                     } else if (contactInfo.email === "") {
@@ -241,6 +264,18 @@ export default function ContactUs() {
       </Box>
 
       <Footer />
+      <Modal
+        open={popupState}
+        onClose={() => setCustomPopup(false)}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <Typography id="modal-modal-title" variant="h6" component="h6">
+            Thank you for contact us we will be in touch with you shortly{" "}
+          </Typography>
+        </Box>
+      </Modal>
     </>
   );
 }

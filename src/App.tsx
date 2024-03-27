@@ -17,7 +17,7 @@ import DashBoard from "./DashBoard";
 import "firebase/firestore";
 import "firebase/auth";
 import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
+import { deleteDoc, doc, getFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 import ReactGA from "react-ga4";
 import "./App.css";
@@ -37,6 +37,15 @@ export const textDB = getFirestore(app);
 export const database = getAuth(app);
 
 ReactGA.initialize("G-RKJZBBSC7C");
+
+export const deleteDocument = async (collectionName: any, documentId: any) => {
+  try {
+    await deleteDoc(doc(textDB, collectionName, documentId));
+    console.log("Document successfully deleted!");
+  } catch (error) {
+    console.error("Error deleting document: ", error);
+  }
+};
 
 function App() {
   return (
