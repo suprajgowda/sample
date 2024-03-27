@@ -6,6 +6,8 @@ import TableView from "./TableView";
 import { textDB } from "./App";
 import { collection, getDocs, query } from "firebase/firestore";
 import ReactGA from "react-ga4";
+import Backdrop from "@mui/material/Backdrop";
+import CircularProgress from "@mui/material/CircularProgress";
 
 export default function DashBoard() {
   const [skills, setSkills] = useState<any>([]);
@@ -16,7 +18,10 @@ export default function DashBoard() {
     ReactGA._gaCommandSendPageview(window.location.pathname, "");
   }, []);
 
+  const [loading, setLoading] = useState(false);
+
   const getData = async () => {
+    setLoading(true);
     const collections = ["Events", "contact", "skills"];
 
     try {
@@ -49,9 +54,15 @@ export default function DashBoard() {
           setSkills(tempList);
         }
       }
+
+      setLoading(false);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
+  };
+
+  const triggerReloadData = () => {
+    getData();
   };
 
   useEffect(() => {
@@ -70,8 +81,20 @@ export default function DashBoard() {
           py: 4,
         }}
       >
-        <BasicTabs skills={skills} events={events} contacts={contacts} />
+        <BasicTabs
+          skills={skills}
+          events={events}
+          contacts={contacts}
+          triggerReloadData={triggerReloadData}
+        />
       </Box>
+
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={loading}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
 
       <Footer />
     </>
@@ -118,7 +141,7 @@ function BasicTabs(props: any) {
     setValue(newValue);
   };
 
-  const { skills, events, contacts } = props;
+  const { skills, events, contacts, triggerReloadData } = props;
 
   return (
     <Box sx={{ width: "100%" }}>
@@ -135,15 +158,27 @@ function BasicTabs(props: any) {
       </Box>
 
       <CustomTabPanel value={value} index={0}>
-        <TableView data={skills} collection={"skills"} />
+        <TableView
+          data={skills}
+          collection={"skills"}
+          triggerGetData={triggerReloadData}
+        />
       </CustomTabPanel>
 
       <CustomTabPanel value={value} index={1}>
-        <TableView data={events} collection={"Events"} />
+        <TableView
+          data={events}
+          collection={"Events"}
+          triggerGetData={triggerReloadData}
+        />
       </CustomTabPanel>
 
       <CustomTabPanel value={value} index={2}>
-        <TableView data={contacts} collection={"contact"} />
+        <TableView
+          data={contacts}
+          collection={"contact"}
+          triggerGetData={triggerReloadData}
+        />
       </CustomTabPanel>
     </Box>
   );

@@ -103,7 +103,7 @@ export default function TableView(props: any) {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
   const data: ContactUsInterface[] = props.data;
-  const { collection } = props;
+  const { collection, triggerGetData } = props;
 
   // Avoid a layout jump when reaching the last page with empty rows.
   const emptyRows =
@@ -131,6 +131,7 @@ export default function TableView(props: any) {
   const handleDelete = async (row: any) => {
     console.log("You Clicked Delete-----", row);
     await deleteDocument(collection, row.id);
+    triggerGetData();
     // Optionally, you can perform additional actions after deletion
   };
 
